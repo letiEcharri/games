@@ -5,7 +5,7 @@
 //  Created by Leticia Personal on 21/02/2021.
 //
 
-import Foundation
+import UIKit
 
 class HomePresenter: BasePresenter, HomePresenterProtocol {
     
@@ -14,8 +14,21 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     var ui: HomePresenterDelegate?
     private var signalDelegate: HomeSignalDelegate
     
+    var user: UserModel?
+    
     init(signalDelegate: HomeSignalDelegate) {
         self.signalDelegate = signalDelegate
     }
     
+    override func viewWillAppear() {
+        user = UserModel(nick: "Coca-Cola", score: 100) // TODO: Get from service
+        self.ui?.reloadData()
+    }
+    
+    
+    // MARK: - Presenter Functions
+    
+    func play() {
+        // TODO: Navigate to next screen
+    }
 }

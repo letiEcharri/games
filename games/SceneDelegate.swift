@@ -32,7 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationController = UINavigationController()
             childCoordinator = AppCoordinator(navigationController)
             childCoordinator?.resolve()
-//            let rootViewController = UINavigationController(rootViewController: viewController)
             window.rootViewController = navigationController
         }
     }
