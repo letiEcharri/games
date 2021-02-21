@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
+		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
+		F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */; };
+		F05E680725E2C9B00040C8A1 /* PantonDemo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */; };
+		F05E680825E2C9B00040C8A1 /* PantonDemo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E680025E2C9AF0040C8A1 /* PantonDemo-Black.ttf */; };
+		F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E681225E2CBC90040C8A1 /* UIFont+Fonts.swift */; };
+		F05E682525E2CE330040C8A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E682425E2CE330040C8A1 /* Coordinator.swift */; };
+		F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */; };
+		F05E683125E2CFAB0040C8A1 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E683025E2CFAB0040C8A1 /* AppDependencies.swift */; };
+		F05E683925E2CFE00040C8A1 /* HomeDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E683825E2CFE00040C8A1 /* HomeDependencies.swift */; };
+		F05E683E25E2D2800040C8A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E683D25E2D2800040C8A1 /* BaseViewController.swift */; };
+		F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E684225E2D3A10040C8A1 /* BasePresenter.swift */; };
+		F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E684725E2D4380040C8A1 /* HomePresenterProtocol.swift */; };
+		F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E684C25E2D4FE0040C8A1 /* HomePresenter.swift */; };
+		F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */; };
 		F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225825E2C07B0064CC7E /* AppDelegate.swift */; };
 		F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */; };
-		F07F225D25E2C07B0064CC7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225C25E2C07B0064CC7E /* ContentView.swift */; };
 		F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07F225E25E2C07C0064CC7E /* Assets.xcassets */; };
 		F07F226225E2C07C0064CC7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07F226125E2C07C0064CC7E /* Preview Assets.xcassets */; };
 		F07F226525E2C07C0064CC7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07F226325E2C07C0064CC7E /* LaunchScreen.storyboard */; };
@@ -35,10 +49,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
+		F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-Light.ttf"; sourceTree = "<group>"; };
+		F05E680025E2C9AF0040C8A1 /* PantonDemo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-Black.ttf"; sourceTree = "<group>"; };
+		F05E681225E2CBC90040C8A1 /* UIFont+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Fonts.swift"; sourceTree = "<group>"; };
+		F05E682425E2CE330040C8A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F05E683025E2CFAB0040C8A1 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		F05E683825E2CFE00040C8A1 /* HomeDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDependencies.swift; sourceTree = "<group>"; };
+		F05E683D25E2D2800040C8A1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F05E684225E2D3A10040C8A1 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		F05E684725E2D4380040C8A1 /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
+		F05E684C25E2D4FE0040C8A1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F07F225525E2C07B0064CC7E /* games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07F225825E2C07B0064CC7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F07F225C25E2C07B0064CC7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F07F225E25E2C07C0064CC7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F07F226125E2C07C0064CC7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F07F226425E2C07C0064CC7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +104,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F05E67F125E2C2ED0040C8A1 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F05E682925E2CE7C0040C8A1 /* coordinators */,
+				F05E67F225E2C2F40040C8A1 /* home */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		F05E67F225E2C2F40040C8A1 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				F05E67F425E2C30B0040C8A1 /* presenter */,
+				F05E67F325E2C3050040C8A1 /* view */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		F05E67F325E2C3050040C8A1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F05E67F425E2C30B0040C8A1 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F05E684725E2D4380040C8A1 /* HomePresenterProtocol.swift */,
+				F05E684C25E2D4FE0040C8A1 /* HomePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		F05E67FA25E2C9950040C8A1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F05E680025E2C9AF0040C8A1 /* PantonDemo-Black.ttf */,
+				F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */,
+				F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */,
+				F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		F05E681125E2CBA20040C8A1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F05E681225E2CBC90040C8A1 /* UIFont+Fonts.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		F05E681725E2CD240040C8A1 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F05E682325E2CDCD0040C8A1 /* base */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		F05E682325E2CDCD0040C8A1 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				F05E682425E2CE330040C8A1 /* Coordinator.swift */,
+				F05E683D25E2D2800040C8A1 /* BaseViewController.swift */,
+				F05E684225E2D3A10040C8A1 /* BasePresenter.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		F05E682925E2CE7C0040C8A1 /* coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */,
+				F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */,
+			);
+			path = coordinators;
+			sourceTree = "<group>";
+		};
+		F05E682F25E2CF580040C8A1 /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F05E683025E2CFAB0040C8A1 /* AppDependencies.swift */,
+				F05E683825E2CFE00040C8A1 /* HomeDependencies.swift */,
+			);
+			path = dependencies;
+			sourceTree = "<group>";
+		};
 		F07F224C25E2C07B0064CC7E = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +217,13 @@
 		F07F225725E2C07B0064CC7E /* games */ = {
 			isa = PBXGroup;
 			children = (
+				F05E682F25E2CF580040C8A1 /* dependencies */,
+				F05E681725E2CD240040C8A1 /* common */,
+				F05E681125E2CBA20040C8A1 /* extensions */,
+				F05E67FA25E2C9950040C8A1 /* fonts */,
+				F05E67F125E2C2ED0040C8A1 /* presentation */,
 				F07F225825E2C07B0064CC7E /* AppDelegate.swift */,
 				F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */,
-				F07F225C25E2C07B0064CC7E /* ContentView.swift */,
 				F07F225E25E2C07C0064CC7E /* Assets.xcassets */,
 				F07F226325E2C07C0064CC7E /* LaunchScreen.storyboard */,
 				F07F226625E2C07C0064CC7E /* Info.plist */,
@@ -239,9 +361,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05E680825E2C9B00040C8A1 /* PantonDemo-Black.ttf in Resources */,
 				F07F226525E2C07C0064CC7E /* LaunchScreen.storyboard in Resources */,
 				F07F226225E2C07C0064CC7E /* Preview Assets.xcassets in Resources */,
+				F05E680725E2C9B00040C8A1 /* PantonDemo-Light.ttf in Resources */,
+				F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */,
 				F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */,
+				F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +392,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05E683125E2CFAB0040C8A1 /* AppDependencies.swift in Sources */,
 				F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */,
 				F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */,
-				F07F225D25E2C07B0064CC7E /* ContentView.swift in Sources */,
+				F05E682525E2CE330040C8A1 /* Coordinator.swift in Sources */,
+				F05E683E25E2D2800040C8A1 /* BaseViewController.swift in Sources */,
+				F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */,
+				F05E683925E2CFE00040C8A1 /* HomeDependencies.swift in Sources */,
+				F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */,
+				F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */,
+				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
+				F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */,
+				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
+				F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
