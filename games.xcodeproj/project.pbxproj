@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */; };
+		F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */; };
+		F03A9BD72604DED300CA8A21 /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */; };
+		F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BDE2604DF5B00CA8A21 /* MainMenuDependencies.swift */; };
+		F03A9BE42604E2F200CA8A21 /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BE32604E2F200CA8A21 /* MainMenuPresenter.swift */; };
+		F03A9BE92604E30600CA8A21 /* MainMenuPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BE82604E30600CA8A21 /* MainMenuPresenterProtocol.swift */; };
+		F03A9C022604F52100CA8A21 /* Stigo-ItalicPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9BFE2604F52000CA8A21 /* Stigo-ItalicPERSONAL.ttf */; };
+		F03A9C032604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9BFF2604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf */; };
+		F03A9C042604F52100CA8A21 /* Stigo-REGPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9C002604F52100CA8A21 /* Stigo-REGPERSONAL.ttf */; };
+		F03A9C052604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9C012604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf */; };
 		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
 		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
 		F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */; };
@@ -52,6 +62,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
+		F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
+		F03A9BDE2604DF5B00CA8A21 /* MainMenuDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuDependencies.swift; sourceTree = "<group>"; };
+		F03A9BE32604E2F200CA8A21 /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
+		F03A9BE82604E30600CA8A21 /* MainMenuPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenterProtocol.swift; sourceTree = "<group>"; };
+		F03A9BFE2604F52000CA8A21 /* Stigo-ItalicPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-ItalicPERSONAL.ttf"; sourceTree = "<group>"; };
+		F03A9BFF2604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-ThinPERSONAL.ttf"; sourceTree = "<group>"; };
+		F03A9C002604F52100CA8A21 /* Stigo-REGPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-REGPERSONAL.ttf"; sourceTree = "<group>"; };
+		F03A9C012604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-ThinItalicPERSONAL.ttf"; sourceTree = "<group>"; };
 		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
 		F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -110,11 +130,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F03A9BC52604D9ED00CA8A21 /* mainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F03A9BC72604DA0700CA8A21 /* presenter */,
+				F03A9BC62604DA0100CA8A21 /* view */,
+			);
+			path = mainMenu;
+			sourceTree = "<group>";
+		};
+		F03A9BC62604DA0100CA8A21 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F03A9BCD2604DCF200CA8A21 /* cell */,
+				F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F03A9BC72604DA0700CA8A21 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F03A9BE82604E30600CA8A21 /* MainMenuPresenterProtocol.swift */,
+				F03A9BE32604E2F200CA8A21 /* MainMenuPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		F03A9BCD2604DCF200CA8A21 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		F05E67F125E2C2ED0040C8A1 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
 				F05E682925E2CE7C0040C8A1 /* coordinators */,
 				F05E67F225E2C2F40040C8A1 /* home */,
+				F03A9BC52604D9ED00CA8A21 /* mainMenu */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -148,6 +204,10 @@
 		F05E67FA25E2C9950040C8A1 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F03A9BFE2604F52000CA8A21 /* Stigo-ItalicPERSONAL.ttf */,
+				F03A9C002604F52100CA8A21 /* Stigo-REGPERSONAL.ttf */,
+				F03A9C012604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf */,
+				F03A9BFF2604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf */,
 				F05E680025E2C9AF0040C8A1 /* PantonDemo-Black.ttf */,
 				F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */,
 				F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */,
@@ -189,6 +249,7 @@
 			children = (
 				F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */,
 				F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */,
+				F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */,
 			);
 			path = coordinators;
 			sourceTree = "<group>";
@@ -198,16 +259,17 @@
 			children = (
 				F05E683025E2CFAB0040C8A1 /* AppDependencies.swift */,
 				F05E683825E2CFE00040C8A1 /* HomeDependencies.swift */,
+				F03A9BDE2604DF5B00CA8A21 /* MainMenuDependencies.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
 		};
-		F05E685F25E2E6D90040C8A1 /* Model */ = {
+		F05E685F25E2E6D90040C8A1 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				F05E686025E2E7170040C8A1 /* user */,
 			);
-			path = Model;
+			path = model;
 			sourceTree = "<group>";
 		};
 		F05E686025E2E7170040C8A1 /* user */ = {
@@ -241,7 +303,7 @@
 		F07F225725E2C07B0064CC7E /* games */ = {
 			isa = PBXGroup;
 			children = (
-				F05E685F25E2E6D90040C8A1 /* Model */,
+				F05E685F25E2E6D90040C8A1 /* model */,
 				F05E682F25E2CF580040C8A1 /* dependencies */,
 				F05E681725E2CD240040C8A1 /* common */,
 				F05E681125E2CBA20040C8A1 /* extensions */,
@@ -386,9 +448,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03A9C042604F52100CA8A21 /* Stigo-REGPERSONAL.ttf in Resources */,
+				F03A9C032604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf in Resources */,
 				F05E680825E2C9B00040C8A1 /* PantonDemo-Black.ttf in Resources */,
+				F03A9C022604F52100CA8A21 /* Stigo-ItalicPERSONAL.ttf in Resources */,
 				F07F226525E2C07C0064CC7E /* LaunchScreen.storyboard in Resources */,
 				F07F226225E2C07C0064CC7E /* Preview Assets.xcassets in Resources */,
+				F03A9C052604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf in Resources */,
 				F05E680725E2C9B00040C8A1 /* PantonDemo-Light.ttf in Resources */,
 				F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */,
 				F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */,
@@ -421,6 +487,8 @@
 				F05E685A25E2DDC30040C8A1 /* UIImage+Images.swift in Sources */,
 				F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */,
 				F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */,
+				F03A9BD72604DED300CA8A21 /* MainMenuCoordinator.swift in Sources */,
+				F03A9BE42604E2F200CA8A21 /* MainMenuPresenter.swift in Sources */,
 				F05E682525E2CE330040C8A1 /* Coordinator.swift in Sources */,
 				F05E683E25E2D2800040C8A1 /* BaseViewController.swift in Sources */,
 				F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */,
@@ -428,10 +496,14 @@
 				F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */,
 				F05E686A25E2EA0F0040C8A1 /* UIColor+Colors.swift in Sources */,
 				F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */,
+				F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */,
+				F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */,
 				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
 				F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */,
 				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
 				F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */,
+				F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */,
+				F03A9BE92604E30600CA8A21 /* MainMenuPresenterProtocol.swift in Sources */,
 				F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

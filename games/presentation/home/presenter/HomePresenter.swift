@@ -16,9 +16,13 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     
     var user: UserModel?
     
+    // MARK: - Initialization
+    
     init(signalDelegate: HomeSignalDelegate) {
         self.signalDelegate = signalDelegate
     }
+    
+    // MARK: - Life Cycle
     
     override func viewWillAppear() {
         user = UserModel(nick: "Coca-Cola", score: 100) // TODO: Get from service
@@ -29,6 +33,6 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     // MARK: - Presenter Functions
     
     func play() {
-        // TODO: Navigate to next screen
+        signalDelegate.signalTrigged(.mainMenu)
     }
 }
