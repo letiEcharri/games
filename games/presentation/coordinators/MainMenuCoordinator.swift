@@ -31,12 +31,22 @@ class MainMenuCoordinator: Coordinator {
         let viewController = appDependencies.makeMainMenuView(signalDelegate: self)
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    private func navigateToQuiz() {
+        childCoordinator = QuizCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
 }
 
 // MARK: - MainMenuSignalDelegate
 
 extension MainMenuCoordinator: MainMenuSignalDelegate {
     func signalTrigged(_ signal: MainMenuSignal) {
-        
+        switch signal {
+        case .quiz:
+            navigateToQuiz()
+        case .dayQuestion:
+            break
+        }
     }
 }

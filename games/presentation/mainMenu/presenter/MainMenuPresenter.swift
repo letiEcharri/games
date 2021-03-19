@@ -38,6 +38,7 @@ class MainMenuPresenter: BasePresenter, MainMenuPresenterProtocol {
     
     func didSelectSection(with row: Int) {
         let section = sections[row]
+        signalDelegate.signalTrigged(section.signal)
     }
     
     // MARK: - Private Functions

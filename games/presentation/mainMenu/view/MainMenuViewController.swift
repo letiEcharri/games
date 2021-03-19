@@ -77,7 +77,7 @@ extension MainMenuViewController: MainMenuPresenterDelegate {
     }
 }
 
-// MARK: - Delegate & DataSource
+// MARK: - CollectionView Delegate & DataSource
 
 extension MainMenuViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
