@@ -15,6 +15,13 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_background: UIImage = {
+        if let image = UIImage(named: "ic_background") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {

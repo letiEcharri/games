@@ -11,6 +11,16 @@ class HomeViewController: BaseViewController {
     
     // MARK: - Views
     
+    lazy var backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.alpha = 0.3
+        imageView.image = .ic_background
+        
+        return imageView
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +50,7 @@ class HomeViewController: BaseViewController {
     lazy var scoreLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .panton(style: .regular, size: 20)
+        label.font = .panton(style: .bold, size: 20)
         label.textColor = .black
         label.textAlignment = .center
         
@@ -61,6 +71,18 @@ class HomeViewController: BaseViewController {
         stack.addArrangedSubview(scoreLabel)
         
         return stack
+    }()
+    
+    lazy var totalScoreLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .panton(style: .bold, size: 16)
+        label.textColor = .black
+        label.textAlignment = .center
+        
+        label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        return label
     }()
     
     lazy var playButton: UIButton = {
@@ -109,11 +131,25 @@ class HomeViewController: BaseViewController {
     override func loadStyle() {
         self.view.backgroundColor = .white
         
+        self.view.addSubview(backgroundImageView)
+        NSLayoutConstraint.activate([
+            backgroundImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        ])
+        
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 15),
             stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15)
+        ])
+        
+        self.view.addSubview(totalScoreLabel)
+        NSLayoutConstraint.activate([
+            totalScoreLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            totalScoreLabel.topAnchor.constraint(equalTo: cupImageView.bottomAnchor, constant: -42.5)
         ])
         
         self.view.addSubview(playButton)
@@ -144,6 +180,7 @@ extension HomeViewController: HomePresenterDelegate {
         if let user = presenter.user {
             titleLabel.text = user.nick
             scoreLabel.text = "Puntuación: \(user.score)"
+            totalScoreLabel.text = String(user.score)
             cupImageView.setImage(color: user.getColor())
         }
     }
