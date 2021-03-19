@@ -27,5 +27,5 @@ class BasePresenter {
 }
 
 protocol BasePresenterDelegate: class {
- 
+    func reloadData()
 }

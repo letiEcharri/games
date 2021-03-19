@@ -1,0 +1,28 @@
+//
+//  MainMenuPresenterProtocol.swift
+//  games
+//
+//  Created by Leticia Personal on 19/03/2021.
+//
+
+import Foundation
+
+enum MainMenuSignal {
+    case quiz
+    case dayQuestion
+}
+
+protocol MainMenuSignalDelegate: class {
+    func signalTrigged(_ signal: MainMenuSignal)
+}
+
+protocol MainMenuPresenterProtocol where Self: BasePresenter {
+    var ui: MainMenuPresenterDelegate? { get set }
+    var sections: [MainMenuPresenter.Model] { get set }
+    
+    func didSelectSection(with row: Int)
+}
+
+protocol MainMenuPresenterDelegate: BasePresenterDelegate {
+    
+}

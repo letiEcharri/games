@@ -10,7 +10,7 @@ import UIKit
 class HomeCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    let appDependencies = AppDependencies()
+    let appDependencies: HomeDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -31,20 +31,20 @@ class HomeCoordinator: Coordinator {
         let viewController = appDependencies.makeHomeView(signalDelegate: self)
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    private func navigateToMainMenu() {
+        childCoordinator = MainMenuCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
 }
 
 // MARK: Coordinator Delegate
 
 extension HomeCoordinator: HomeSignalDelegate {
     func signalTrigged(_ signal: HomeSignal) {
-        
+        switch signal {
+        case .mainMenu:
+            navigateToMainMenu()
+        }
     }
-}
-
-enum HomeSignal {
-    
-}
-
-protocol HomeSignalDelegate: class {
-    func signalTrigged(_ signal: HomeSignal)
 }

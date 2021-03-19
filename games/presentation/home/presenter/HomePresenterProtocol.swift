@@ -7,6 +7,14 @@
 
 import UIKit
 
+enum HomeSignal {
+    case mainMenu
+}
+
+protocol HomeSignalDelegate: class {
+    func signalTrigged(_ signal: HomeSignal)
+}
+
 protocol HomePresenterProtocol where Self: BasePresenter {
     
     var ui: HomePresenterDelegate? { get set }
@@ -16,5 +24,5 @@ protocol HomePresenterProtocol where Self: BasePresenter {
 }
 
 protocol HomePresenterDelegate: BasePresenterDelegate {
-    func reloadData()
+    
 }

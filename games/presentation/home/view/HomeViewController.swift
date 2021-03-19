@@ -11,16 +11,6 @@ class HomeViewController: BaseViewController {
     
     // MARK: - Views
     
-    lazy var backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.alpha = 0.3
-        imageView.image = .ic_background
-        
-        return imageView
-    }()
-    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -129,15 +119,7 @@ class HomeViewController: BaseViewController {
     // MARK: - Setup UI
     
     override func loadStyle() {
-        self.view.backgroundColor = .white
-        
-        self.view.addSubview(backgroundImageView)
-        NSLayoutConstraint.activate([
-            backgroundImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        ])
+        addBackgroundImage()
         
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
