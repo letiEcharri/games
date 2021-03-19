@@ -15,6 +15,8 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
     
     // MARK: - Properties
     
+    private let interactor: QuizInteractorProtocol = QuizInteractor.shared
+    
     var ui: QuizCategoriesPresenterDelegate?
     var categories: [QuizCategoryModel] = []
     
@@ -29,40 +31,11 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
     // MARK: - Presenter Functions
     
     override func viewWillAppear() {
-        getCategories()
-    }
-    
-    // MARK: - Private Functions
-    
-    private func getCategories() {
-        // TODO: Get categorias from service
-        let quiz = readLocalFile(forName: "quiz")
-        let decoder = JSONDecoder()
-                    
-        do {
-            if let quizData = quiz {
-                let model = try decoder.decode(QuizModel.self, from: quizData)
-                self.categories = model.quiz.categories
+        interactor.getQuizCategories { (cats, error) in
+            if let cats = cats {
+                self.categories = cats
                 self.ui?.reloadData()
             }
-            
-        } catch {
-            print(error)
         }
-        
-    }
-    
-    private func readLocalFile(forName name: String) -> Data? {
-        do {
-            if let bundlePath = Bundle.main.path(forResource: name,
-                                                 ofType: "json"),
-                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                return jsonData
-            }
-        } catch {
-            print(error)
-        }
-        
-        return nil
     }
 }
