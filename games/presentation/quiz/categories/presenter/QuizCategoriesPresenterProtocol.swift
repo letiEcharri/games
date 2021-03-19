@@ -8,6 +8,7 @@
 import Foundation
 
 enum QuizCategoriesSignal {
+    case category(_ cat: QuizCategoryModel)
 }
 
 protocol QuizCategoriesSignalDelegate: class {
@@ -17,6 +18,8 @@ protocol QuizCategoriesSignalDelegate: class {
 protocol QuizCategoriesPresenterProtocol where Self: BasePresenter {
     var ui: QuizCategoriesPresenterDelegate? { get set }
     var categories: [QuizCategoryModel] { get set }
+    
+    func didSelect(with row: Int)
 }
 
 protocol QuizCategoriesPresenterDelegate: BasePresenterDelegate {

@@ -136,4 +136,8 @@ extension QuizCategoriesViewController: UITableViewDelegate, UITableViewDataSour
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(with: indexPath.row)
+    }
 }

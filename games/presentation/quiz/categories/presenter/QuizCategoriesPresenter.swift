@@ -38,4 +38,9 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
             }
         }
     }
+    
+    func didSelect(with row: Int) {
+        let category = categories[row - 1]
+        signalDelegate.signalTrigged(.category(category))
+    }
 }

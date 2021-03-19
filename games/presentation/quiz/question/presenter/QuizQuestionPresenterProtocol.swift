@@ -1,0 +1,28 @@
+//
+//  QuizQuestionPresenterProtocol.swift
+//  games
+//
+//  Created by Leticia Personal on 19/03/2021.
+//
+
+import Foundation
+
+enum QuizQuestionSignal {
+}
+
+protocol QuizQuestionSignalDelegate: class {
+    func signalTrigged(_ signal: QuizQuestionSignal)
+}
+
+protocol QuizQuestionPresenterProtocol where Self: BasePresenter {
+    var ui: QuizQuestionPresenterDelegate? { get set }
+    var category: QuizCategoryModel { get set }
+    var question: QuizQuestionModel { get }
+    
+    func next(selected answer: String)
+    func isAnswerRight(with key: String) -> Bool
+}
+
+protocol QuizQuestionPresenterDelegate: BasePresenterDelegate {
+    
+}

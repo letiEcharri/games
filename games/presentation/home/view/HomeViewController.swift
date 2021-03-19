@@ -78,7 +78,7 @@ class HomeViewController: BaseViewController {
     lazy var playButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 59/255, green: 179/255, blue: 0, alpha: 1)
+        button.backgroundColor = .playGreen
         button.layer.cornerRadius = 10
         button.titleLabel?.font = .panton(style: .bold, size: 25)
         button.setTitleColor(.white, for: .normal)
