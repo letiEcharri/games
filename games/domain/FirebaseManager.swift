@@ -30,4 +30,14 @@ class FirebaseManager {
             }
         }
     }
+    
+    static func update(from database: DataBase, item: String, value: Any) {
+        FirebaseManager.ref.child(database.rawValue).child(item).setValue(value) { (error:Error?, ref:DatabaseReference) in
+            if let error = error {
+              print("Data could not be saved: \(error).")
+            } else {
+              print("Data saved successfully!")
+            }
+        }
+    }
 }

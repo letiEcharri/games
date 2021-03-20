@@ -14,6 +14,7 @@ enum UserCup {
 }
 
 struct UserModel: Decodable {
+    var id: Int
     var nick: String
     var score: Int
     var cup: UserCup {

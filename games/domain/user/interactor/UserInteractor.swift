@@ -16,4 +16,8 @@ class UserInteractor: UserInteractorProtocol {
     func getUser(nick: String, completion: @escaping UserResponseBlock) {
         repository.getUser(nick: nick, completion: completion)
     }
+    
+    func update(score: Int) {
+        repository.update(score: score)
+    }
 }

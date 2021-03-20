@@ -35,4 +35,10 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
             }
         }
     }
+    
+    func update(score: Int, with userID: Int) {
+        let item = "\(userID)/score"
+        FirebaseManager.update(from: .users, item: item, value: score)
+    }
+    
 }
