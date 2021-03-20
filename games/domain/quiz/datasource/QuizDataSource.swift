@@ -12,15 +12,24 @@ class QuizDataSource: DataSource, QuizDataSourceProtocol {
     static let shared: QuizDataSourceProtocol = QuizDataSource()
     
     func getQuiz(completion: @escaping QuizResponseBlock) {
-        if let quizData = readLocalFile(forName: "quiz") {
-            let decoder = JSONDecoder()
-                        
-            do {
-                let model = try decoder.decode(QuizModel.self, from: quizData)
-                completion(model, nil)
-                
-            } catch {
-                completion(nil, error)
+        FirebaseManager.getValue(from: .quiz) { (response, error) in
+            if let quiz = response as? [String: Any] {
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: quiz, options: .prettyPrinted)
+                    let model = try JSONDecoder().decode(QuizCategoriesModel.self, from: jsonData)
+                    completion(model, nil)
+
+                } catch {
+                    completion(nil, error)
+                }
+            } else if let quizData = self.readLocalFile(forName: "quiz") {
+                do {
+                    let model = try JSONDecoder().decode(QuizModel.self, from: quizData)
+                    completion(model.quiz, nil)
+
+                } catch {
+                    completion(nil, error)
+                }
             }
         }
     }

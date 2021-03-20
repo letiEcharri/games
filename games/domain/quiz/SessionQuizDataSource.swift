@@ -11,7 +11,7 @@ class SessionQuizDataSource {
     
     static let shared = SessionQuizDataSource()
     
-    var quiz: QuizModel?
+    var quiz: QuizCategoriesModel?
     
     func clear() {
         quiz = nil
