@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias QuizResponseBlock = (QuizModel?, Error?) -> Void
+typealias QuizResponseBlock = (QuizCategoriesModel?, Error?) -> Void
 
 protocol QuizDataSourceProtocol {
     func getQuiz(completion: @escaping QuizResponseBlock)

@@ -16,11 +16,12 @@ class QuizRepository: QuizRepositoryProtocol {
     
     func getQuizCategories(completion: @escaping QuizCategoriesResponseBlock) {
         if let quiz = session.quiz {
-            completion(quiz.quiz.categories, nil)
+            completion(quiz.categories, nil)
         } else {
             datasource.getQuiz { (model, error) in
                 if let model = model {
-                    completion(model.quiz.categories, nil)
+                    self.session.quiz = model
+                    completion(model.categories, nil)
                 } else {
                     completion(nil, error)
                 }

@@ -40,7 +40,18 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
     }
     
     func didSelect(with row: Int) {
-        let category = categories[row - 1]
-        signalDelegate.signalTrigged(.category(category))
+        if row == 0 {
+            var mix: [QuizQuestionModel] = [QuizQuestionModel]()
+            for item in categories {
+                mix.append(contentsOf: item.questions)
+            }
+            mix.shuffle()
+            let selected = Array(mix[0...4])
+            signalDelegate.signalTrigged(.category(QuizCategoryModel(name: "mix", questions: selected)))
+            
+        } else {
+            let category = categories[row - 1]
+            signalDelegate.signalTrigged(.category(category))
+        }
     }
 }

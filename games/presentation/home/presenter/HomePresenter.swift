@@ -13,6 +13,7 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     
     var ui: HomePresenterDelegate?
     private var signalDelegate: HomeSignalDelegate
+    private var userInteractor: UserInteractorProtocol = UserInteractor.shared
     
     var user: UserModel?
     
@@ -25,8 +26,12 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     // MARK: - Life Cycle
     
     override func viewWillAppear() {
-        user = UserModel(nick: "Coca-Cola", score: 100) // TODO: Get from service
-        self.ui?.reloadData()
+        userInteractor.getUser(nick: "testuser") { (user, error) in
+            if let user = user {
+                self.user = user
+                self.ui?.reloadData()
+            }
+        }
     }
     
     

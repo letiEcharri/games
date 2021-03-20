@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         customizeNavigationBar()
+        FirebaseApp.configure()
         
         return true
     }
@@ -38,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.tintColor = .white // Items
         navigationBarAppearace.barTintColor = .purple // Background
         navigationBarAppearace.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.panton(style: .bold, size: 30),
+            NSAttributedString.Key.font: UIFont.bandar(style: .outline, size: 30),
             NSAttributedString.Key.foregroundColor: UIColor.white
         ] // Title
     }

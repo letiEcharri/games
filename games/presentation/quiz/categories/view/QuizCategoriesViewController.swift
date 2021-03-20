@@ -72,7 +72,11 @@ class QuizCategoriesViewController: BaseViewController {
 // MARK: - QuizCategoriesPresenterDelegate
 
 extension QuizCategoriesViewController: QuizCategoriesPresenterDelegate {
-    func reloadData() {}
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - Table Delegate & Datasource
