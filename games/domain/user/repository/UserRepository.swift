@@ -26,4 +26,11 @@ class UserRepository: UserRepositoryProtocol {
             }
         }
     }
+    
+    func update(score: Int) {
+        session.user?.score += score
+        if let user = session.user {
+            datasource.update(score: user.score, with: user.id)
+        }
+    }
 }

@@ -19,6 +19,7 @@ class QuizScorePresenter: BasePresenter, QuizScorePresenterProtocol {
     // MARK: - Properties
     
     private weak var signalDelegate: QuizQuestionSignalDelegate?
+    private let interactor: UserInteractorProtocol = UserInteractor.shared
     
     weak var ui: QuizScorePresenterDelegate?
     
@@ -38,6 +39,7 @@ class QuizScorePresenter: BasePresenter, QuizScorePresenterProtocol {
     // MARK: - QuizScorePresenter Functions
     
     func exit() {
+        interactor.update(score: score)
         signalDelegate?.signalTrigged(.finish)
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol UserInteractorProtocol {
     func getUser(nick: String, completion: @escaping UserResponseBlock)
+    func update(score: Int)
 }
