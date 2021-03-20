@@ -20,6 +20,8 @@
 		F008C5452606628D00A5E015 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5442606628D00A5E015 /* UserRepository.swift */; };
 		F008C54B2606645B00A5E015 /* UserInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C54A2606645B00A5E015 /* UserInteractorProtocol.swift */; };
 		F008C5532606646300A5E015 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5522606646300A5E015 /* UserInteractor.swift */; };
+		F008C5592606A2A600A5E015 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5582606A2A600A5E015 /* LoadingViewController.swift */; };
+		F008C5612606A54300A5E015 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5602606A54300A5E015 /* Notification+Name.swift */; };
 		F016F8512606122A008623D3 /* QuizScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84E2606122A008623D3 /* QuizScorePresenter.swift */; };
 		F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */; };
 		F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F8502606122A008623D3 /* QuizScoreViewController.swift */; };
@@ -119,6 +121,8 @@
 		F008C5442606628D00A5E015 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		F008C54A2606645B00A5E015 /* UserInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractorProtocol.swift; sourceTree = "<group>"; };
 		F008C5522606646300A5E015 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		F008C5582606A2A600A5E015 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		F008C5602606A54300A5E015 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		F016F84E2606122A008623D3 /* QuizScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenter.swift; sourceTree = "<group>"; };
 		F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenterProtocol.swift; sourceTree = "<group>"; };
 		F016F8502606122A008623D3 /* QuizScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 		F008C4CF26062B2F00A5E015 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				F008C5572606A28100A5E015 /* loading */,
 				F008C4D026062B4800A5E015 /* progressStepBar */,
 			);
 			path = components;
@@ -290,6 +295,14 @@
 				F008C5522606646300A5E015 /* UserInteractor.swift */,
 			);
 			path = interactor;
+			sourceTree = "<group>";
+		};
+		F008C5572606A28100A5E015 /* loading */ = {
+			isa = PBXGroup;
+			children = (
+				F008C5582606A2A600A5E015 /* LoadingViewController.swift */,
+			);
+			path = loading;
 			sourceTree = "<group>";
 		};
 		F03A9BC52604D9ED00CA8A21 /* mainMenu */ = {
@@ -533,6 +546,7 @@
 				F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */,
 				F05E686925E2EA0F0040C8A1 /* UIColor+Colors.swift */,
 				F03A9C4A260516DE00CA8A21 /* UIView+Style.swift */,
+				F008C5602606A54300A5E015 /* Notification+Name.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -991,6 +1005,8 @@
 				F008C50E2606598A00A5E015 /* FirebaseManager.swift in Sources */,
 				F03A9C5A260517DD00CA8A21 /* QuizCategoriesPresenter.swift in Sources */,
 				F03A9C302605073300CA8A21 /* QuizCategoriesViewController.swift in Sources */,
+				F008C5592606A2A600A5E015 /* LoadingViewController.swift in Sources */,
+				F008C5612606A54300A5E015 /* Notification+Name.swift in Sources */,
 				F03A9C9B26052F1400CA8A21 /* QuizQuestionViewController.swift in Sources */,
 				F03A9C55260517D300CA8A21 /* QuizCategoriesPresenterProtocol.swift in Sources */,
 			);

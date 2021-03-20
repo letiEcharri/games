@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.tintColor = .white // Items
         navigationBarAppearace.barTintColor = .purple // Background
         navigationBarAppearace.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.panton(style: .bold, size: 30),
+            NSAttributedString.Key.font: UIFont.bandar(style: .outline, size: 30),
             NSAttributedString.Key.foregroundColor: UIColor.white
         ] // Title
     }

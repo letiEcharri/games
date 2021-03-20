@@ -9,6 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    // MARK: Views
     lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +19,11 @@ class BaseViewController: UIViewController {
         
         return imageView
     }()
+    
+    // MARK: Properties
 
+    // MARK: Lyfe Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,10 +31,17 @@ class BaseViewController: UIViewController {
         setTexts()
     }
     
+    // MARK: Style
+    
     func loadStyle() {}
     
-    func setTexts() {}
-
+    func setTexts() {
+        title = "GAMES"
+    }
+    
+    
+    // MARK: Functions
+    
     func addBackgroundImage() {
         self.view.backgroundColor = .white
         
@@ -64,5 +76,17 @@ class BaseViewController: UIViewController {
         }
         checkProgressSteps()
         view.setNeedsDisplay()
+    }
+    
+    func showLoading() {
+        let loadingVC = LoadingViewController()
+        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.modalTransitionStyle = .crossDissolve
+               
+        present(loadingVC, animated: true, completion: nil)
+    }
+    
+    func hideLoading() {
+        NotificationCenter.default.post(name: .loading, object: nil)
     }
 }

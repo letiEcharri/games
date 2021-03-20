@@ -114,6 +114,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        
+        showLoading()
     }
     
     // MARK: - Setup UI
@@ -143,7 +145,7 @@ class HomeViewController: BaseViewController {
     }
     
     override func setTexts() {
-        self.title = "HOME"
+        super.setTexts()
         playButton.setTitle("PLAY", for: .normal)
         scoreLabel.text = "Puntuación: 0"
     }
@@ -166,6 +168,7 @@ extension HomeViewController: HomePresenterDelegate {
                 self.totalScoreLabel.text = String(user.score)
                 self.cupImageView.setImage(color: user.getColor())
             }
+            self.hideLoading()
         }
     }
 }
