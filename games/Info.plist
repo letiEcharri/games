@@ -64,10 +64,11 @@
 		<string>PantonDemo-Black.ttf</string>
 		<string>PantonDemo-BlackItalic.ttf</string>
 		<string>PantonDemo-LightItalic.ttf</string>
-		<string>Stigo-ItalicPERSONAL.ttf</string>
-		<string>Stigo-REGPERSONAL.ttf</string>
-		<string>Stigo-ThinItalicPERSONAL.ttf</string>
-		<string>Stigo-ThinPERSONAL.ttf</string>
+		<string>BandarBold.ttf</string>
+		<string>BandarBoldItalic.ttf</string>
+		<string>BandarItalic.ttf</string>
+		<string>BandarOutline.ttf</string>
+		<string>BandarRegular.ttf</string>
 	</array>
 </dict>
 </plist>

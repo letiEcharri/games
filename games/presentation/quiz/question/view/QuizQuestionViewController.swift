@@ -15,7 +15,7 @@ class QuizQuestionViewController: BaseViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .purple
-        label.font = .boldSystemFont(ofSize: 23)
+        label.font = .bandar(style: .bold, size: 23)
         label.textAlignment = .center
         label.numberOfLines = 0
         
@@ -72,6 +72,7 @@ class QuizQuestionViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
+        navigationItem.setHidesBackButton(true, animated: true)
     }
 
     override func viewDidLoad() {
@@ -156,7 +157,7 @@ extension QuizQuestionViewController {
         private func configureView() {
             translatesAutoresizingMaskIntoConstraints = false
             backgroundColor = .white
-            titleLabel?.font = .systemFont(ofSize: 18)
+            titleLabel?.font = .bandar(style: .regular, size: 18)
             titleLabel?.numberOfLines = 0
             titleLabel?.textAlignment = .center
             setTitleColor(.purple, for: .normal)

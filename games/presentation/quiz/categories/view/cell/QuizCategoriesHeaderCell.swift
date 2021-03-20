@@ -17,7 +17,7 @@ class QuizCategoriesHeaderCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = .stigo(style: .bold, size: 20)
+        label.font = .bandar(style: .bold, size: 20)
         label.textColor = .white
         
         return label
@@ -46,6 +46,7 @@ class QuizCategoriesHeaderCell: UITableViewCell {
     
     func set(title: String) {
         backgroundColor = .clear
+        selectionStyle = .none
         
         label.text = title
         addSubview(circle)

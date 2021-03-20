@@ -41,6 +41,9 @@ class QuizQuestionPresenter: BasePresenter, QuizQuestionPresenterProtocol {
             index += 1
             score += question.answer == answer ? 1 : 0
             self.ui?.reloadData()
+        } else if index == (category.questions.count - 1) {
+            let model = QuizScorePresenter.Model(totalQuestions: category.questions.count, rightQuestions: score)
+            signalDelegate.signalTrigged(.score(model))
         }
     }
     

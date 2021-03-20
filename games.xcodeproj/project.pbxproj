@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F016F8512606122A008623D3 /* QuizScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84E2606122A008623D3 /* QuizScorePresenter.swift */; };
+		F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */; };
+		F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F8502606122A008623D3 /* QuizScoreViewController.swift */; };
 		F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */; };
 		F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */; };
 		F03A9BD72604DED300CA8A21 /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */; };
 		F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BDE2604DF5B00CA8A21 /* MainMenuDependencies.swift */; };
 		F03A9BE42604E2F200CA8A21 /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BE32604E2F200CA8A21 /* MainMenuPresenter.swift */; };
 		F03A9BE92604E30600CA8A21 /* MainMenuPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BE82604E30600CA8A21 /* MainMenuPresenterProtocol.swift */; };
-		F03A9C022604F52100CA8A21 /* Stigo-ItalicPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9BFE2604F52000CA8A21 /* Stigo-ItalicPERSONAL.ttf */; };
-		F03A9C032604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9BFF2604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf */; };
-		F03A9C042604F52100CA8A21 /* Stigo-REGPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9C002604F52100CA8A21 /* Stigo-REGPERSONAL.ttf */; };
-		F03A9C052604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A9C012604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf */; };
 		F03A9C102605013C00CA8A21 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = F03A9C0F2605013C00CA8A21 /* quiz.json */; };
 		F03A9C24260502A500CA8A21 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9C23260502A500CA8A21 /* QuizModel.swift */; };
 		F03A9C302605073300CA8A21 /* QuizCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9C2F2605073300CA8A21 /* QuizCategoriesViewController.swift */; };
@@ -56,6 +55,11 @@
 		F05E685A25E2DDC30040C8A1 /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */; };
 		F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E686125E2E72C0040C8A1 /* UserModel.swift */; };
 		F05E686A25E2EA0F0040C8A1 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E686925E2EA0F0040C8A1 /* UIColor+Colors.swift */; };
+		F07A228C26061A2500F14946 /* BandarBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228726061A2400F14946 /* BandarBold.ttf */; };
+		F07A228D26061A2500F14946 /* BandarBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228826061A2500F14946 /* BandarBoldItalic.ttf */; };
+		F07A228E26061A2500F14946 /* BandarItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228926061A2500F14946 /* BandarItalic.ttf */; };
+		F07A228F26061A2500F14946 /* BandarOutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228A26061A2500F14946 /* BandarOutline.ttf */; };
+		F07A229026061A2500F14946 /* BandarRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228B26061A2500F14946 /* BandarRegular.ttf */; };
 		F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225825E2C07B0064CC7E /* AppDelegate.swift */; };
 		F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */; };
 		F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07F225E25E2C07C0064CC7E /* Assets.xcassets */; };
@@ -83,16 +87,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F016F84E2606122A008623D3 /* QuizScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenter.swift; sourceTree = "<group>"; };
+		F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenterProtocol.swift; sourceTree = "<group>"; };
+		F016F8502606122A008623D3 /* QuizScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreViewController.swift; sourceTree = "<group>"; };
 		F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
 		F03A9BDE2604DF5B00CA8A21 /* MainMenuDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuDependencies.swift; sourceTree = "<group>"; };
 		F03A9BE32604E2F200CA8A21 /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
 		F03A9BE82604E30600CA8A21 /* MainMenuPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenterProtocol.swift; sourceTree = "<group>"; };
-		F03A9BFE2604F52000CA8A21 /* Stigo-ItalicPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-ItalicPERSONAL.ttf"; sourceTree = "<group>"; };
-		F03A9BFF2604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-ThinPERSONAL.ttf"; sourceTree = "<group>"; };
-		F03A9C002604F52100CA8A21 /* Stigo-REGPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-REGPERSONAL.ttf"; sourceTree = "<group>"; };
-		F03A9C012604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stigo-ThinItalicPERSONAL.ttf"; sourceTree = "<group>"; };
 		F03A9C0F2605013C00CA8A21 /* quiz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quiz.json; sourceTree = "<group>"; };
 		F03A9C23260502A500CA8A21 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		F03A9C2F2605073300CA8A21 /* QuizCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoriesViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +135,11 @@
 		F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
 		F05E686125E2E72C0040C8A1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F05E686925E2EA0F0040C8A1 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		F07A228726061A2400F14946 /* BandarBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarBold.ttf; sourceTree = "<group>"; };
+		F07A228826061A2500F14946 /* BandarBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarBoldItalic.ttf; sourceTree = "<group>"; };
+		F07A228926061A2500F14946 /* BandarItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarItalic.ttf; sourceTree = "<group>"; };
+		F07A228A26061A2500F14946 /* BandarOutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarOutline.ttf; sourceTree = "<group>"; };
+		F07A228B26061A2500F14946 /* BandarRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarRegular.ttf; sourceTree = "<group>"; };
 		F07F225525E2C07B0064CC7E /* games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07F225825E2C07B0064CC7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 			children = (
 				F03A9C2E2605070900CA8A21 /* categories */,
 				F03A9C9726052ECD00CA8A21 /* question */,
+				F08D08D1260609560044E152 /* score */,
 			);
 			path = quiz;
 			sourceTree = "<group>";
@@ -389,10 +398,11 @@
 		F05E67FA25E2C9950040C8A1 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F03A9BFE2604F52000CA8A21 /* Stigo-ItalicPERSONAL.ttf */,
-				F03A9C002604F52100CA8A21 /* Stigo-REGPERSONAL.ttf */,
-				F03A9C012604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf */,
-				F03A9BFF2604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf */,
+				F07A228726061A2400F14946 /* BandarBold.ttf */,
+				F07A228826061A2500F14946 /* BandarBoldItalic.ttf */,
+				F07A228926061A2500F14946 /* BandarItalic.ttf */,
+				F07A228A26061A2500F14946 /* BandarOutline.ttf */,
+				F07A228B26061A2500F14946 /* BandarRegular.ttf */,
 				F05E680025E2C9AF0040C8A1 /* PantonDemo-Black.ttf */,
 				F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */,
 				F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */,
@@ -536,6 +546,32 @@
 			path = gamesUITests;
 			sourceTree = "<group>";
 		};
+		F08D08D1260609560044E152 /* score */ = {
+			isa = PBXGroup;
+			children = (
+				F08D08D3260609C10044E152 /* presenter */,
+				F08D08D2260609BA0044E152 /* view */,
+			);
+			path = score;
+			sourceTree = "<group>";
+		};
+		F08D08D2260609BA0044E152 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F016F8502606122A008623D3 /* QuizScoreViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F08D08D3260609C10044E152 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */,
+				F016F84E2606122A008623D3 /* QuizScorePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -639,16 +675,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F03A9C042604F52100CA8A21 /* Stigo-REGPERSONAL.ttf in Resources */,
-				F03A9C032604F52100CA8A21 /* Stigo-ThinPERSONAL.ttf in Resources */,
 				F03A9C102605013C00CA8A21 /* quiz.json in Resources */,
+				F07A228C26061A2500F14946 /* BandarBold.ttf in Resources */,
 				F05E680825E2C9B00040C8A1 /* PantonDemo-Black.ttf in Resources */,
-				F03A9C022604F52100CA8A21 /* Stigo-ItalicPERSONAL.ttf in Resources */,
 				F07F226525E2C07C0064CC7E /* LaunchScreen.storyboard in Resources */,
+				F07A228F26061A2500F14946 /* BandarOutline.ttf in Resources */,
 				F07F226225E2C07C0064CC7E /* Preview Assets.xcassets in Resources */,
-				F03A9C052604F52100CA8A21 /* Stigo-ThinItalicPERSONAL.ttf in Resources */,
+				F07A229026061A2500F14946 /* BandarRegular.ttf in Resources */,
+				F07A228E26061A2500F14946 /* BandarItalic.ttf in Resources */,
 				F05E680725E2C9B00040C8A1 /* PantonDemo-Light.ttf in Resources */,
 				F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */,
+				F07A228D26061A2500F14946 /* BandarBoldItalic.ttf in Resources */,
 				F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */,
 				F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */,
 			);
@@ -675,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F016F8512606122A008623D3 /* QuizScorePresenter.swift in Sources */,
 				F03A9C72260525B700CA8A21 /* QuizDataSourceProtocol.swift in Sources */,
 				F03A9C77260525C000CA8A21 /* QuizDataSource.swift in Sources */,
 				F05E683125E2CFAB0040C8A1 /* AppDependencies.swift in Sources */,
@@ -692,6 +730,7 @@
 				F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */,
 				F03A9C812605289E00CA8A21 /* QuizRepositoryProtocol.swift in Sources */,
 				F03A9C3C2605083200CA8A21 /* QuizCategoriesCell.swift in Sources */,
+				F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */,
 				F05E683925E2CFE00040C8A1 /* HomeDependencies.swift in Sources */,
 				F03A9C6D2605252F00CA8A21 /* SessionQuizDataSource.swift in Sources */,
 				F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */,
@@ -702,6 +741,7 @@
 				F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */,
 				F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */,
 				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
+				F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */,
 				F03A9C86260528A900CA8A21 /* QuizRepository.swift in Sources */,
 				F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */,
 				F03A9C632605196700CA8A21 /* QuizDependencies.swift in Sources */,

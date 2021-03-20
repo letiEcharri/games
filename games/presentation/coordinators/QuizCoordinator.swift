@@ -10,6 +10,7 @@ import UIKit
 class QuizCoordinator: Coordinator {
     
     let navigationController: UINavigationController
+    var categoriesNavController: UINavigationController?
     let appDependencies: QuizDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
@@ -29,12 +30,21 @@ class QuizCoordinator: Coordinator {
     
     private func navigateToCategories() {
         let viewController = appDependencies.makeQuizCategoriesView(signaDelegate: self)
-        navigationController.pushViewController(viewController, animated: true)
+        categoriesNavController = UINavigationController(rootViewController: viewController)
+        if let categoriesNavController = categoriesNavController {
+            categoriesNavController.modalPresentationStyle = .fullScreen
+            navigationController.present(categoriesNavController, animated: true)
+        }
     }
     
     private func navigateToQuestion(category: QuizCategoryModel) {
         let viewController = appDependencies.makeQuizQuestionView(signalDelegate: self, category: category)
-        navigationController.pushViewController(viewController, animated: true)
+        categoriesNavController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func navigateToScore(model: QuizScorePresenter.Model) {
+        let viewController = appDependencies.makeQuizScoreView(signalDelegate: self, model: model)
+        categoriesNavController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -49,6 +59,11 @@ extension QuizCoordinator: QuizCategoriesSignalDelegate {
 
 extension QuizCoordinator: QuizQuestionSignalDelegate {
     func signalTrigged(_ signal: QuizQuestionSignal) {
-        
+        switch signal {
+        case .score(let model):
+            navigateToScore(model: model)
+        case .finish:
+            categoriesNavController?.dismiss(animated: true)
+        }
     }
 }

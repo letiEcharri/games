@@ -8,6 +8,8 @@
 import Foundation
 
 enum QuizQuestionSignal {
+    case score(_ model: QuizScorePresenter.Model)
+    case finish
 }
 
 protocol QuizQuestionSignalDelegate: class {

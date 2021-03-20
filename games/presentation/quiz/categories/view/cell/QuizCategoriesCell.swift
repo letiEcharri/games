@@ -16,7 +16,7 @@ class QuizCategoriesCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .stigo(style: .bold, size: 20)
+        label.font = .bandar(style: .bold, size: 20)
         label.textColor = .white
         label.textAlignment = .center
         
@@ -43,6 +43,7 @@ class QuizCategoriesCell: UITableViewCell {
     func set(title: String) {
         backgroundColor = .clear
         clipsToBounds = false
+        selectionStyle = .none
         
         titleLabel.text = title
         

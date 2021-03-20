@@ -11,30 +11,6 @@ class QuizCategoriesViewController: BaseViewController {
     
     // MARK: - Views
     
-    lazy var headerButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .purple
-        button.layer.cornerRadius = 35
-        
-        button.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
-        return button
-    }()
-    
-    lazy var tableHeaderView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 70))
-        
-        view.addSubview(headerButton)
-        NSLayoutConstraint.activate([
-            headerButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            headerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-        return view
-    }()
-    
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -90,19 +66,13 @@ class QuizCategoriesViewController: BaseViewController {
             tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40)
         ])
     }
-    
-    override func setTexts() {
-        headerButton.setTitle("MIX", for: .normal)
-    }
 
 }
 
 // MARK: - QuizCategoriesPresenterDelegate
 
 extension QuizCategoriesViewController: QuizCategoriesPresenterDelegate {
-    func reloadData() {
-        
-    }
+    func reloadData() {}
 }
 
 // MARK: - Table Delegate & Datasource

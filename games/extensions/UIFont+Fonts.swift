@@ -33,23 +33,26 @@ extension UIFont {
     
     // MARK: Stigo
     
-    public enum StigoStyle {
+    public enum BandarStyle {
         case regular
         case italic
         case bold
         case boldItalic
+        case outline
     }
     
-    public static func stigo(style: StigoStyle, size: CGFloat) -> UIFont {
+    public static func bandar(style: BandarStyle, size: CGFloat) -> UIFont {
         switch style {
         case .regular:
-            return UIFont(name: "StigoThinPERSONAL", size: size) ?? UIFont.systemFont(ofSize: size)
+            return UIFont(name: "BandarRegular", size: size) ?? UIFont.systemFont(ofSize: size)
         case .italic:
-            return UIFont(name: "StigoThinItalicPERSONAL", size: size) ?? UIFont.systemFont(ofSize: size)
+            return UIFont(name: "BandarItalic", size: size) ?? UIFont.systemFont(ofSize: size)
         case .bold:
-            return UIFont(name: "StigoREGPERSONAL", size: size) ?? UIFont.systemFont(ofSize: size)
+            return UIFont(name: "BandarBold", size: size) ?? UIFont.systemFont(ofSize: size)
         case .boldItalic:
-            return UIFont(name: "StigoItalicPERSONAL", size: size) ?? UIFont.systemFont(ofSize: size)
+            return UIFont(name: "BandarBoldItalic", size: size) ?? UIFont.systemFont(ofSize: size)
+        case .outline:
+            return UIFont(name: "BandarOutline", size: size) ?? UIFont.systemFont(ofSize: size)
         }
     }
 }
