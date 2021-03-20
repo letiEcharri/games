@@ -20,4 +20,8 @@ extension UIColor {
     static var gold: UIColor = {
         return UIColor(red: 255/255, green: 215/255, blue: 0, alpha: 1)
     }()
+    
+    static var playGreen: UIColor = {
+        return UIColor(red: 59/255, green: 179/255, blue: 0, alpha: 1)
+    }()
 }

@@ -16,7 +16,7 @@ class MainMenuCell: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .stigo(style: .bold, size: 30)
+        label.font = .bandar(style: .bold, size: 30)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0

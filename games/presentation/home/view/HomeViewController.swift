@@ -14,7 +14,7 @@ class HomeViewController: BaseViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .panton(style: .bold, size: 30)
+        label.font = .bandar(style: .bold, size: 40)
         label.textColor = .black
         label.textAlignment = .center
         
@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
     lazy var scoreLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .panton(style: .bold, size: 20)
+        label.font = .bandar(style: .bold, size: 30)
         label.textColor = .black
         label.textAlignment = .center
         
@@ -66,7 +66,7 @@ class HomeViewController: BaseViewController {
     lazy var totalScoreLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .panton(style: .bold, size: 16)
+        label.font = .bandar(style: .bold, size: 16)
         label.textColor = .black
         label.textAlignment = .center
         
@@ -78,9 +78,9 @@ class HomeViewController: BaseViewController {
     lazy var playButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 59/255, green: 179/255, blue: 0, alpha: 1)
+        button.backgroundColor = .playGreen
         button.layer.cornerRadius = 10
-        button.titleLabel?.font = .panton(style: .bold, size: 25)
+        button.titleLabel?.font = .bandar(style: .bold, size: 25)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(playButtonAction(_:)), for: .touchUpInside)
         

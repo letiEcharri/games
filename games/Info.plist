@@ -20,6 +20,18 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PantonDemo-Light.ttf</string>
+		<string>PantonDemo-Black.ttf</string>
+		<string>PantonDemo-BlackItalic.ttf</string>
+		<string>PantonDemo-LightItalic.ttf</string>
+		<string>BandarBold.ttf</string>
+		<string>BandarBoldItalic.ttf</string>
+		<string>BandarItalic.ttf</string>
+		<string>BandarOutline.ttf</string>
+		<string>BandarRegular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -57,17 +69,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>PantonDemo-Light.ttf</string>
-		<string>PantonDemo-Black.ttf</string>
-		<string>PantonDemo-BlackItalic.ttf</string>
-		<string>PantonDemo-LightItalic.ttf</string>
-		<string>Stigo-ItalicPERSONAL.ttf</string>
-		<string>Stigo-REGPERSONAL.ttf</string>
-		<string>Stigo-ThinItalicPERSONAL.ttf</string>
-		<string>Stigo-ThinPERSONAL.ttf</string>
 	</array>
 </dict>
 </plist>
