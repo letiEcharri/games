@@ -41,4 +41,28 @@ class BaseViewController: UIViewController {
             backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         ])
     }
+    
+    private func checkProgressSteps() {
+        if let viewController = self as? ProgressStepBarProtocol {
+            let progressBar = ProgressStepBar(viewModel: viewController.viewModel)
+            view.addSubview(progressBar)
+            NSLayoutConstraint.activate([
+                progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+                progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        } else {
+            for item in view.subviews where (item is ProgressStepBar) {
+                item.removeFromSuperview()
+            }
+        }
+    }
+    
+    func updateProgressStepsBar() {
+        for item in view.subviews where (item is ProgressStepBar) {
+            item.removeFromSuperview()
+        }
+        checkProgressSteps()
+        view.setNeedsDisplay()
+    }
 }

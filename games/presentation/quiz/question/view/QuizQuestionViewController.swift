@@ -131,6 +131,15 @@ extension QuizQuestionViewController: QuizQuestionPresenterDelegate {
             item.removeFromSuperview()
         }
         addData()
+        updateProgressStepsBar()
+    }
+}
+
+// MARK: - QuizQuestionPresenterDelegate
+
+extension QuizQuestionViewController: ProgressStepBarProtocol {
+    var viewModel: ProgressStepBar.Model {
+        presenter.getStepsModel()
     }
 }
 
@@ -157,7 +166,7 @@ extension QuizQuestionViewController {
         private func configureView() {
             translatesAutoresizingMaskIntoConstraints = false
             backgroundColor = .white
-            titleLabel?.font = .bandar(style: .regular, size: 18)
+            titleLabel?.font = .bandar(style: .regular, size: 20)
             titleLabel?.numberOfLines = 0
             titleLabel?.textAlignment = .center
             setTitleColor(.purple, for: .normal)

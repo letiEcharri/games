@@ -20,6 +20,7 @@ class QuizQuestionPresenter: BasePresenter, QuizQuestionPresenterProtocol {
     }
     var index = 0
     var score = 0
+    var rightAnswers: [Int] = []
     
     // MARK: - Initialization
     
@@ -37,9 +38,12 @@ class QuizQuestionPresenter: BasePresenter, QuizQuestionPresenterProtocol {
     // MARK: - Presenter Functions
     
     func next(selected answer: String) {
+        if question.answer == answer {
+            rightAnswers.append(index+1)
+            score += 1
+        }
         if index < (category.questions.count - 1) {
             index += 1
-            score += question.answer == answer ? 1 : 0
             self.ui?.reloadData()
         } else if index == (category.questions.count - 1) {
             let model = QuizScorePresenter.Model(totalQuestions: category.questions.count, rightQuestions: score)
@@ -49,5 +53,9 @@ class QuizQuestionPresenter: BasePresenter, QuizQuestionPresenterProtocol {
     
     func isAnswerRight(with key: String) -> Bool {
         return question.answer == key
+    }
+    
+    func getStepsModel() -> ProgressStepBar.Model {
+        return ProgressStepBar.Model(steps: category.questions.count, currentStep: index + 1, rightSteps: rightAnswers)
     }
 }

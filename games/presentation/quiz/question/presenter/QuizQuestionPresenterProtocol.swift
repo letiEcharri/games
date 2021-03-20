@@ -23,6 +23,7 @@ protocol QuizQuestionPresenterProtocol where Self: BasePresenter {
     
     func next(selected answer: String)
     func isAnswerRight(with key: String) -> Bool
+    func getStepsModel() -> ProgressStepBar.Model
 }
 
 protocol QuizQuestionPresenterDelegate: BasePresenterDelegate {

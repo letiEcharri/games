@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F008C4D226062B7F00A5E015 /* ProgressStepBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C4D126062B7F00A5E015 /* ProgressStepBar.swift */; };
 		F016F8512606122A008623D3 /* QuizScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84E2606122A008623D3 /* QuizScorePresenter.swift */; };
 		F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */; };
 		F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F8502606122A008623D3 /* QuizScoreViewController.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F008C4D126062B7F00A5E015 /* ProgressStepBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStepBar.swift; sourceTree = "<group>"; };
 		F016F84E2606122A008623D3 /* QuizScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenter.swift; sourceTree = "<group>"; };
 		F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenterProtocol.swift; sourceTree = "<group>"; };
 		F016F8502606122A008623D3 /* QuizScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F008C4CF26062B2F00A5E015 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				F008C4D026062B4800A5E015 /* progressStepBar */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		F008C4D026062B4800A5E015 /* progressStepBar */ = {
+			isa = PBXGroup;
+			children = (
+				F008C4D126062B7F00A5E015 /* ProgressStepBar.swift */,
+			);
+			path = progressStepBar;
+			sourceTree = "<group>";
+		};
 		F03A9BC52604D9ED00CA8A21 /* mainMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +379,7 @@
 		F05E67F125E2C2ED0040C8A1 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F008C4CF26062B2F00A5E015 /* components */,
 				F05E682925E2CE7C0040C8A1 /* coordinators */,
 				F05E67F225E2C2F40040C8A1 /* home */,
 				F03A9BC52604D9ED00CA8A21 /* mainMenu */,
@@ -736,6 +755,7 @@
 				F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */,
 				F03A9C4B260516DE00CA8A21 /* UIView+Style.swift in Sources */,
 				F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */,
+				F008C4D226062B7F00A5E015 /* ProgressStepBar.swift in Sources */,
 				F05E686A25E2EA0F0040C8A1 /* UIColor+Colors.swift in Sources */,
 				F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */,
 				F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */,

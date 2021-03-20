@@ -22,6 +22,20 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_tick: UIImage = {
+        if let image = UIImage(named: "ic_tick") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_cross: UIImage = {
+        if let image = UIImage(named: "ic_cross") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {
