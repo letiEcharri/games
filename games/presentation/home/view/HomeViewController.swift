@@ -159,11 +159,13 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: HomePresenterDelegate {
     func reloadData() {
-        if let user = presenter.user {
-            titleLabel.text = user.nick
-            scoreLabel.text = "Puntuación: \(user.score)"
-            totalScoreLabel.text = String(user.score)
-            cupImageView.setImage(color: user.getColor())
+        DispatchQueue.main.async {
+            if let user = self.presenter.user {
+                self.titleLabel.text = user.nick
+                self.scoreLabel.text = "Puntuación: \(user.score)"
+                self.totalScoreLabel.text = String(user.score)
+                self.cupImageView.setImage(color: user.getColor())
+            }
         }
     }
 }

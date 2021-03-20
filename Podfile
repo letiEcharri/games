@@ -7,6 +7,7 @@ target 'games' do
 
   # Pods for games
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
   target 'gamesTests' do
     inherit! :search_paths

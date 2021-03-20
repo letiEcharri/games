@@ -13,7 +13,7 @@ enum UserCup {
     case bronze
 }
 
-struct UserModel {
+struct UserModel: Decodable {
     var nick: String
     var score: Int
     var cup: UserCup {
