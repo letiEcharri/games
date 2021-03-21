@@ -36,6 +36,34 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_lock: UIImage = {
+        if let image = UIImage(named: "ic_lock") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_user: UIImage = {
+        if let image = UIImage(named: "ic_user") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_eye: UIImage = {
+        if let image = UIImage(named: "ic_eye") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_back: UIImage = {
+        if let image = UIImage(named: "ic_back") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {

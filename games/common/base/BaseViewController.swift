@@ -21,8 +21,15 @@ class BaseViewController: UIViewController {
     }()
     
     // MARK: Properties
+    
+    private var childCoordinator: Coordinator?
 
     // MARK: Lyfe Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationBarButtons()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +43,7 @@ class BaseViewController: UIViewController {
     func loadStyle() {}
     
     func setTexts() {
-        title = "GAMES"
+        title = "QUIZ"
     }
     
     
@@ -88,5 +95,18 @@ class BaseViewController: UIViewController {
     
     func hideLoading() {
         NotificationCenter.default.post(name: .loading, object: nil)
+    }
+    
+    private func navigationBarButtons() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        
+        let exit = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(closeSessionAction(_:)))
+        navigationItem.rightBarButtonItem = exit
+    }
+    
+    @objc private func closeSessionAction(_ sender: UIBarButtonItem) {
+        UserDefaults.standard.setValue(nil, forKey: UserDefaultsKeys.user.rawValue)
+        childCoordinator = LoginCoordinator(navigationController ?? UINavigationController())
+        childCoordinator?.resolve()
     }
 }
