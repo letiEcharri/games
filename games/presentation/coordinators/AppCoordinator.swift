@@ -23,11 +23,16 @@ class AppCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func resolve() {
-        navigateToHome()
+        navigateToLogin()
     }
     
     private func navigateToHome() {
         childCoordinator = HomeCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
+    
+    private func navigateToLogin() {
+        childCoordinator = LoginCoordinator(navigationController)
         childCoordinator?.resolve()
     }
 }

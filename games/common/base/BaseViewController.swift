@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
     func loadStyle() {}
     
     func setTexts() {
-        title = "GAMES"
+        title = "QUIZ"
     }
     
     
