@@ -23,7 +23,11 @@ class AppCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func resolve() {
-        navigateToLogin()
+        if UserDefaults.standard.string(forKey: UserDefaultsKeys.user.rawValue) != nil {
+            navigateToHome()
+        } else {
+            navigateToLogin()
+        }
     }
     
     private func navigateToHome() {

@@ -57,6 +57,13 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_back: UIImage = {
+        if let image = UIImage(named: "ic_back") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {

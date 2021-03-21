@@ -60,6 +60,8 @@ class HomeViewController: BaseViewController {
         stack.addArrangedSubview(cupImageView)
         stack.addArrangedSubview(scoreLabel)
         
+        stack.isHidden  = true
+        
         return stack
     }()
     
@@ -69,6 +71,7 @@ class HomeViewController: BaseViewController {
         label.font = .bandar(style: .bold, size: 16)
         label.textColor = .black
         label.textAlignment = .center
+        label.isHidden  = true
         
         label.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
@@ -83,6 +86,8 @@ class HomeViewController: BaseViewController {
         button.titleLabel?.font = .bandar(style: .bold, size: 25)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(playButtonAction(_:)), for: .touchUpInside)
+        button.isEnabled = false
+        button.alpha = 0.5
         
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
@@ -90,6 +95,8 @@ class HomeViewController: BaseViewController {
     }()
     
     // MARK: - Properties
+    
+    var loadingImageView: UIImageView?
     
     let presenter: HomePresenterProtocol
     
@@ -109,6 +116,8 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func viewDidLoad() {
@@ -120,6 +129,12 @@ class HomeViewController: BaseViewController {
     
     override func loadStyle() {
         addBackgroundImage()
+        
+        loadingImageView = UIImageView.fromGif(frame: CGRect(x: 0, y: (view.frame.height/2) - 175, width: view.frame.width, height: 350),
+                                               resourceName: "loading")
+        view.addSubview(loadingImageView ?? UIImageView())
+        loadingImageView?.startAnimating()
+
         
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
@@ -165,6 +180,11 @@ extension HomeViewController: HomePresenterDelegate {
                 self.scoreLabel.text = "Puntuación: \(user.score)"
                 self.totalScoreLabel.text = String(user.score)
                 self.cupImageView.setImage(color: user.getColor())
+                self.loadingImageView?.stopAnimating()
+                self.stackView.isHidden  = false
+                self.totalScoreLabel.isHidden  = false
+                self.playButton.isEnabled = true
+                self.playButton.alpha = 1
             }
             self.hideLoading()
         }

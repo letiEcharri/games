@@ -18,7 +18,14 @@ class UserRepository: UserRepositoryProtocol {
         if let sessionUser = self.session.user {
             completion(sessionUser, nil)
         } else {
-            completion(nil, "User not found")
+            if let nick = UserDefaults.standard.string(forKey: UserDefaultsKeys.user.rawValue) {
+                datasource.getUser(nick: nick) { (user, error) in
+                    self.session.user = user
+                    completion(user, nil)
+                }
+            } else {
+                completion(nil, "User not found")
+            }
         }
     }
     
@@ -32,6 +39,9 @@ class UserRepository: UserRepositoryProtocol {
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock) {
         datasource.login(user: user, pass: pass) { (isSuccess, user, error) in
             self.session.user = user
+            if isSuccess {
+                UserDefaults.standard.setValue(user?.nick, forKey: UserDefaultsKeys.user.rawValue)
+            }
             completion(isSuccess, error)
         }
     }

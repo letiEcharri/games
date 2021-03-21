@@ -89,6 +89,8 @@
 		F0B9D0582607703A00BC48E7 /* LoginDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D0572607703A00BC48E7 /* LoginDependencies.swift */; };
 		F0B9D062260797B500BC48E7 /* LoginInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D060260797B500BC48E7 /* LoginInteractorProtocol.swift */; };
 		F0B9D063260797B500BC48E7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D061260797B500BC48E7 /* LoginInteractor.swift */; };
+		F0B9D0692607E4B500BC48E7 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F0B9D0682607E4B500BC48E7 /* loading.gif */; };
+		F0B9D06E2607E73A00BC48E7 /* UIImageView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +205,8 @@
 		F0B9D0572607703A00BC48E7 /* LoginDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDependencies.swift; sourceTree = "<group>"; };
 		F0B9D060260797B500BC48E7 /* LoginInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorProtocol.swift; sourceTree = "<group>"; };
 		F0B9D061260797B500BC48E7 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		F0B9D0682607E4B500BC48E7 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Functions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +361,7 @@
 		F03A9C0C2604F89500CA8A21 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F0B9D0672607E4AC00BC48E7 /* other */,
 				F05E67FA25E2C9950040C8A1 /* fonts */,
 				F03A9C0D2604F8A700CA8A21 /* json */,
 			);
@@ -560,6 +565,7 @@
 				F05E686925E2EA0F0040C8A1 /* UIColor+Colors.swift */,
 				F03A9C4A260516DE00CA8A21 /* UIView+Style.swift */,
 				F008C5602606A54300A5E015 /* Notification+Name.swift */,
+				F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -765,6 +771,14 @@
 			path = login;
 			sourceTree = "<group>";
 		};
+		F0B9D0672607E4AC00BC48E7 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				F0B9D0682607E4B500BC48E7 /* loading.gif */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -885,6 +899,7 @@
 				F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */,
 				F07A228D26061A2500F14946 /* BandarBoldItalic.ttf in Resources */,
 				F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */,
+				F0B9D0692607E4B500BC48E7 /* loading.gif in Resources */,
 				F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */,
 				F008C4F62606573A00A5E015 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1068,6 +1083,7 @@
 				F0AC66E626076EA900DFD467 /* LoginPresenterProtocol.swift in Sources */,
 				F03A9C8E26052B4B00CA8A21 /* QuizInteractorProtocol.swift in Sources */,
 				F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */,
+				F0B9D06E2607E73A00BC48E7 /* UIImageView+Functions.swift in Sources */,
 				F03A9BE92604E30600CA8A21 /* MainMenuPresenterProtocol.swift in Sources */,
 				F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */,
 				F008C50E2606598A00A5E015 /* FirebaseManager.swift in Sources */,
