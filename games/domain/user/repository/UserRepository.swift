@@ -14,16 +14,11 @@ class UserRepository: UserRepositoryProtocol {
     let session = SessionUserDataSource.shared
     let datasource: UserDataSourceProtocol = UserDataSource.shared
     
-    func getUser(nick: String, completion: @escaping UserResponseBlock) {
+    func getUser(completion: @escaping UserResponseBlock) {
         if let sessionUser = self.session.user {
             completion(sessionUser, nil)
         } else {
-            datasource.getUser(nick: nick) { (user, error) in
-                if let user = user {
-                    self.session.user = user
-                }
-                completion(user, error)
-            }
+            completion(nil, "User not found")
         }
     }
     
@@ -31,6 +26,13 @@ class UserRepository: UserRepositoryProtocol {
         session.user?.score += score
         if let user = session.user {
             datasource.update(score: user.score, with: user.id)
+        }
+    }
+    
+    func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock) {
+        datasource.login(user: user, pass: pass) { (isSuccess, user, error) in
+            self.session.user = user
+            completion(isSuccess, error)
         }
     }
 }

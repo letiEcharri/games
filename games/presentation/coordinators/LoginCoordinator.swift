@@ -31,10 +31,18 @@ class LoginCoordinator: Coordinator {
         let viewContoller = appDependencies.makeLoginView(signalDelegate: self)
         navigationController.pushViewController(viewContoller, animated: true)
     }
+    
+    private func navigateToHome() {
+        childCoordinator = HomeCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
 }
 
 extension LoginCoordinator: LoginSignalDelegate {
     func signalTrigged(_ signal: LoginSignal) {
-        
+        switch signal {
+        case .home:
+            navigateToHome()
+        }
     }
 }

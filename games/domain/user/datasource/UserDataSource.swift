@@ -26,12 +26,14 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                                     completion(model, nil)
                                     
                                 } catch {
-                                    completion(nil, error)
+                                    completion(nil, error.localizedDescription)
                                 }
                             }
                         }
                     }
                 }
+            } else {
+                completion(nil, error?.localizedDescription)
             }
         }
     }
@@ -39,6 +41,35 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
     func update(score: Int, with userID: Int) {
         let item = "\(userID)/score"
         FirebaseManager.update(from: .users, item: item, value: score)
+    }
+    
+    func login(user: String, pass: String, completion: @escaping LoginResponseBlock) {
+        FirebaseManager.getValue(from: .users) { (response, error) in
+            if let response = response {
+                if let users = response as? NSArray {
+                    for item in users {
+                        if let selectedItem = item as? [String: Any],
+                           let key = selectedItem["nick"] as? String,
+                           let password = selectedItem["password"] as? String {
+                            if key == user {
+                                do {
+                                    let jsonData = try JSONSerialization.data(withJSONObject: selectedItem, options: .prettyPrinted)
+                                    let model = try JSONDecoder().decode(UserModel.self, from: jsonData)
+                                    completion(pass == password, model, nil)
+                                    
+                                } catch {
+                                    completion(pass == password, nil, error)
+                                }
+                                return
+                            }
+                        }
+                    }
+                }
+                completion(false, nil, nil)
+            } else {
+                completion(false, nil, error)
+            }
+        }
     }
     
 }

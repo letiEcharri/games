@@ -114,8 +114,6 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        
-        showLoading()
     }
     
     // MARK: - Setup UI

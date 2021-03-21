@@ -87,6 +87,8 @@
 		F0AC66E726076EA900DFD467 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC66E426076EA900DFD467 /* LoginViewController.swift */; };
 		F0B9D05326076FC100BC48E7 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D05226076FC100BC48E7 /* LoginCoordinator.swift */; };
 		F0B9D0582607703A00BC48E7 /* LoginDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D0572607703A00BC48E7 /* LoginDependencies.swift */; };
+		F0B9D062260797B500BC48E7 /* LoginInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D060260797B500BC48E7 /* LoginInteractorProtocol.swift */; };
+		F0B9D063260797B500BC48E7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D061260797B500BC48E7 /* LoginInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +201,8 @@
 		F0AC66E426076EA900DFD467 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0B9D05226076FC100BC48E7 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		F0B9D0572607703A00BC48E7 /* LoginDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDependencies.swift; sourceTree = "<group>"; };
+		F0B9D060260797B500BC48E7 /* LoginInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorProtocol.swift; sourceTree = "<group>"; };
+		F0B9D061260797B500BC48E7 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				F008C50D2606598A00A5E015 /* FirebaseManager.swift */,
+				F0B9D05F2607979900BC48E7 /* login */,
 				F008C52726065F8E00A5E015 /* user */,
 				F03A9C6B260523B900CA8A21 /* quiz */,
 			);
@@ -751,6 +756,15 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		F0B9D05F2607979900BC48E7 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				F0B9D060260797B500BC48E7 /* LoginInteractorProtocol.swift */,
+				F0B9D061260797B500BC48E7 /* LoginInteractor.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1044,8 +1058,10 @@
 				F008C54B2606645B00A5E015 /* UserInteractorProtocol.swift in Sources */,
 				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
 				F0B9D05326076FC100BC48E7 /* LoginCoordinator.swift in Sources */,
+				F0B9D063260797B500BC48E7 /* LoginInteractor.swift in Sources */,
 				F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */,
 				F0AC66E526076EA900DFD467 /* LoginPresenter.swift in Sources */,
+				F0B9D062260797B500BC48E7 /* LoginInteractorProtocol.swift in Sources */,
 				F008C52926065FE700A5E015 /* SessionUserDataSource.swift in Sources */,
 				F03A9C7C260525F500CA8A21 /* DataSource.swift in Sources */,
 				F03A9C9326052B5400CA8A21 /* QuizInteractor.swift in Sources */,

@@ -26,7 +26,7 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     // MARK: - Life Cycle
     
     override func viewWillAppear() {
-        userInteractor.getUser(nick: "testuser") { (user, error) in
+        userInteractor.getUser() { (user, error) in
             if let user = user {
                 self.user = user
                 self.ui?.reloadData()

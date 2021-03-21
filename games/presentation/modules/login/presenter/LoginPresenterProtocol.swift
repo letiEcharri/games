@@ -12,7 +12,7 @@ import UIKit
 // MARK: - ViewState
 
 enum LoginSignal {
-    
+    case home
 }
 
 protocol LoginSignalDelegate: class {

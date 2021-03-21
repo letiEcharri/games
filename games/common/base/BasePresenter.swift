@@ -28,4 +28,6 @@ class BasePresenter {
 
 protocol BasePresenterDelegate: class {
     func reloadData()
+    func showLoading()
+    func hideLoading()
 }

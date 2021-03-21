@@ -7,9 +7,12 @@
 
 import Foundation
 
-typealias UserResponseBlock = (UserModel?, Error?) -> Void
+typealias UserResponseBlock = (UserModel?, String?) -> Void
+typealias LoginRepositoryBlock = (Bool, Error?) -> Void
+
 
 protocol UserRepositoryProtocol {
-    func getUser(nick: String, completion: @escaping UserResponseBlock)
+    func getUser(completion: @escaping UserResponseBlock)
     func update(score: Int)
+    func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock)
 }
