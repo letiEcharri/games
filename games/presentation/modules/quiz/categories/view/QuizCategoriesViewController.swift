@@ -115,3 +115,19 @@ extension QuizCategoriesViewController: UITableViewDelegate, UITableViewDataSour
         presenter.didSelect(with: indexPath.row)
     }
 }
+
+// MARK: - NavToolbarProtocol
+
+extension QuizCategoriesViewController: NavToolbarProtocol {
+    func toolbarPlayAction() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func toolbarHomeAction() {
+        presenter.goToHome()
+    }
+    
+    func toolbarProfileAction() {
+        presenter.goToProfile()
+    }
+}

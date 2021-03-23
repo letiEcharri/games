@@ -9,6 +9,7 @@ import UIKit
 
 enum HomeSignal {
     case mainMenu
+    case profile
 }
 
 protocol HomeSignalDelegate: class {
@@ -21,6 +22,7 @@ protocol HomePresenterProtocol where Self: BasePresenter {
     var user: UserModel? { get set }
     
     func play()
+    func goToProfile()
 }
 
 protocol HomePresenterDelegate: BasePresenterDelegate {

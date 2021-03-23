@@ -79,17 +79,18 @@ class HomeViewController: BaseViewController {
     }()
     
     lazy var playButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .playGreen
         button.layer.cornerRadius = 10
-        button.titleLabel?.font = .bandar(style: .bold, size: 25)
-        button.setTitleColor(.white, for: .normal)
+        button.setImage(.ic_toolbar_play, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .playGreen
         button.addTarget(self, action: #selector(playButtonAction(_:)), for: .touchUpInside)
         button.isEnabled = false
         button.alpha = 0.5
         
-        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         return button
     }()
@@ -151,15 +152,14 @@ class HomeViewController: BaseViewController {
         
         self.view.addSubview(playButton)
         NSLayoutConstraint.activate([
-            playButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-            playButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            playButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor)
+            playButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -90),
+            playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
     override func setTexts() {
         super.setTexts()
-        playButton.setTitle("PLAY", for: .normal)
+//        playButton.setTitle("PLAY", for: .normal)
         scoreLabel.text = "Puntuación: 0"
     }
     
@@ -188,5 +188,19 @@ extension HomeViewController: HomePresenterDelegate {
             }
             self.hideLoading()
         }
+    }
+}
+
+// MARK: - NavToolbarProtocol
+
+extension HomeViewController: NavToolbarProtocol {
+    func toolbarPlayAction() {
+        presenter.play()
+    }
+    
+    func toolbarHomeAction() {}
+    
+    func toolbarProfileAction() {
+        presenter.goToProfile()
     }
 }

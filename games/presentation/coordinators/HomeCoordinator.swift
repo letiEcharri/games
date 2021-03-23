@@ -45,6 +45,8 @@ extension HomeCoordinator: HomeSignalDelegate {
         switch signal {
         case .mainMenu:
             navigateToMainMenu()
+        case .profile:
+            break
         }
     }
 }

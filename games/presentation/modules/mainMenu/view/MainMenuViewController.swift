@@ -47,6 +47,7 @@ class MainMenuViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func viewDidLoad() {
@@ -97,5 +98,19 @@ extension MainMenuViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.didSelectSection(with: indexPath.row)
+    }
+}
+
+// MARK: - NavToolbarProtocol
+
+extension MainMenuViewController: NavToolbarProtocol {
+    func toolbarPlayAction() {}
+    
+    func toolbarHomeAction() {
+        presenter.goToHome()
+    }
+    
+    func toolbarProfileAction() {
+        presenter.goToProfile()
     }
 }

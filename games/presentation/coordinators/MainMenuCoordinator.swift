@@ -36,6 +36,11 @@ class MainMenuCoordinator: Coordinator {
         childCoordinator = QuizCoordinator(navigationController)
         childCoordinator?.resolve()
     }
+    
+    private func navigateToHome() {
+        childCoordinator = HomeCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
 }
 
 // MARK: - MainMenuSignalDelegate
@@ -46,6 +51,10 @@ extension MainMenuCoordinator: MainMenuSignalDelegate {
         case .quiz:
             navigateToQuiz()
         case .dayQuestion:
+            break
+        case .home:
+            navigateToHome()
+        case .profile:
             break
         }
     }

@@ -64,6 +64,34 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_toolbar_cup: UIImage = {
+        if let image = UIImage(named: "ic_toolbar_cup") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_toolbar_play: UIImage = {
+        if let image = UIImage(named: "ic_toolbar_play") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_toolbar_user: UIImage = {
+        if let image = UIImage(named: "ic_toolbar_user") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_exit: UIImage = {
+        if let image = UIImage(named: "ic_exit") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {

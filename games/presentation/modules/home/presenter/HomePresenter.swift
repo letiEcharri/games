@@ -40,4 +40,8 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     func play() {
         signalDelegate.signalTrigged(.mainMenu)
     }
+    
+    func goToProfile() {
+        signalDelegate.signalTrigged(.profile)
+    }
 }
