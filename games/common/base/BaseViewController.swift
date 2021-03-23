@@ -29,6 +29,11 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarButtons()
+        if let toolbarController = self as? NavToolbarProtocol {
+            toolbarController.configureToolbar()
+        } else {
+            navigationController?.setToolbarHidden(true, animated: true)
+        }
     }
     
     override func viewDidLoad() {

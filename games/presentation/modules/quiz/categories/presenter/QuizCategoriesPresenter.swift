@@ -54,4 +54,12 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
             signalDelegate.signalTrigged(.category(category))
         }
     }
+    
+    func goToHome() {
+        signalDelegate.signalTrigged(.home)
+    }
+    
+    func goToProfile() {
+        signalDelegate.signalTrigged(.profile)
+    }
 }

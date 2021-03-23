@@ -52,6 +52,7 @@
 		F03A9C9B26052F1400CA8A21 /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9C9A26052F1400CA8A21 /* QuizQuestionViewController.swift */; };
 		F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9C9F2605327A00CA8A21 /* QuizQuestionPresenter.swift */; };
 		F03A9CA52605328500CA8A21 /* QuizQuestionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9CA42605328500CA8A21 /* QuizQuestionPresenterProtocol.swift */; };
+		F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056D5A7260A76E80068DE05 /* UIButton+Action.swift */; };
 		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
 		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
 		F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */; };
@@ -75,6 +76,7 @@
 		F07A228E26061A2500F14946 /* BandarItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228926061A2500F14946 /* BandarItalic.ttf */; };
 		F07A228F26061A2500F14946 /* BandarOutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228A26061A2500F14946 /* BandarOutline.ttf */; };
 		F07A229026061A2500F14946 /* BandarRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228B26061A2500F14946 /* BandarRegular.ttf */; };
+		F07CEEA8260A676600470395 /* NavToolbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CEEA7260A676600470395 /* NavToolbarProtocol.swift */; };
 		F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225825E2C07B0064CC7E /* AppDelegate.swift */; };
 		F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */; };
 		F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07F225E25E2C07C0064CC7E /* Assets.xcassets */; };
@@ -162,6 +164,7 @@
 		F03A9C9A26052F1400CA8A21 /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
 		F03A9C9F2605327A00CA8A21 /* QuizQuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionPresenter.swift; sourceTree = "<group>"; };
 		F03A9CA42605328500CA8A21 /* QuizQuestionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionPresenterProtocol.swift; sourceTree = "<group>"; };
+		F056D5A7260A76E80068DE05 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
 		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
 		F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 		F07A228926061A2500F14946 /* BandarItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarItalic.ttf; sourceTree = "<group>"; };
 		F07A228A26061A2500F14946 /* BandarOutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarOutline.ttf; sourceTree = "<group>"; };
 		F07A228B26061A2500F14946 /* BandarRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarRegular.ttf; sourceTree = "<group>"; };
+		F07CEEA7260A676600470395 /* NavToolbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavToolbarProtocol.swift; sourceTree = "<group>"; };
 		F07F225525E2C07B0064CC7E /* games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07F225825E2C07B0064CC7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 				F03A9C4A260516DE00CA8A21 /* UIView+Style.swift */,
 				F008C5602606A54300A5E015 /* Notification+Name.swift */,
 				F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */,
+				F056D5A7260A76E80068DE05 /* UIButton+Action.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -573,6 +578,7 @@
 		F05E681725E2CD240040C8A1 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				F07CEE9E260A66AD00470395 /* protocols */,
 				F05E682325E2CDCD0040C8A1 /* base */,
 			);
 			path = common;
@@ -628,6 +634,14 @@
 				F05E686125E2E72C0040C8A1 /* UserModel.swift */,
 			);
 			path = user;
+			sourceTree = "<group>";
+		};
+		F07CEE9E260A66AD00470395 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F07CEEA7260A676600470395 /* NavToolbarProtocol.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 		F07F224C25E2C07B0064CC7E = {
@@ -1055,6 +1069,7 @@
 				F05E683925E2CFE00040C8A1 /* HomeDependencies.swift in Sources */,
 				F0AC66E726076EA900DFD467 /* LoginViewController.swift in Sources */,
 				F03A9C6D2605252F00CA8A21 /* SessionQuizDataSource.swift in Sources */,
+				F07CEEA8260A676600470395 /* NavToolbarProtocol.swift in Sources */,
 				F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */,
 				F03A9C4B260516DE00CA8A21 /* UIView+Style.swift in Sources */,
 				F008C5452606628D00A5E015 /* UserRepository.swift in Sources */,
@@ -1077,6 +1092,7 @@
 				F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */,
 				F0AC66E526076EA900DFD467 /* LoginPresenter.swift in Sources */,
 				F0B9D062260797B500BC48E7 /* LoginInteractorProtocol.swift in Sources */,
+				F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */,
 				F008C52926065FE700A5E015 /* SessionUserDataSource.swift in Sources */,
 				F03A9C7C260525F500CA8A21 /* DataSource.swift in Sources */,
 				F03A9C9326052B5400CA8A21 /* QuizInteractor.swift in Sources */,

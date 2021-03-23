@@ -41,6 +41,14 @@ class MainMenuPresenter: BasePresenter, MainMenuPresenterProtocol {
         signalDelegate.signalTrigged(section.signal)
     }
     
+    func goToHome() {
+        signalDelegate.signalTrigged(.home)
+    }
+    
+    func goToProfile() {
+        signalDelegate.signalTrigged(.profile)
+    }
+    
     // MARK: - Private Functions
     
     private func getSections() {

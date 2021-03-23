@@ -10,6 +10,8 @@ import Foundation
 enum MainMenuSignal {
     case quiz
     case dayQuestion
+    case home
+    case profile
 }
 
 protocol MainMenuSignalDelegate: class {
@@ -21,6 +23,8 @@ protocol MainMenuPresenterProtocol where Self: BasePresenter {
     var sections: [MainMenuPresenter.Model] { get set }
     
     func didSelectSection(with row: Int)
+    func goToHome()
+    func goToProfile()
 }
 
 protocol MainMenuPresenterDelegate: BasePresenterDelegate {

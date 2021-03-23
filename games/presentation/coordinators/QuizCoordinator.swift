@@ -46,6 +46,11 @@ class QuizCoordinator: Coordinator {
         childCoordinator = MainMenuCoordinator(navigationController)
         childCoordinator?.resolve()
     }
+    
+    private func navigateToHome() {
+        childCoordinator = HomeCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
 }
 
 extension QuizCoordinator: QuizCategoriesSignalDelegate {
@@ -53,6 +58,10 @@ extension QuizCoordinator: QuizCategoriesSignalDelegate {
         switch signal {
         case .category(let cat):
             navigateToQuestion(category: cat)
+        case .home:
+            navigateToHome()
+        case .profile:
+            break
         }
     }
 }
