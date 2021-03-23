@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.alpha = 0.3
-        imageView.image = .ic_background
+        imageView.image = .ic_games_backgroung
         
         return imageView
     }()
