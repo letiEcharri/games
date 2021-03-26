@@ -41,13 +41,17 @@ class QuizQuestionPresenter: BasePresenter, QuizQuestionPresenterProtocol {
         if question.answer == answer {
             rightAnswers.append(index+1)
             score += 1
+        } else {
+            self.ui?.showRightAnswer(with: question.answer)
         }
-        if index < (category.questions.count - 1) {
-            index += 1
-            self.ui?.reloadData()
-        } else if index == (category.questions.count - 1) {
-            let model = QuizScorePresenter.Model(totalQuestions: category.questions.count, rightQuestions: score)
-            signalDelegate.signalTrigged(.score(model))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            if self.index < (self.category.questions.count - 1) {
+                self.index += 1
+                self.ui?.reloadData()
+            } else if self.index == (self.category.questions.count - 1) {
+                let model = QuizScorePresenter.Model(totalQuestions: self.category.questions.count, rightQuestions: self.score)
+                self.signalDelegate.signalTrigged(.score(model))
+            }
         }
     }
     

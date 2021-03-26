@@ -8,7 +8,9 @@
 import Foundation
 
 typealias QuizResponseBlock = (QuizCategoriesModel?, Error?) -> Void
+typealias QuizCategoryResponseBlock = (QuizCategoryModel?, Error?) -> Void
 
-protocol QuizDataSourceProtocol {
+protocol QuizDataSourceProtocol: OpenTrivialDataBase {
     func getQuiz(completion: @escaping QuizResponseBlock)
+    func getQuestions(with model: OpenTrivialRequestModel, completion: @escaping QuizCategoryResponseBlock)
 }

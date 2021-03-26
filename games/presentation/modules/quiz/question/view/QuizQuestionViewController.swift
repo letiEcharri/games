@@ -54,6 +54,11 @@ class QuizQuestionViewController: BaseViewController {
     
     // MARK: - Properties
     
+    var button1: AnswerButton?
+    var button2: AnswerButton?
+    var button3: AnswerButton?
+    var button4: AnswerButton?
+    
     let presenter: QuizQuestionPresenterProtocol
     
     // MARK: - Initialization
@@ -99,27 +104,28 @@ class QuizQuestionViewController: BaseViewController {
     
     @objc private func buttonAction(_ sender: AnswerButton) {
         sender.set(status: presenter.isAnswerRight(with: sender.key))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.presenter.next(selected: sender.key)
-        }
+        self.presenter.next(selected: sender.key)
     }
     
     private func addData() {
         questionLabel.text = presenter.question.question
         stackView.addArrangedSubview(boxQuestion)
         
-        let button1 = AnswerButton(title: presenter.question.answers.answer1, key: "answer1")
-        button1.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
-        let button2 = AnswerButton(title: presenter.question.answers.answer2, key: "answer2")
-        button2.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
-        let button3 = AnswerButton(title: presenter.question.answers.answer3, key: "answer3")
-        button3.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
-        let button4 = AnswerButton(title: presenter.question.answers.answer4, key: "answer4")
-        button4.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
-        stackView.addArrangedSubview(button1)
-        stackView.addArrangedSubview(button2)
-        stackView.addArrangedSubview(button3)
-        stackView.addArrangedSubview(button4)
+        button1 = AnswerButton(title: presenter.question.answers.answer1, key: "answer1")
+        button2 = AnswerButton(title: presenter.question.answers.answer2, key: "answer2")
+        button3 = AnswerButton(title: presenter.question.answers.answer3, key: "answer3")
+        button4 = AnswerButton(title: presenter.question.answers.answer4, key: "answer4")
+        
+        if let button1 = button1, let button2 = button2, let button3 = button3, let button4 = button4 {
+            button1.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+            button2.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+            button3.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+            button4.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+            stackView.addArrangedSubview(button1)
+            stackView.addArrangedSubview(button2)
+            stackView.addArrangedSubview(button3)
+            stackView.addArrangedSubview(button4)
+        }
     }
 }
 
@@ -132,6 +138,21 @@ extension QuizQuestionViewController: QuizQuestionPresenterDelegate {
         }
         addData()
         updateProgressStepsBar()
+    }
+    
+    func showRightAnswer(with key: String) {
+        switch key {
+        case "answer1":
+            button1?.blink()
+        case "answer2":
+            button2?.blink()
+        case "answer3":
+            button3?.blink()
+        case "answer4":
+            button4?.blink()
+        default:
+            button1?.blink()
+        }
     }
 }
 
@@ -152,6 +173,10 @@ extension QuizQuestionViewController {
         var title: String
         var key: String
         
+        private var blinker: Bool = false
+        
+        private var timer: Timer?
+        
         init(title: String, key: String) {
             self.title = title
             self.key = key
@@ -163,26 +188,51 @@ extension QuizQuestionViewController {
             fatalError("init(coder:) has not been implemented")
         }
         
+        deinit {
+            if let timer = timer {
+                timer.invalidate()
+            }
+        }
+        
         private func configureView() {
             translatesAutoresizingMaskIntoConstraints = false
-            backgroundColor = .white
             titleLabel?.font = .bandar(style: .regular, size: 20)
             titleLabel?.numberOfLines = 0
             titleLabel?.textAlignment = .center
-            setTitleColor(.purple, for: .normal)
             layer.cornerRadius = 10
-            layer.borderWidth = 1
-            layer.borderColor = UIColor.purple.cgColor
+            defaultStyle()
             
             setTitle(title, for: .normal)
 
             heightAnchor.constraint(equalToConstant: 70).isActive = true
         }
         
-        func set(status: Bool) {
+        private func defaultStyle() {
+            backgroundColor = .white
+            setTitleColor(.purple, for: .normal)
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.purple.cgColor
+        }
+        
+        private func style(with status: Bool) {
             setTitleColor(.white, for: .normal)
             layer.borderWidth = 0
             backgroundColor = status ? .playGreen : .red
+        }
+        
+        func set(status: Bool) {
+            style(with: status)
+        }
+        
+        func blink() {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { timer in
+                if self.blinker {
+                    self.defaultStyle()
+                } else {
+                    self.style(with: true)
+                }
+                self.blinker.toggle()
+            }
         }
         
     }

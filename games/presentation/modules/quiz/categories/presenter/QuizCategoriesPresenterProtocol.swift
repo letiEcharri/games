@@ -19,7 +19,8 @@ protocol QuizCategoriesSignalDelegate: class {
 
 protocol QuizCategoriesPresenterProtocol where Self: BasePresenter {
     var ui: QuizCategoriesPresenterDelegate? { get set }
-    var categories: [QuizCategoryModel] { get set }
+//    var categories: [QuizCategoryModel] { get set }
+    var categories: [QuestionCategory] { get set }
     
     func didSelect(with row: Int)
     func goToHome()
