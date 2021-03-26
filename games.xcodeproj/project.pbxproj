@@ -84,6 +84,8 @@
 		F07F226525E2C07C0064CC7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07F226325E2C07C0064CC7E /* LaunchScreen.storyboard */; };
 		F07F227025E2C07C0064CC7E /* gamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F226F25E2C07C0064CC7E /* gamesTests.swift */; };
 		F07F227B25E2C07C0064CC7E /* gamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F227A25E2C07C0064CC7E /* gamesUITests.swift */; };
+		F099379B260E56130032988D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F099379D260E56130032988D /* Localizable.strings */; };
+		F09937A6260E56A70032988D /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09937A5260E56A70032988D /* String+Utils.swift */; };
 		F0AC66E526076EA900DFD467 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC66E226076EA900DFD467 /* LoginPresenter.swift */; };
 		F0AC66E626076EA900DFD467 /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC66E326076EA900DFD467 /* LoginPresenterProtocol.swift */; };
 		F0AC66E726076EA900DFD467 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC66E426076EA900DFD467 /* LoginViewController.swift */; };
@@ -202,6 +204,10 @@
 		F07F227625E2C07C0064CC7E /* gamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07F227A25E2C07C0064CC7E /* gamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesUITests.swift; sourceTree = "<group>"; };
 		F07F227C25E2C07C0064CC7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0993797260E56020032988D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F099379C260E56130032988D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F09937A1260E561D0032988D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F09937A5260E56A70032988D /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		F0AC66E226076EA900DFD467 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		F0AC66E326076EA900DFD467 /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
 		F0AC66E426076EA900DFD467 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +371,7 @@
 		F03A9C0C2604F89500CA8A21 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F099378E260E55D90032988D /* localizables */,
 				F0B9D0672607E4AC00BC48E7 /* other */,
 				F05E67FA25E2C9950040C8A1 /* fonts */,
 				F03A9C0D2604F8A700CA8A21 /* json */,
@@ -571,6 +578,7 @@
 				F008C5602606A54300A5E015 /* Notification+Name.swift */,
 				F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */,
 				F056D5A7260A76E80068DE05 /* UIButton+Action.swift */,
+				F09937A5260E56A70032988D /* String+Utils.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -739,6 +747,14 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		F099378E260E55D90032988D /* localizables */ = {
+			isa = PBXGroup;
+			children = (
+				F099379D260E56130032988D /* Localizable.strings */,
+			);
+			path = localizables;
+			sourceTree = "<group>";
+		};
 		F0AC66DE26076E5F00DFD467 /* modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,6 +899,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = F07F224C25E2C07B0064CC7E;
 			productRefGroup = F07F225625E2C07B0064CC7E /* Products */;
@@ -914,6 +931,7 @@
 				F07A228D26061A2500F14946 /* BandarBoldItalic.ttf in Resources */,
 				F07F225F25E2C07C0064CC7E /* Assets.xcassets in Resources */,
 				F0B9D0692607E4B500BC48E7 /* loading.gif in Resources */,
+				F099379B260E56130032988D /* Localizable.strings in Resources */,
 				F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */,
 				F008C4F62606573A00A5E015 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1058,6 +1076,7 @@
 				F03A9C462605120800CA8A21 /* QuizCategoriesHeaderCell.swift in Sources */,
 				F03A9BE42604E2F200CA8A21 /* MainMenuPresenter.swift in Sources */,
 				F008C532260660C900A5E015 /* UserDataSourceProtocol.swift in Sources */,
+				F09937A6260E56A70032988D /* String+Utils.swift in Sources */,
 				F008C537260660D000A5E015 /* UserDataSource.swift in Sources */,
 				F05E682525E2CE330040C8A1 /* Coordinator.swift in Sources */,
 				F05E683E25E2D2800040C8A1 /* BaseViewController.swift in Sources */,
@@ -1148,8 +1167,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				F07F226425E2C07C0064CC7E /* Base */,
+				F0993797260E56020032988D /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F099379D260E56130032988D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F099379C260E56130032988D /* en */,
+				F09937A1260E561D0032988D /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1159,6 +1188,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1220,6 +1250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

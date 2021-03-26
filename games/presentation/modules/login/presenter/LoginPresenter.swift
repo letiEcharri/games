@@ -34,6 +34,7 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
                     self.signalDelegate?.signalTrigged(.home)
                 }
             } else {
+                self.ui?.hideLoading()
                 // TODO: Alert with error
             }
         }

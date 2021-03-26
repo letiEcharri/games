@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  games
+
+  Created by Leticia Personal on 26/03/2021.
+  
+*/
+
+// COMMON
+"user" = "User";
+"password" = "Password";
+"score" = "Score";
+
+// MAIN MENU
+"main_menu_day_challenge" = "Day challenge";
+
+// SCORE
+"score_ok" = "Ok!";

@@ -128,8 +128,8 @@ class LoginViewController: BaseViewController {
     override func setTexts() {
         titleLabel.text = "QUIZ"
         loginButton.setTitle("LOGIN", for: .normal)
-        userTextField.placeholder = "Usuario"
-        passTextField.placeholder = "Password"
+        userTextField.placeholder = "user".localized
+        passTextField.placeholder = "password".localized
     }
     
     // MARK: - Functions
