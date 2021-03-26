@@ -53,7 +53,7 @@ class MainMenuPresenter: BasePresenter, MainMenuPresenterProtocol {
     
     private func getSections() {
         let quiz = Model(title: "Quiz", signal: .quiz)
-        let dayQuestion = Model(title: "Reto del día", signal: .dayQuestion)
+        let dayQuestion = Model(title: "main_menu_day_challenge".localized, signal: .dayQuestion)
         sections = [quiz, dayQuestion]
     }
 }

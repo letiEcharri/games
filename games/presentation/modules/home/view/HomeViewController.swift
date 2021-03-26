@@ -160,7 +160,7 @@ class HomeViewController: BaseViewController {
     override func setTexts() {
         super.setTexts()
 //        playButton.setTitle("PLAY", for: .normal)
-        scoreLabel.text = "Puntuación: 0"
+        scoreLabel.text = String(format: "%@: %d", "score".localized, 0)
     }
     
     // MARK: - Functions
@@ -177,7 +177,7 @@ extension HomeViewController: HomePresenterDelegate {
         DispatchQueue.main.async {
             if let user = self.presenter.user {
                 self.titleLabel.text = user.nick
-                self.scoreLabel.text = "Puntuación: \(user.score)"
+                self.scoreLabel.text = String(format: "%@: %d", "score".localized, user.score)
                 self.totalScoreLabel.text = String(user.score)
                 self.cupImageView.setImage(color: user.getColor())
                 self.loadingImageView?.stopAnimating()
