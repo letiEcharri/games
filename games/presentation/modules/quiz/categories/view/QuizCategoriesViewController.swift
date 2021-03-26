@@ -19,6 +19,8 @@ class QuizCategoriesViewController: BaseViewController {
         table.backgroundColor = .clear
         table.rowHeight = 80
         table.separatorStyle = .none
+        table.showsHorizontalScrollIndicator = false
+        table.showsVerticalScrollIndicator = false
         
         table.register(QuizCategoriesCell.self, forCellReuseIdentifier: QuizCategoriesCell.identifier)
         table.register(QuizCategoriesHeaderCell.self, forCellReuseIdentifier: QuizCategoriesHeaderCell.identifier)
@@ -62,8 +64,8 @@ class QuizCategoriesViewController: BaseViewController {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
             tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
-            tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 40)
+            tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor)
         ])
     }
 
@@ -105,7 +107,7 @@ extension QuizCategoriesViewController: UITableViewDelegate, UITableViewDataSour
             }
             
             let item = presenter.categories[indexPath.row - 1]
-            cell.set(title: item.name.uppercased())
+            cell.set(title: item.getName().uppercased())
             
             return cell
         }

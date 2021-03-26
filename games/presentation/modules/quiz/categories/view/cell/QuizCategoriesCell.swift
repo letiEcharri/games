@@ -34,7 +34,8 @@ class QuizCategoriesCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         return view
@@ -51,8 +52,8 @@ class QuizCategoriesCell: UITableViewCell {
         NSLayoutConstraint.activate([
             boxView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             boxView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            boxView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
+            boxView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+            boxView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
         ])
     }
 }

@@ -11,4 +11,5 @@ typealias QuizCategoriesResponseBlock = ([QuizCategoryModel]?, Error?) -> Void
 
 protocol QuizRepositoryProtocol {
     func getQuizCategories(completion: @escaping QuizCategoriesResponseBlock)
+    func getQuestions(with model: OpenTrivialRequestModel, completion: @escaping QuizCategoryResponseBlock)
 }

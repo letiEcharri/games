@@ -32,4 +32,19 @@ struct QuizCategoryAnswersModel: Decodable {
     let answer2: String
     let answer3: String
     let answer4: String
+    
+    func getRight(answer: String) -> String {
+        switch answer {
+        case answer1:
+            return "answer1"
+        case answer2:
+            return "answer2"
+        case answer3:
+            return "answer3"
+        case answer4:
+            return "answer4"
+        default:
+            return "answer1"
+        }
+    }
 }

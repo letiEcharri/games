@@ -28,4 +28,8 @@ class QuizRepository: QuizRepositoryProtocol {
             }
         }
     }
+    
+    func getQuestions(with model: OpenTrivialRequestModel, completion: @escaping QuizCategoryResponseBlock) {
+        datasource.getQuestions(with: model, completion: completion)
+    }
 }

@@ -27,5 +27,5 @@ protocol QuizQuestionPresenterProtocol where Self: BasePresenter {
 }
 
 protocol QuizQuestionPresenterDelegate: BasePresenterDelegate {
-    
+    func showRightAnswer(with key: String)
 }

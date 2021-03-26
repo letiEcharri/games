@@ -16,4 +16,8 @@ class QuizInteractor: QuizInteractorProtocol {
     func getQuizCategories(completion: @escaping QuizCategoriesResponseBlock) {
         repository.getQuizCategories(completion: completion)
     }
+    
+    func getQuestions(with model: OpenTrivialRequestModel, completion: @escaping QuizCategoryResponseBlock) {
+        repository.getQuestions(with: model, completion: completion)
+    }
 }

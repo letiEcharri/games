@@ -18,7 +18,7 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
     private let interactor: QuizInteractorProtocol = QuizInteractor.shared
     
     var ui: QuizCategoriesPresenterDelegate?
-    var categories: [QuizCategoryModel] = []
+    var categories: [QuestionCategory] = QuestionCategory.allCases
     
     private var signalDelegate: QuizCategoriesSignalDelegate
     
@@ -30,28 +30,15 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
     
     // MARK: - Presenter Functions
     
-    override func viewWillAppear() {
-        interactor.getQuizCategories { (cats, error) in
-            if let cats = cats {
-                self.categories = cats
-                self.ui?.reloadData()
-            }
-        }
-    }
-    
     func didSelect(with row: Int) {
-        if row == 0 {
-            var mix: [QuizQuestionModel] = [QuizQuestionModel]()
-            for item in categories {
-                mix.append(contentsOf: item.questions)
+        var model = OpenTrivialRequestModel()
+        if row != 0 {
+            model.category = categories[row-1]
+        }
+        interactor.getQuestions(with: model) { (category, error) in
+            if let category = category {
+                self.signalDelegate.signalTrigged(.category(category))
             }
-            mix.shuffle()
-            let selected = Array(mix[0...4])
-            signalDelegate.signalTrigged(.category(QuizCategoryModel(name: "mix", questions: selected)))
-            
-        } else {
-            let category = categories[row - 1]
-            signalDelegate.signalTrigged(.category(category))
         }
     }
     
