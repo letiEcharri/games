@@ -46,6 +46,16 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
         FirebaseManager.update(from: .users, item: item, value: score)
     }
     
+    func update(email: String, with userID: Int) {
+        let item = "\(userID)/email"
+        FirebaseManager.update(from: .users, item: item, value: email)
+    }
+    
+    func update(password: String, with userID: Int) {
+        let item = "\(userID)/password"
+        FirebaseManager.update(from: .users, item: item, value: password)
+    }
+    
     func login(user: String, pass: String, completion: @escaping LoginResponseBlock) {
         FirebaseManager.getValue(from: .users) { (response, error) in
             if let response = response {

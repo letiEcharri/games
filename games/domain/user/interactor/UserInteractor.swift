@@ -20,4 +20,12 @@ class UserInteractor: UserInteractorProtocol {
     func update(score: Int) {
         repository.update(score: score)
     }
+    
+    func update(email: String) {
+        repository.update(email: email)
+    }
+    
+    func update(password: String) {
+        repository.update(password: password)
+    }
 }

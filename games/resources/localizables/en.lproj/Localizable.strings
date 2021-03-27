@@ -26,3 +26,6 @@
 // INFO ALERT
 "alert_error_title" = "Error";
 
+// USER PROFILE
+"user_change_pass_old" = "Current password";
+"user_change_pass_new" = "New password";

@@ -14,5 +14,7 @@ typealias LoginRepositoryBlock = (Bool, Error?) -> Void
 protocol UserRepositoryProtocol {
     func getUser(completion: @escaping UserResponseBlock)
     func update(score: Int)
+    func update(email: String)
+    func update(password: String)
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock)
 }

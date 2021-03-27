@@ -44,7 +44,11 @@ class UserProfilePresenter: BasePresenter, UserProfilePresenterProtocol {
     }
     
     func textfieldAction(isSecureEntry: Bool, text: String) {
-        print()
+        if isSecureEntry {
+            interactor.update(password: text)
+        } else {
+            interactor.update(email: text)
+        }
     }
     
     func goToHome() {

@@ -75,6 +75,7 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
     
     var emailTexfField: TexFieldView?
     var passTexfField: TexFieldView?
+    var changePassView: ChangePassView?
 
     // MARK: - Properties
     
@@ -169,6 +170,7 @@ extension UserProfileViewController: UserProfilePresenterDelegate {
         emailTexfField?.textField.delegate = self
         passTexfField = TexFieldView(text: "*********", isSecureTextEntry: true)
         passTexfField?.textField.delegate = self
+        passTexfField?.delegate = self
         if let emailTexfField = emailTexfField, let passTexfField = passTexfField {
             stackView.addArrangedSubview(emailTexfField)
             stackView.addArrangedSubview(passTexfField)
@@ -196,6 +198,29 @@ extension UserProfileViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - ChangePassViewProtocol
+
+extension UserProfileViewController: ChangePassViewProtocol {
+    func showChangePassView() {
+        changePassView = ChangePassView(delegate: self)
+        if let changePassView = changePassView {
+            view.addSubview(changePassView)
+            NSLayoutConstraint.activate([
+                changePassView.topAnchor.constraint(equalTo: view.topAnchor),
+                changePassView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                changePassView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                changePassView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            ])
+        }
+    }
+    
+    func change(old pass: String, newPass: String) {
+        changePassView?.removeFromSuperview()
+    }
+}
+
+// MARK: - NavToolbarProtocol
+
 extension UserProfileViewController: NavToolbarProtocol {
     func toolbarPlayAction() {
         presenter.goToMainMenu()
@@ -207,152 +232,3 @@ extension UserProfileViewController: NavToolbarProtocol {
     
     func toolbarProfileAction() {}
 }
-
-// MARK: - Internal classes
-
-extension UserProfileViewController {
-    
-    class TextField: UITextField {
-        
-        lazy var rightImage: UIImageView = {
-            let imageView = UIImageView(frame: CGRect(x: 5, y: 15, width: 20, height: 20))
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = .ic_edit
-            imageView.setImage(color: .purple)
-            imageView.isUserInteractionEnabled = true
-            
-            return imageView
-        }()
-        
-        override var isSecureTextEntry: Bool {
-            didSet {
-                if isSecureTextEntry {
-                    font = .bandar(style: .regular, size: 50)
-                }
-            }
-        }
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            configureView()
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        private func configureView() {
-            backgroundColor = .clear
-            translatesAutoresizingMaskIntoConstraints = false
-            font = .bandar(style: .regular, size: 22)
-            textColor = .black
-            isEnabled = false
-            textAlignment = .center
-            tintColor = .purple
-
-            heightAnchor.constraint(equalToConstant: 50).isActive = true
-        }
-        
-        func disable() {
-            isEnabled = false
-            borderStyle = .none
-            backgroundColor = .clear
-            resignFirstResponder()
-        }
-    }
-    
-    class TexFieldView: UIView {
-        
-        lazy var titleLabel: UILabel = {
-            let label = UILabel()
-            label.font = .bandar(style: .boldItalic, size: 18)
-            label.textColor = .black
-            label.textAlignment = .center
-            
-            return label
-        }()
-        
-        lazy var rightImage: UIImageView = {
-            let imageView = UIImageView()
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = .ic_edit
-            imageView.setImage(color: .purple)
-            imageView.isUserInteractionEnabled = true
-            
-            imageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-            imageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-            
-            let tap = UITapGestureRecognizer(target: self, action: #selector(editTapAction(_:)))
-            imageView.addGestureRecognizer(tap)
-            
-            return imageView
-        }()
-        
-        lazy var txtStackView: UIStackView =  {
-            let stack = UIStackView(arrangedSubviews: [
-                textField,
-                rightImage
-            ])
-            stack.translatesAutoresizingMaskIntoConstraints = false
-            stack.axis = .horizontal
-            stack.spacing = 5
-            
-            stack.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            
-            return stack
-        }()
-        
-        lazy var stackView: UIStackView =  {
-            let stack = UIStackView(arrangedSubviews: [
-                titleLabel,
-                txtStackView
-            ])
-            stack.translatesAutoresizingMaskIntoConstraints = false
-            stack.axis = .vertical
-            
-            return stack
-        }()
-        
-        var isSecureTextEntry: Bool = false
-        private var text: String
-        var textField = TextField()
-        
-        init(text: String, isSecureTextEntry: Bool) {
-            self.text = text
-            self.isSecureTextEntry = isSecureTextEntry
-            super.init(frame: .zero)
-            configureView()
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        private func configureView() {
-            backgroundColor = .clear
-            
-            heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
-            titleLabel.text = isSecureTextEntry ? "password".localized : "email".localized
-            textField.isSecureTextEntry = isSecureTextEntry
-            textField.text = text
-            
-            addSubview(stackView)
-            NSLayoutConstraint.activate([
-                stackView.topAnchor.constraint(equalTo: topAnchor),
-                stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-                stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                stackView.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ])
-        }
-        
-        @objc private func editTapAction(_ sender: UITapGestureRecognizer) {
-            textField.isEnabled = true
-            textField.borderStyle = .roundedRect
-            textField.backgroundColor = UIColor.white.withAlphaComponent(0.4)
-            textField.becomeFirstResponder()
-        }
-    }
-}
-

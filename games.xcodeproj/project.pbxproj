@@ -64,6 +64,7 @@
 		F040467F260FCE2A00C1B706 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040467E260FCE2A00C1B706 /* UIViewController+Utils.swift */; };
 		F0404684260FD50C00C1B706 /* ToolbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404683260FD50C00C1B706 /* ToolbarCoordinator.swift */; };
 		F0404689260FD7F100C1B706 /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */; };
+		F0404691260FE26700C1B706 /* UserProfileInternalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404690260FE26700C1B706 /* UserProfileInternalViews.swift */; };
 		F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056D5A7260A76E80068DE05 /* UIButton+Action.swift */; };
 		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
 		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
@@ -193,6 +194,8 @@
 		F040467E260FCE2A00C1B706 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		F0404683260FD50C00C1B706 /* ToolbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarCoordinator.swift; sourceTree = "<group>"; };
 		F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
+		F0404690260FE26700C1B706 /* UserProfileInternalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInternalViews.swift; sourceTree = "<group>"; };
+		F0404695260FF36E00C1B706 /* games.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = games.entitlements; sourceTree = "<group>"; };
 		F056D5A7260A76E80068DE05 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
 		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -377,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				F015E911260F9A9D00D4E02E /* UserProfileViewController.swift */,
+				F0404690260FE26700C1B706 /* UserProfileInternalViews.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -761,6 +765,7 @@
 		F07F225725E2C07B0064CC7E /* games */ = {
 			isa = PBXGroup;
 			children = (
+				F0404695260FF36E00C1B706 /* games.entitlements */,
 				F05E685F25E2E6D90040C8A1 /* model */,
 				F05E682F25E2CF580040C8A1 /* dependencies */,
 				F05E681725E2CD240040C8A1 /* common */,
@@ -1213,6 +1218,7 @@
 				F02599D7260F648F00DC4700 /* SessionTokenModel.swift in Sources */,
 				F040467F260FCE2A00C1B706 /* UIViewController+Utils.swift in Sources */,
 				F03A9C9326052B5400CA8A21 /* QuizInteractor.swift in Sources */,
+				F0404691260FE26700C1B706 /* UserProfileInternalViews.swift in Sources */,
 				F0AC66E626076EA900DFD467 /* LoginPresenterProtocol.swift in Sources */,
 				F03A9C8E26052B4B00CA8A21 /* QuizInteractorProtocol.swift in Sources */,
 				F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */,
@@ -1408,6 +1414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = games/games.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"games/Preview Content\"";
 				DEVELOPMENT_TEAM = 74F5A5SVZ5;
@@ -1431,6 +1438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = games/games.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"games/Preview Content\"";
 				DEVELOPMENT_TEAM = 74F5A5SVZ5;
