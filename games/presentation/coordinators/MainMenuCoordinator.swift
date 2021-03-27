@@ -37,14 +37,9 @@ class MainMenuCoordinator: Coordinator {
         childCoordinator?.resolve()
     }
     
-    private func navigateToHome() {
-        childCoordinator = HomeCoordinator(navigationController)
+    private func navigateTo(_ destination: ToolbarDestination) {
+        childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
-    }
-    
-    private func navigateToUserProfile() {
-        let viewController = appDependencies.makeUserProfileView()
-        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -58,9 +53,9 @@ extension MainMenuCoordinator: MainMenuSignalDelegate {
         case .dayQuestion:
             break
         case .home:
-            navigateToHome()
+            navigateTo(.home)
         case .profile:
-            navigateToUserProfile()
+            navigateTo(.userProfile)
         }
     }
 }

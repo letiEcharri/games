@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationBarButtons()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
         if let toolbarController = self as? NavToolbarProtocol {
             toolbarController.configureToolbar()
@@ -114,19 +114,5 @@ class BaseViewController: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         ])
-    }
-}
-
-// MARK: NavigationBarProtocol
-
-extension BaseViewController: NavigationBarProtocol {
-    
-    func closeSession() {
-        let viewModel = InfoAlertModel(type: .info, description: "close_session_message".localized, action: {
-            SessionDataSource.closeSession()
-            self.childCoordinator = LoginCoordinator(self.navigationController ?? UINavigationController())
-            self.childCoordinator?.resolve()
-        })
-        showAlert(with: viewModel)
     }
 }

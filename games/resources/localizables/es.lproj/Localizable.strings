@@ -15,6 +15,7 @@
 "close_session_message" = "¿Desea abanonar Quiz?";
 "error_generic" = "Ha ocurrido un error";
 "email" = "Email";
+"close_session" = "Cerrar sesión";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Reto del día";

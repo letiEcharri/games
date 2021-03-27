@@ -42,19 +42,9 @@ class QuizCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    private func navigateToMainMenu() {
-        childCoordinator = MainMenuCoordinator(navigationController)
+    private func navigateTo(_ destination: ToolbarDestination) {
+        childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
-    }
-    
-    private func navigateToHome() {
-        childCoordinator = HomeCoordinator(navigationController)
-        childCoordinator?.resolve()
-    }
-    
-    private func navigateToUserProfile() {
-        let viewController = appDependencies.makeUserProfileView()
-        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -64,12 +54,14 @@ extension QuizCoordinator: QuizCategoriesSignalDelegate {
         case .category(let cat):
             navigateToQuestion(category: cat)
         case .home:
-            navigateToHome()
+            navigateTo(.home)
         case .profile:
-            navigateToUserProfile()
+            navigateTo(.userProfile)
         }
     }
 }
+
+// MARK: Coordinator Delegate
 
 extension QuizCoordinator: QuizQuestionSignalDelegate {
     func signalTrigged(_ signal: QuizQuestionSignal) {
@@ -77,7 +69,7 @@ extension QuizCoordinator: QuizQuestionSignalDelegate {
         case .score(let model):
             navigateToScore(model: model)
         case .finish:
-            navigateToMainMenu()
+            navigateTo(.mainMenu)
         }
     }
 }

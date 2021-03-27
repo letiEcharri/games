@@ -58,6 +58,21 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
         return stack
     }()
     
+    lazy var closeSessionButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .purple
+        button.titleLabel?.font = .bandar(style: .bold, size: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("close_session".localized.uppercased(), for: .normal)
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(closeSessionAction(_:)), for: .touchUpInside)
+        
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        return button
+    }()
+    
     var emailTexfField: TexFieldView?
     var passTexfField: TexFieldView?
 
@@ -103,6 +118,13 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
         
+        view.addSubview(closeSessionButton)
+        NSLayoutConstraint.activate([
+            closeSessionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            closeSessionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            closeSessionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+        ])
+        
     }
     
     // MARK: - Functions
@@ -125,6 +147,13 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
                 
             }
         }
+    }
+    
+    @objc private func closeSessionAction(_ sender: UIButton) {
+        let viewModel = InfoAlertModel(type: .info, description: "close_session_message".localized, action: {
+            self.presenter.closeSession()
+        })
+        showAlert(with: viewModel)
     }
 
 }
@@ -165,6 +194,18 @@ extension UserProfileViewController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+extension UserProfileViewController: NavToolbarProtocol {
+    func toolbarPlayAction() {
+        presenter.goToMainMenu()
+    }
+    
+    func toolbarHomeAction() {
+        presenter.goToHome()
+    }
+    
+    func toolbarProfileAction() {}
 }
 
 // MARK: - Internal classes

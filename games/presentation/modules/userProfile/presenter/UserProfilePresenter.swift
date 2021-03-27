@@ -12,6 +12,8 @@ import UIKit
 class UserProfilePresenter: BasePresenter, UserProfilePresenterProtocol {
     
     // MARK: - Properties
+    
+    private weak var signalDelegate: UserProfileSignalDelegate?
         
     weak var ui: UserProfilePresenterDelegate?
     var user: UserModel?
@@ -20,9 +22,9 @@ class UserProfilePresenter: BasePresenter, UserProfilePresenterProtocol {
     
     // MARK: - Initialization
     
-//    init(signalDelegate: UserProfileSignalDelegate) {
-//        self.signalDelegate = signalDelegate
-//    }
+    init(signalDelegate: UserProfileSignalDelegate) {
+        self.signalDelegate = signalDelegate
+    }
     
     // MARK: - UserProfilePresenter Functions
     
@@ -43,5 +45,17 @@ class UserProfilePresenter: BasePresenter, UserProfilePresenterProtocol {
     
     func textfieldAction(isSecureEntry: Bool, text: String) {
         print()
+    }
+    
+    func goToHome() {
+        signalDelegate?.signalTrigged(.home)
+    }
+    
+    func goToMainMenu() {
+        signalDelegate?.signalTrigged(.mainMenu)
+    }
+    
+    func closeSession() {
+        signalDelegate?.signalTrigged(.closeSession)
     }
 }

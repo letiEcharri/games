@@ -62,6 +62,8 @@
 		F0404675260FA4A300C1B706 /* BackgroundImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404674260FA4A300C1B706 /* BackgroundImageProtocol.swift */; };
 		F040467A260FA86E00C1B706 /* UserProfileDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404679260FA86E00C1B706 /* UserProfileDependencies.swift */; };
 		F040467F260FCE2A00C1B706 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040467E260FCE2A00C1B706 /* UIViewController+Utils.swift */; };
+		F0404684260FD50C00C1B706 /* ToolbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404683260FD50C00C1B706 /* ToolbarCoordinator.swift */; };
+		F0404689260FD7F100C1B706 /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */; };
 		F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056D5A7260A76E80068DE05 /* UIButton+Action.swift */; };
 		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
 		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
@@ -189,6 +191,8 @@
 		F0404674260FA4A300C1B706 /* BackgroundImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageProtocol.swift; sourceTree = "<group>"; };
 		F0404679260FA86E00C1B706 /* UserProfileDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDependencies.swift; sourceTree = "<group>"; };
 		F040467E260FCE2A00C1B706 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		F0404683260FD50C00C1B706 /* ToolbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarCoordinator.swift; sourceTree = "<group>"; };
+		F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
 		F056D5A7260A76E80068DE05 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
 		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -677,10 +681,12 @@
 			isa = PBXGroup;
 			children = (
 				F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */,
+				F0404683260FD50C00C1B706 /* ToolbarCoordinator.swift */,
 				F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */,
 				F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */,
 				F03A9C4026050A3B00CA8A21 /* QuizCoordinator.swift */,
 				F0B9D05226076FC100BC48E7 /* LoginCoordinator.swift */,
+				F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */,
 			);
 			path = coordinators;
 			sourceTree = "<group>";
@@ -1185,6 +1191,7 @@
 				F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */,
 				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
 				F02599CE260F5E7600DC4700 /* NavigationBarProtocol.swift in Sources */,
+				F0404689260FD7F100C1B706 /* UserProfileCoordinator.swift in Sources */,
 				F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */,
 				F03A9C86260528A900CA8A21 /* QuizRepository.swift in Sources */,
 				F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */,
@@ -1218,6 +1225,7 @@
 				F09937B1260E5E170032988D /* QuestionsModel.swift in Sources */,
 				F008C5592606A2A600A5E015 /* LoadingViewController.swift in Sources */,
 				F008C5612606A54300A5E015 /* Notification+Name.swift in Sources */,
+				F0404684260FD50C00C1B706 /* ToolbarCoordinator.swift in Sources */,
 				F03A9C9B26052F1400CA8A21 /* QuizQuestionViewController.swift in Sources */,
 				F03A9C55260517D300CA8A21 /* QuizCategoriesPresenterProtocol.swift in Sources */,
 			);

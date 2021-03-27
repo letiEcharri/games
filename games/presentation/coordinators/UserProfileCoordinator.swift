@@ -1,17 +1,16 @@
 //
-//  HomeCoordinator.swift
+//  UserProfileCoordinator.swift
 //  games
 //
-//  Created by Leticia Personal on 21/02/2021.
+//  Created by Leticia Personal on 27/03/2021.
 //
 
 import UIKit
 
-class HomeCoordinator: Coordinator {
+class UserProfileCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    let appDependencies: HomeDependencies = AppDependencies()
-    let userDependencies: UserProfileDependencies = AppDependencies()
+    let appDependencies: UserProfileDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -23,13 +22,13 @@ class HomeCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func resolve() {
-        navigateToHome()
+        navigateToUserProfile()
     }
     
-    // MARK: - HomeCoordinator Functions
+    // MARK: - Functions
     
-    private func navigateToHome() {
-        let viewController = appDependencies.makeHomeView(signalDelegate: self)
+    private func navigateToUserProfile() {
+        let viewController = appDependencies.makeUserProfileView(signalDelegate: self)
         navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -37,17 +36,25 @@ class HomeCoordinator: Coordinator {
         childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
     }
+    
+    private func closeSession() {
+        SessionDataSource.closeSession()
+        childCoordinator = LoginCoordinator(navigationController)
+        childCoordinator?.resolve()
+    }
 }
 
 // MARK: Coordinator Delegate
 
-extension HomeCoordinator: HomeSignalDelegate {
-    func signalTrigged(_ signal: HomeSignal) {
+extension UserProfileCoordinator: UserProfileSignalDelegate {
+    func signalTrigged(_ signal: UserProfileSignal) {
         switch signal {
+        case .home:
+            navigateTo(.home)
         case .mainMenu:
             navigateTo(.mainMenu)
-        case .profile:
-            navigateTo(.userProfile)
+        case .closeSession:
+            closeSession()
         }
     }
 }
