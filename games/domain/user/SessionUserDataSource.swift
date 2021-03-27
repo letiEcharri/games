@@ -12,7 +12,7 @@ class SessionUserDataSource {
     static let shared = SessionUserDataSource()
     
     var user: UserModel?
-    
+        
     func clear() {
         user = nil
     }

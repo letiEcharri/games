@@ -99,6 +99,13 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_warning: UIImage = {
+        if let image = UIImage(named: "ic_warning") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {
@@ -109,3 +116,4 @@ extension UIImageView {
         self.tintColor = color
     }
 }
+

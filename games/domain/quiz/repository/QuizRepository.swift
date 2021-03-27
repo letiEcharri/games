@@ -30,6 +30,30 @@ class QuizRepository: QuizRepositoryProtocol {
     }
     
     func getQuestions(with model: OpenTrivialRequestModel, completion: @escaping QuizCategoryResponseBlock) {
-        datasource.getQuestions(with: model, completion: completion)
+        var newModel = model
+        if let sessionToken = session.token {
+            newModel.token = sessionToken
+            datasource.getQuestions(with: newModel, completion: completion)
+        } else {
+            retrieveToken { (success, error) in
+                if success {
+                    newModel.token = self.session.token
+                    self.datasource.getQuestions(with: newModel, completion: completion)
+                } else {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    private func retrieveToken(completion: @escaping (Bool, Error?) -> Void) {
+        datasource.retrieveSessionToken { (token, error) in
+            if let token = token {
+                self.session.token = token
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
     }
 }

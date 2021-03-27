@@ -10,9 +10,16 @@
 "user" = "Usuario";
 "password" = "Constraseña";
 "score" = "Puntuación";
+"ok" = "Aceptar";
+"cancel" = "Cancelar";
+"close_session_message" = "¿Desea abanonar Quiz?";
+"error_generic" = "Ha ocurrido un error";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Reto del día";
 
 // SCORE
 "score_ok" = "¡Vale!";
+
+// INFO ALERT
+"alert_error_title" = "Error";

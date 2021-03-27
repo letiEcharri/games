@@ -22,9 +22,13 @@
 		F008C5532606646300A5E015 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5522606646300A5E015 /* UserInteractor.swift */; };
 		F008C5592606A2A600A5E015 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5582606A2A600A5E015 /* LoadingViewController.swift */; };
 		F008C5612606A54300A5E015 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008C5602606A54300A5E015 /* Notification+Name.swift */; };
+		F00E73AE260F799500A78F20 /* AlertDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E73AD260F799500A78F20 /* AlertDependencies.swift */; };
 		F016F8512606122A008623D3 /* QuizScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84E2606122A008623D3 /* QuizScorePresenter.swift */; };
 		F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */; };
 		F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F016F8502606122A008623D3 /* QuizScoreViewController.swift */; };
+		F02599CE260F5E7600DC4700 /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02599CD260F5E7600DC4700 /* NavigationBarProtocol.swift */; };
+		F02599D7260F648F00DC4700 /* SessionTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02599D6260F648F00DC4700 /* SessionTokenModel.swift */; };
+		F02599E3260F69A600DC4700 /* InfoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02599E0260F69A600DC4700 /* InfoAlertViewController.swift */; };
 		F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */; };
 		F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */; };
 		F03A9BD72604DED300CA8A21 /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */; };
@@ -97,6 +101,7 @@
 		F0B9D063260797B500BC48E7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D061260797B500BC48E7 /* LoginInteractor.swift */; };
 		F0B9D0692607E4B500BC48E7 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F0B9D0682607E4B500BC48E7 /* loading.gif */; };
 		F0B9D06E2607E73A00BC48E7 /* UIImageView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */; };
+		F0D92E5C260F5A4400E6B990 /* SessionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D92E5B260F5A4400E6B990 /* SessionDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,9 +143,13 @@
 		F008C5522606646300A5E015 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		F008C5582606A2A600A5E015 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		F008C5602606A54300A5E015 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		F00E73AD260F799500A78F20 /* AlertDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDependencies.swift; sourceTree = "<group>"; };
 		F016F84E2606122A008623D3 /* QuizScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenter.swift; sourceTree = "<group>"; };
 		F016F84F2606122A008623D3 /* QuizScorePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScorePresenterProtocol.swift; sourceTree = "<group>"; };
 		F016F8502606122A008623D3 /* QuizScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreViewController.swift; sourceTree = "<group>"; };
+		F02599CD260F5E7600DC4700 /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
+		F02599D6260F648F00DC4700 /* SessionTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTokenModel.swift; sourceTree = "<group>"; };
+		F02599E0260F69A600DC4700 /* InfoAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertViewController.swift; sourceTree = "<group>"; };
 		F03A9BC82604DA2100CA8A21 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		F03A9BCE2604DD3400CA8A21 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		F03A9BD62604DED300CA8A21 /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
@@ -221,6 +230,7 @@
 		F0B9D061260797B500BC48E7 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		F0B9D0682607E4B500BC48E7 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Functions.swift"; sourceTree = "<group>"; };
+		F0D92E5B260F5A4400E6B990 /* SessionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +287,7 @@
 		F008C4CF26062B2F00A5E015 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				F02599DB260F68E900DC4700 /* infoAlert */,
 				F008C5572606A28100A5E015 /* loading */,
 				F008C4D026062B4800A5E015 /* progressStepBar */,
 			);
@@ -335,6 +346,23 @@
 				F008C5582606A2A600A5E015 /* LoadingViewController.swift */,
 			);
 			path = loading;
+			sourceTree = "<group>";
+		};
+		F02599D5260F646900DC4700 /* openTrivial */ = {
+			isa = PBXGroup;
+			children = (
+				F09937B0260E5E170032988D /* QuestionsModel.swift */,
+				F02599D6260F648F00DC4700 /* SessionTokenModel.swift */,
+			);
+			path = openTrivial;
+			sourceTree = "<group>";
+		};
+		F02599DB260F68E900DC4700 /* infoAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F02599E0260F69A600DC4700 /* InfoAlertViewController.swift */,
+			);
+			path = infoAlert;
 			sourceTree = "<group>";
 		};
 		F03A9BC52604D9ED00CA8A21 /* mainMenu */ = {
@@ -423,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				F03A9C23260502A500CA8A21 /* QuizModel.swift */,
-				F09937B0260E5E170032988D /* QuestionsModel.swift */,
 			);
 			path = quiz;
 			sourceTree = "<group>";
@@ -591,6 +618,7 @@
 		F05E681725E2CD240040C8A1 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				F0D92E5B260F5A4400E6B990 /* SessionDataSource.swift */,
 				F07CEE9E260A66AD00470395 /* protocols */,
 				F05E682325E2CDCD0040C8A1 /* base */,
 			);
@@ -600,11 +628,8 @@
 		F05E682325E2CDCD0040C8A1 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				F05E682425E2CE330040C8A1 /* Coordinator.swift */,
 				F05E683D25E2D2800040C8A1 /* BaseViewController.swift */,
 				F05E684225E2D3A10040C8A1 /* BasePresenter.swift */,
-				F03A9C7B260525F500CA8A21 /* DataSource.swift */,
-				F09937B8260E651C0032988D /* OpenTrivialDataBase.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -629,6 +654,7 @@
 				F03A9BDE2604DF5B00CA8A21 /* MainMenuDependencies.swift */,
 				F03A9C622605196700CA8A21 /* QuizDependencies.swift */,
 				F0B9D0572607703A00BC48E7 /* LoginDependencies.swift */,
+				F00E73AD260F799500A78F20 /* AlertDependencies.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
@@ -636,6 +662,7 @@
 		F05E685F25E2E6D90040C8A1 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				F02599D5260F646900DC4700 /* openTrivial */,
 				F03A9C222605029000CA8A21 /* quiz */,
 				F05E686025E2E7170040C8A1 /* user */,
 			);
@@ -653,7 +680,11 @@
 		F07CEE9E260A66AD00470395 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F02599CD260F5E7600DC4700 /* NavigationBarProtocol.swift */,
 				F07CEEA7260A676600470395 /* NavToolbarProtocol.swift */,
+				F05E682425E2CE330040C8A1 /* Coordinator.swift */,
+				F03A9C7B260525F500CA8A21 /* DataSource.swift */,
+				F09937B8260E651C0032988D /* OpenTrivialDataBase.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -1098,18 +1129,22 @@
 				F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */,
 				F03A9C4B260516DE00CA8A21 /* UIView+Style.swift in Sources */,
 				F008C5452606628D00A5E015 /* UserRepository.swift in Sources */,
+				F0D92E5C260F5A4400E6B990 /* SessionDataSource.swift in Sources */,
 				F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */,
 				F008C4D226062B7F00A5E015 /* ProgressStepBar.swift in Sources */,
 				F05E686A25E2EA0F0040C8A1 /* UIColor+Colors.swift in Sources */,
+				F00E73AE260F799500A78F20 /* AlertDependencies.swift in Sources */,
 				F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */,
 				F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */,
 				F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */,
 				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
+				F02599CE260F5E7600DC4700 /* NavigationBarProtocol.swift in Sources */,
 				F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */,
 				F03A9C86260528A900CA8A21 /* QuizRepository.swift in Sources */,
 				F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */,
 				F008C5532606646300A5E015 /* UserInteractor.swift in Sources */,
 				F03A9C632605196700CA8A21 /* QuizDependencies.swift in Sources */,
+				F02599E3260F69A600DC4700 /* InfoAlertViewController.swift in Sources */,
 				F008C54B2606645B00A5E015 /* UserInteractorProtocol.swift in Sources */,
 				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
 				F0B9D05326076FC100BC48E7 /* LoginCoordinator.swift in Sources */,
@@ -1121,6 +1156,7 @@
 				F008C52926065FE700A5E015 /* SessionUserDataSource.swift in Sources */,
 				F03A9C7C260525F500CA8A21 /* DataSource.swift in Sources */,
 				F09937B9260E651C0032988D /* OpenTrivialDataBase.swift in Sources */,
+				F02599D7260F648F00DC4700 /* SessionTokenModel.swift in Sources */,
 				F03A9C9326052B5400CA8A21 /* QuizInteractor.swift in Sources */,
 				F0AC66E626076EA900DFD467 /* LoginPresenterProtocol.swift in Sources */,
 				F03A9C8E26052B4B00CA8A21 /* QuizInteractorProtocol.swift in Sources */,

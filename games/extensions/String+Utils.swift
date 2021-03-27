@@ -39,4 +39,17 @@ extension String {
         }
         return self
     }
+    
+    var fromBase64: String {
+        guard let data = Data(base64Encoded: self) else {
+            return self
+        }
+        
+        return String(data: data, encoding: .utf8) ?? self
+    }
+    
+    var toBase64: String {
+        return Data(self.utf8).base64EncodedString()
+    }
+    
 }

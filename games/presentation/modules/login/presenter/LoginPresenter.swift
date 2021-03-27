@@ -33,9 +33,10 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
                 DispatchQueue.main.async {
                     self.signalDelegate?.signalTrigged(.home)
                 }
-            } else {
+            } else if let error = error {
                 self.ui?.hideLoading()
-                // TODO: Alert with error
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
+                self.ui?.showAlert(with: viewModel)
             }
         }
     }
