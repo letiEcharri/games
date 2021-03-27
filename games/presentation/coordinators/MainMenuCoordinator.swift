@@ -10,7 +10,7 @@ import UIKit
 class MainMenuCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    let appDependencies: MainMenuDependencies = AppDependencies()
+    let appDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -41,6 +41,11 @@ class MainMenuCoordinator: Coordinator {
         childCoordinator = HomeCoordinator(navigationController)
         childCoordinator?.resolve()
     }
+    
+    private func navigateToUserProfile() {
+        let viewController = appDependencies.makeUserProfileView()
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: - MainMenuSignalDelegate
@@ -55,7 +60,7 @@ extension MainMenuCoordinator: MainMenuSignalDelegate {
         case .home:
             navigateToHome()
         case .profile:
-            break
+            navigateToUserProfile()
         }
     }
 }

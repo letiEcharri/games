@@ -17,6 +17,7 @@ struct UserModel: Decodable {
     var id: Int
     var nick: String
     var score: Int
+    var email: String
     var cup: UserCup {
         switch score {
         case 101 ... 500:

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizCategoriesViewController: BaseViewController {
+class QuizCategoriesViewController: BaseViewController, BackgroundImageProtocol {
     
     // MARK: - Views
     
@@ -58,7 +58,6 @@ class QuizCategoriesViewController: BaseViewController {
     // MARK: - Setup UI
     
     override func loadStyle() {
-        addBackgroundImage()
         
         self.view.addSubview(tableView)
         NSLayoutConstraint.activate([

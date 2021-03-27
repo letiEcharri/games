@@ -14,6 +14,7 @@
 "cancel" = "Cancel";
 "close_session_message" = "Do you want to leave Quiz?";
 "error_generic" = "An error has occurred";
+"email" = "Correo electrónico";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Day challenge";

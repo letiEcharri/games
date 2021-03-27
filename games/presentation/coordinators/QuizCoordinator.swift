@@ -10,7 +10,7 @@ import UIKit
 class QuizCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    let appDependencies: QuizDependencies = AppDependencies()
+    let appDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -51,6 +51,11 @@ class QuizCoordinator: Coordinator {
         childCoordinator = HomeCoordinator(navigationController)
         childCoordinator?.resolve()
     }
+    
+    private func navigateToUserProfile() {
+        let viewController = appDependencies.makeUserProfileView()
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
 extension QuizCoordinator: QuizCategoriesSignalDelegate {
@@ -61,7 +66,7 @@ extension QuizCoordinator: QuizCategoriesSignalDelegate {
         case .home:
             navigateToHome()
         case .profile:
-            break
+            navigateToUserProfile()
         }
     }
 }

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_woman_glasses.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

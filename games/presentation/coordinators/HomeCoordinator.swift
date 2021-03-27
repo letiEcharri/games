@@ -11,6 +11,7 @@ class HomeCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     let appDependencies: HomeDependencies = AppDependencies()
+    let userDependencies: UserProfileDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -36,6 +37,11 @@ class HomeCoordinator: Coordinator {
         childCoordinator = MainMenuCoordinator(navigationController)
         childCoordinator?.resolve()
     }
+    
+    private func navigateToUserProfile() {
+        let viewController = userDependencies.makeUserProfileView()
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: Coordinator Delegate
@@ -46,7 +52,7 @@ extension HomeCoordinator: HomeSignalDelegate {
         case .mainMenu:
             navigateToMainMenu()
         case .profile:
-            break
+            navigateToUserProfile()
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizQuestionViewController: BaseViewController {
+class QuizQuestionViewController: BaseViewController, BackgroundImageProtocol {
     
     // MARK: - Views
     
@@ -88,8 +88,6 @@ class QuizQuestionViewController: BaseViewController {
     // MARK: - Setup UI
     
     override func loadStyle() {
-        addBackgroundImage()
-        
         addData()
         
         view.addSubview(stackView)

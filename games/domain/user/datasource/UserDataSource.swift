@@ -24,14 +24,17 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                                     let jsonData = try JSONSerialization.data(withJSONObject: selectedItem, options: .prettyPrinted)
                                     let model = try JSONDecoder().decode(UserModel.self, from: jsonData)
                                     completion(model, nil)
+                                    return
                                     
                                 } catch {
                                     completion(nil, error.localizedDescription)
+                                    return
                                 }
                             }
                         }
                     }
                 }
+                completion(nil, "error_generic".localized)
             } else {
                 completion(nil, error?.localizedDescription)
             }
