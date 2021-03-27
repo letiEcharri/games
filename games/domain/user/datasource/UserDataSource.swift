@@ -65,7 +65,8 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                         }
                     }
                 }
-                completion(false, nil, nil)
+                let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
+                completion(false, nil, error)
             } else {
                 completion(false, nil, error)
             }

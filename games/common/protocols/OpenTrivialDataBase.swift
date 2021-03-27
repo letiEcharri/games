@@ -63,6 +63,7 @@ struct OpenTrivialRequestModel {
     var category: QuestionCategory?
     var difficulty: String = "easy"
     var type: String = "multiple"
+    var token: String?
     
     func getParameters() -> [URLQueryItem] {
         var params = [
@@ -72,6 +73,9 @@ struct OpenTrivialRequestModel {
         ]
         if let category = category {
             params.append(URLQueryItem(name: "category", value: String(category.rawValue)))
+        }
+        if let token = token {
+            params.append(URLQueryItem(name: "token", value: token))
         }
         return params
     }

@@ -30,6 +30,9 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
             if let user = user {
                 self.user = user
                 self.ui?.reloadData()
+            } else if let error = error {
+                let viewModel = InfoAlertModel(type: .error, description: error)
+                self.ui?.showAlert(with: viewModel)
             }
         }
     }

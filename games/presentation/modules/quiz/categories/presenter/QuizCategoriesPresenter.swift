@@ -38,6 +38,9 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
         interactor.getQuestions(with: model) { (category, error) in
             if let category = category {
                 self.signalDelegate.signalTrigged(.category(category))
+            } else if let error = error {
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
+                self.ui?.showAlert(with: viewModel)
             }
         }
     }

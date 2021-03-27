@@ -99,19 +99,29 @@ class BaseViewController: UIViewController {
     }
     
     func hideLoading() {
-        NotificationCenter.default.post(name: .loading, object: nil)
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: .loading, object: nil)
+        }
     }
     
-    private func navigationBarButtons() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-        
-        let exit = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(closeSessionAction(_:)))
-        navigationItem.rightBarButtonItem = exit
+    func showAlert(with viewModel: InfoAlertModel) {
+        DispatchQueue.main.async {
+            let viewController = AppDependencies().makeInfoAlertView(with: viewModel)
+            self.present(viewController, animated: true)
+        }
     }
+}
+
+// MARK: NavigationBarProtocol
+
+extension BaseViewController: NavigationBarProtocol {
     
-    @objc private func closeSessionAction(_ sender: UIBarButtonItem) {
-        UserDefaults.standard.setValue(nil, forKey: UserDefaultsKeys.user.rawValue)
-        childCoordinator = LoginCoordinator(navigationController ?? UINavigationController())
-        childCoordinator?.resolve()
+    func closeSession() {
+        let viewModel = InfoAlertModel(type: .info, description: "close_session_message".localized, action: {
+            SessionDataSource.closeSession()
+            self.childCoordinator = LoginCoordinator(self.navigationController ?? UINavigationController())
+            self.childCoordinator?.resolve()
+        })
+        showAlert(with: viewModel)
     }
 }

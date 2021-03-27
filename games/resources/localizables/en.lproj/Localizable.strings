@@ -10,9 +10,17 @@
 "user" = "User";
 "password" = "Password";
 "score" = "Score";
+"ok" = "Ok";
+"cancel" = "Cancel";
+"close_session_message" = "Do you want to leave Quiz?";
+"error_generic" = "An error has occurred";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Day challenge";
 
 // SCORE
 "score_ok" = "Ok!";
+
+// INFO ALERT
+"alert_error_title" = "Error";
+

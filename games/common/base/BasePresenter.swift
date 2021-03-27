@@ -5,7 +5,7 @@
 //  Created by Leticia Personal on 21/02/2021.
 //
 
-import Foundation
+import UIKit
 
 class BasePresenter {
     
@@ -30,4 +30,5 @@ protocol BasePresenterDelegate: class {
     func reloadData()
     func showLoading()
     func hideLoading()
+    func showAlert(with viewModel: InfoAlertModel)
 }
