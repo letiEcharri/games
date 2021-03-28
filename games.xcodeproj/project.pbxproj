@@ -82,14 +82,14 @@
 		F05E685A25E2DDC30040C8A1 /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */; };
 		F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E686125E2E72C0040C8A1 /* UserModel.swift */; };
 		F05E686A25E2EA0F0040C8A1 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E686925E2EA0F0040C8A1 /* UIColor+Colors.swift */; };
-		F05EA1CE2610E675002201FC /* QuizDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1C62610E675002201FC /* QuizDependencies.swift */; };
-		F05EA1CF2610E675002201FC /* AlertDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1C72610E675002201FC /* AlertDependencies.swift */; };
-		F05EA1D02610E675002201FC /* HomeDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1C82610E675002201FC /* HomeDependencies.swift */; };
-		F05EA1D12610E675002201FC /* ImageSelectorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1C92610E675002201FC /* ImageSelectorDependencies.swift */; };
-		F05EA1D32610E675002201FC /* UserProfileDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1CB2610E675002201FC /* UserProfileDependencies.swift */; };
-		F05EA1D42610E675002201FC /* LoginDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1CC2610E675002201FC /* LoginDependencies.swift */; };
-		F05EA1D52610E675002201FC /* MainMenuDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1CD2610E675002201FC /* MainMenuDependencies.swift */; };
-		F05EA1DD2610E6C2002201FC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1DC2610E6C2002201FC /* AppDependencies.swift */; };
+		F05EA1F02610E9F8002201FC /* ImageSelectorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1E82610E9F1002201FC /* ImageSelectorDependencies.swift */; };
+		F05EA1F12610E9F8002201FC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1E92610E9F2002201FC /* AppDependencies.swift */; };
+		F05EA1F22610E9F8002201FC /* UserProfileDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1EA2610E9F3002201FC /* UserProfileDependencies.swift */; };
+		F05EA1F32610E9F8002201FC /* LoginDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1EB2610E9F4002201FC /* LoginDependencies.swift */; };
+		F05EA1F42610E9F8002201FC /* QuizDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1EC2610E9F5002201FC /* QuizDependencies.swift */; };
+		F05EA1F52610E9F8002201FC /* HomeDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1ED2610E9F6002201FC /* HomeDependencies.swift */; };
+		F05EA1F62610E9F8002201FC /* MainMenuDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1EE2610E9F7002201FC /* MainMenuDependencies.swift */; };
+		F05EA1F72610E9F8002201FC /* AlertDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05EA1EF2610E9F8002201FC /* AlertDependencies.swift */; };
 		F07A228C26061A2500F14946 /* BandarBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228726061A2400F14946 /* BandarBold.ttf */; };
 		F07A228D26061A2500F14946 /* BandarBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228826061A2500F14946 /* BandarBoldItalic.ttf */; };
 		F07A228E26061A2500F14946 /* BandarItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228926061A2500F14946 /* BandarItalic.ttf */; };
@@ -218,14 +218,14 @@
 		F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
 		F05E686125E2E72C0040C8A1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F05E686925E2EA0F0040C8A1 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
-		F05EA1C62610E675002201FC /* QuizDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizDependencies.swift; sourceTree = "<group>"; };
-		F05EA1C72610E675002201FC /* AlertDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDependencies.swift; sourceTree = "<group>"; };
-		F05EA1C82610E675002201FC /* HomeDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDependencies.swift; sourceTree = "<group>"; };
-		F05EA1C92610E675002201FC /* ImageSelectorDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectorDependencies.swift; sourceTree = "<group>"; };
-		F05EA1CB2610E675002201FC /* UserProfileDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileDependencies.swift; sourceTree = "<group>"; };
-		F05EA1CC2610E675002201FC /* LoginDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDependencies.swift; sourceTree = "<group>"; };
-		F05EA1CD2610E675002201FC /* MainMenuDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuDependencies.swift; sourceTree = "<group>"; };
-		F05EA1DC2610E6C2002201FC /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		F05EA1E82610E9F1002201FC /* ImageSelectorDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectorDependencies.swift; sourceTree = "<group>"; };
+		F05EA1E92610E9F2002201FC /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		F05EA1EA2610E9F3002201FC /* UserProfileDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileDependencies.swift; sourceTree = "<group>"; };
+		F05EA1EB2610E9F4002201FC /* LoginDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDependencies.swift; sourceTree = "<group>"; };
+		F05EA1EC2610E9F5002201FC /* QuizDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizDependencies.swift; sourceTree = "<group>"; };
+		F05EA1ED2610E9F6002201FC /* HomeDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDependencies.swift; sourceTree = "<group>"; };
+		F05EA1EE2610E9F7002201FC /* MainMenuDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuDependencies.swift; sourceTree = "<group>"; };
+		F05EA1EF2610E9F8002201FC /* AlertDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDependencies.swift; sourceTree = "<group>"; };
 		F07A228726061A2400F14946 /* BandarBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarBold.ttf; sourceTree = "<group>"; };
 		F07A228826061A2500F14946 /* BandarBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarBoldItalic.ttf; sourceTree = "<group>"; };
 		F07A228926061A2500F14946 /* BandarItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarItalic.ttf; sourceTree = "<group>"; };
@@ -759,17 +759,17 @@
 			path = user;
 			sourceTree = "<group>";
 		};
-		F05EA1C52610E675002201FC /* dependencies */ = {
+		F05EA1E72610E9E1002201FC /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				F05EA1C62610E675002201FC /* QuizDependencies.swift */,
-				F05EA1C72610E675002201FC /* AlertDependencies.swift */,
-				F05EA1C82610E675002201FC /* HomeDependencies.swift */,
-				F05EA1C92610E675002201FC /* ImageSelectorDependencies.swift */,
-				F05EA1CB2610E675002201FC /* UserProfileDependencies.swift */,
-				F05EA1CC2610E675002201FC /* LoginDependencies.swift */,
-				F05EA1CD2610E675002201FC /* MainMenuDependencies.swift */,
-				F05EA1DC2610E6C2002201FC /* AppDependencies.swift */,
+				F05EA1EF2610E9F8002201FC /* AlertDependencies.swift */,
+				F05EA1E92610E9F2002201FC /* AppDependencies.swift */,
+				F05EA1ED2610E9F6002201FC /* HomeDependencies.swift */,
+				F05EA1E82610E9F1002201FC /* ImageSelectorDependencies.swift */,
+				F05EA1EB2610E9F4002201FC /* LoginDependencies.swift */,
+				F05EA1EE2610E9F7002201FC /* MainMenuDependencies.swift */,
+				F05EA1EC2610E9F5002201FC /* QuizDependencies.swift */,
+				F05EA1EA2610E9F3002201FC /* UserProfileDependencies.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
@@ -812,7 +812,7 @@
 		F07F225725E2C07B0064CC7E /* games */ = {
 			isa = PBXGroup;
 			children = (
-				F05EA1C52610E675002201FC /* dependencies */,
+				F05EA1E72610E9E1002201FC /* dependencies */,
 				F05E685F25E2E6D90040C8A1 /* model */,
 				F05E681725E2CD240040C8A1 /* common */,
 				F05E681125E2CBA20040C8A1 /* extensions */,
@@ -1217,30 +1217,32 @@
 				F015E912260F9A9D00D4E02E /* UserProfilePresenter.swift in Sources */,
 				F008C537260660D000A5E015 /* UserDataSource.swift in Sources */,
 				F05E682525E2CE330040C8A1 /* Coordinator.swift in Sources */,
-				F05EA1D52610E675002201FC /* MainMenuDependencies.swift in Sources */,
+				F05EA1F52610E9F8002201FC /* HomeDependencies.swift in Sources */,
 				F05E683E25E2D2800040C8A1 /* BaseViewController.swift in Sources */,
 				F03A9CA52605328500CA8A21 /* QuizQuestionPresenterProtocol.swift in Sources */,
+				F05EA1F02610E9F8002201FC /* ImageSelectorDependencies.swift in Sources */,
+				F05EA1F12610E9F8002201FC /* AppDependencies.swift in Sources */,
 				F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */,
 				F03A9C812605289E00CA8A21 /* QuizRepositoryProtocol.swift in Sources */,
 				F03E55B6260FFB5B00193944 /* ImageSelectorCell.swift in Sources */,
 				F03A9C3C2605083200CA8A21 /* QuizCategoriesCell.swift in Sources */,
+				F05EA1F42610E9F8002201FC /* QuizDependencies.swift in Sources */,
 				F04046A1260FF73D00C1B706 /* ImageSelectorPresenter.swift in Sources */,
 				F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */,
 				F0AC66E726076EA900DFD467 /* LoginViewController.swift in Sources */,
+				F05EA1F32610E9F8002201FC /* LoginDependencies.swift in Sources */,
 				F03A9C6D2605252F00CA8A21 /* SessionQuizDataSource.swift in Sources */,
-				F05EA1D12610E675002201FC /* ImageSelectorDependencies.swift in Sources */,
 				F07CEEA8260A676600470395 /* NavToolbarProtocol.swift in Sources */,
 				F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */,
 				F03A9C4B260516DE00CA8A21 /* UIView+Style.swift in Sources */,
 				F008C5452606628D00A5E015 /* UserRepository.swift in Sources */,
 				F0D92E5C260F5A4400E6B990 /* SessionDataSource.swift in Sources */,
-				F05EA1D02610E675002201FC /* HomeDependencies.swift in Sources */,
 				F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */,
 				F008C4D226062B7F00A5E015 /* ProgressStepBar.swift in Sources */,
+				F05EA1F72610E9F8002201FC /* AlertDependencies.swift in Sources */,
 				F05E686A25E2EA0F0040C8A1 /* UIColor+Colors.swift in Sources */,
-				F05EA1D32610E675002201FC /* UserProfileDependencies.swift in Sources */,
-				F05EA1CE2610E675002201FC /* QuizDependencies.swift in Sources */,
 				F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */,
+				F05EA1F62610E9F8002201FC /* MainMenuDependencies.swift in Sources */,
 				F03A9BCF2604DD3400CA8A21 /* MainMenuCell.swift in Sources */,
 				F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */,
 				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
@@ -1254,10 +1256,8 @@
 				F04046A2260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift in Sources */,
 				F008C54B2606645B00A5E015 /* UserInteractorProtocol.swift in Sources */,
 				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
-				F05EA1DD2610E6C2002201FC /* AppDependencies.swift in Sources */,
 				F0B9D05326076FC100BC48E7 /* LoginCoordinator.swift in Sources */,
 				F015E913260F9A9D00D4E02E /* UserProfilePresenterProtocol.swift in Sources */,
-				F05EA1D42610E675002201FC /* LoginDependencies.swift in Sources */,
 				F0B9D063260797B500BC48E7 /* LoginInteractor.swift in Sources */,
 				F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */,
 				F0AC66E526076EA900DFD467 /* LoginPresenter.swift in Sources */,
@@ -1277,11 +1277,11 @@
 				F03A9BE92604E30600CA8A21 /* MainMenuPresenterProtocol.swift in Sources */,
 				F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */,
 				F008C50E2606598A00A5E015 /* FirebaseManager.swift in Sources */,
+				F05EA1F22610E9F8002201FC /* UserProfileDependencies.swift in Sources */,
 				F03A9C5A260517DD00CA8A21 /* QuizCategoriesPresenter.swift in Sources */,
 				F03A9C302605073300CA8A21 /* QuizCategoriesViewController.swift in Sources */,
 				F09937B1260E5E170032988D /* QuestionsModel.swift in Sources */,
 				F008C5592606A2A600A5E015 /* LoadingViewController.swift in Sources */,
-				F05EA1CF2610E675002201FC /* AlertDependencies.swift in Sources */,
 				F008C5612606A54300A5E015 /* Notification+Name.swift in Sources */,
 				F0404684260FD50C00C1B706 /* ToolbarCoordinator.swift in Sources */,
 				F03A9C9B26052F1400CA8A21 /* QuizQuestionViewController.swift in Sources */,
