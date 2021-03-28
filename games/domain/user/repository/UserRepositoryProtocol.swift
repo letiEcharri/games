@@ -8,6 +8,7 @@
 import Foundation
 
 typealias UserResponseBlock = (UserModel?, String?) -> Void
+typealias AllUsersResponseBlock = ([UserModel]?, String?) -> Void
 typealias LoginRepositoryBlock = (Bool, Error?) -> Void
 
 
@@ -17,4 +18,5 @@ protocol UserRepositoryProtocol {
     func update(email: String)
     func update(password: String)
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock)
+    func getTopUsers(completion: @escaping AllUsersResponseBlock)
 }

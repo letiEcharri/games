@@ -12,4 +12,5 @@ protocol UserInteractorProtocol {
     func update(score: Int)
     func update(email: String)
     func update(password: String)
+    func getTopUsers(completion: @escaping AllUsersResponseBlock)
 }

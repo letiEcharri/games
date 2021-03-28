@@ -29,3 +29,6 @@
 // USER PROFILE
 "user_change_pass_old" = "Contraseña actual";
 "user_change_pass_new" = "Contraseña nueva";
+
+// Ranking
+"ranking_position" = "Posición";

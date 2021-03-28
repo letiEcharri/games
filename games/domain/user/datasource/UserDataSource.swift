@@ -86,4 +86,34 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
         }
     }
     
+    func getTopUsers(completion: @escaping AllUsersResponseBlock) {
+        FirebaseManager.getValue(from: .users) { (response, error) in
+            if let response = response {
+                if let users = response as? NSArray {
+                    var allUsers = [UserModel]()
+                    for item in users {
+                        if let selectedItem = item as? [String: Any] {
+                            do {
+                                let jsonData = try JSONSerialization.data(withJSONObject: selectedItem, options: .prettyPrinted)
+                                let model = try JSONDecoder().decode(UserModel.self, from: jsonData)
+                                allUsers.append(model)
+                                
+                            } catch {
+                                completion(nil, error.localizedDescription)
+                                return
+                            }
+                        }
+                    }
+                    let sortUsers = allUsers.sorted(by: { $0.score > $1.score })
+                    let newUsers = sortUsers.enumerated().compactMap({ $0 < 11 ? $1 : nil })
+                    completion(newUsers, nil)
+                    return
+                }
+                completion(nil, "error_generic".localized)
+            } else {
+                completion(nil, error?.localizedDescription)
+            }
+        }
+    }
+    
 }

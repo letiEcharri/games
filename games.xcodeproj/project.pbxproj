@@ -94,6 +94,10 @@
 		F07A228E26061A2500F14946 /* BandarItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228926061A2500F14946 /* BandarItalic.ttf */; };
 		F07A228F26061A2500F14946 /* BandarOutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228A26061A2500F14946 /* BandarOutline.ttf */; };
 		F07A229026061A2500F14946 /* BandarRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F07A228B26061A2500F14946 /* BandarRegular.ttf */; };
+		F07C7A712610C244009B351F /* RankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C7A6E2610C244009B351F /* RankingPresenter.swift */; };
+		F07C7A722610C244009B351F /* RankingPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C7A6F2610C244009B351F /* RankingPresenterProtocol.swift */; };
+		F07C7A732610C244009B351F /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C7A702610C244009B351F /* RankingViewController.swift */; };
+		F07C7A7C2610C2B5009B351F /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07C7A7B2610C2B5009B351F /* RankingCell.swift */; };
 		F07CEEA8260A676600470395 /* NavToolbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CEEA7260A676600470395 /* NavToolbarProtocol.swift */; };
 		F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225825E2C07B0064CC7E /* AppDelegate.swift */; };
 		F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F225A25E2C07B0064CC7E /* SceneDelegate.swift */; };
@@ -116,6 +120,7 @@
 		F0B9D0692607E4B500BC48E7 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F0B9D0682607E4B500BC48E7 /* loading.gif */; };
 		F0B9D06E2607E73A00BC48E7 /* UIImageView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */; };
 		F0D92E5C260F5A4400E6B990 /* SessionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D92E5B260F5A4400E6B990 /* SessionDataSource.swift */; };
+		F0E777D12610C98900471268 /* RankingDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E777D02610C98900471268 /* RankingDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +235,10 @@
 		F07A228926061A2500F14946 /* BandarItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarItalic.ttf; sourceTree = "<group>"; };
 		F07A228A26061A2500F14946 /* BandarOutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarOutline.ttf; sourceTree = "<group>"; };
 		F07A228B26061A2500F14946 /* BandarRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BandarRegular.ttf; sourceTree = "<group>"; };
+		F07C7A6E2610C244009B351F /* RankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPresenter.swift; sourceTree = "<group>"; };
+		F07C7A6F2610C244009B351F /* RankingPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPresenterProtocol.swift; sourceTree = "<group>"; };
+		F07C7A702610C244009B351F /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		F07C7A7B2610C2B5009B351F /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
 		F07CEEA7260A676600470395 /* NavToolbarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavToolbarProtocol.swift; sourceTree = "<group>"; };
 		F07F225525E2C07B0064CC7E /* games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07F225825E2C07B0064CC7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +269,7 @@
 		F0B9D0682607E4B500BC48E7 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		F0B9D06D2607E73A00BC48E7 /* UIImageView+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Functions.swift"; sourceTree = "<group>"; };
 		F0D92E5B260F5A4400E6B990 /* SessionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataSource.swift; sourceTree = "<group>"; };
+		F0E777D02610C98900471268 /* RankingDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -752,6 +762,7 @@
 				F00E73AD260F799500A78F20 /* AlertDependencies.swift */,
 				F0404679260FA86E00C1B706 /* UserProfileDependencies.swift */,
 				F03E55BA260FFEBD00193944 /* ImageSelectorDependencies.swift */,
+				F0E777D02610C98900471268 /* RankingDependencies.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
@@ -772,6 +783,41 @@
 				F05E686125E2E72C0040C8A1 /* UserModel.swift */,
 			);
 			path = user;
+			sourceTree = "<group>";
+		};
+		F07C7A6B2610C208009B351F /* ranking */ = {
+			isa = PBXGroup;
+			children = (
+				F07C7A6D2610C21C009B351F /* presenter */,
+				F07C7A6C2610C217009B351F /* view */,
+			);
+			path = ranking;
+			sourceTree = "<group>";
+		};
+		F07C7A6C2610C217009B351F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F07C7A7A2610C277009B351F /* cell */,
+				F07C7A702610C244009B351F /* RankingViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F07C7A6D2610C21C009B351F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F07C7A6F2610C244009B351F /* RankingPresenterProtocol.swift */,
+				F07C7A6E2610C244009B351F /* RankingPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		F07C7A7A2610C277009B351F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F07C7A7B2610C2B5009B351F /* RankingCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		F07CEE9E260A66AD00470395 /* protocols */ = {
@@ -894,11 +940,13 @@
 		F0AC66DE26076E5F00DFD467 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				F0E777D52610CB5700471268 /* homeTabBar */,
 				F0AC66DF26076E8600DFD467 /* login */,
 				F05E67F225E2C2F40040C8A1 /* home */,
 				F03A9BC52604D9ED00CA8A21 /* mainMenu */,
 				F03A9C17260501B700CA8A21 /* quiz */,
 				F015E90B260F9A3800D4E02E /* userProfile */,
+				F07C7A6B2610C208009B351F /* ranking */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -944,6 +992,29 @@
 				F0B9D0682607E4B500BC48E7 /* loading.gif */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		F0E777D52610CB5700471268 /* homeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F0E777D72610CB7B00471268 /* presenter */,
+				F0E777D62610CB7600471268 /* view */,
+			);
+			path = homeTabBar;
+			sourceTree = "<group>";
+		};
+		F0E777D62610CB7600471268 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F0E777D72610CB7B00471268 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1204,12 +1275,15 @@
 				F03A9C77260525C000CA8A21 /* QuizDataSource.swift in Sources */,
 				F05E683125E2CFAB0040C8A1 /* AppDependencies.swift in Sources */,
 				F03A9C4126050A3B00CA8A21 /* QuizCoordinator.swift in Sources */,
+				F07C7A7C2610C2B5009B351F /* RankingCell.swift in Sources */,
 				F008C53D2606628500A5E015 /* UserRepositoryProtocol.swift in Sources */,
 				F0B9D0582607703A00BC48E7 /* LoginDependencies.swift in Sources */,
 				F05E685A25E2DDC30040C8A1 /* UIImage+Images.swift in Sources */,
+				F0E777D12610C98900471268 /* RankingDependencies.swift in Sources */,
 				F07F225925E2C07B0064CC7E /* AppDelegate.swift in Sources */,
 				F015E914260F9A9D00D4E02E /* UserProfileViewController.swift in Sources */,
 				F07F225B25E2C07B0064CC7E /* SceneDelegate.swift in Sources */,
+				F07C7A712610C244009B351F /* RankingPresenter.swift in Sources */,
 				F03A9C24260502A500CA8A21 /* QuizModel.swift in Sources */,
 				F03A9BD72604DED300CA8A21 /* MainMenuCoordinator.swift in Sources */,
 				F03A9C462605120800CA8A21 /* QuizCategoriesHeaderCell.swift in Sources */,
@@ -1262,6 +1336,7 @@
 				F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */,
 				F0AC66E526076EA900DFD467 /* LoginPresenter.swift in Sources */,
 				F0B9D062260797B500BC48E7 /* LoginInteractorProtocol.swift in Sources */,
+				F07C7A722610C244009B351F /* RankingPresenterProtocol.swift in Sources */,
 				F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */,
 				F008C52926065FE700A5E015 /* SessionUserDataSource.swift in Sources */,
 				F03A9C7C260525F500CA8A21 /* DataSource.swift in Sources */,
@@ -1276,6 +1351,7 @@
 				F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */,
 				F0B9D06E2607E73A00BC48E7 /* UIImageView+Functions.swift in Sources */,
 				F03A9BE92604E30600CA8A21 /* MainMenuPresenterProtocol.swift in Sources */,
+				F07C7A732610C244009B351F /* RankingViewController.swift in Sources */,
 				F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */,
 				F008C50E2606598A00A5E015 /* FirebaseManager.swift in Sources */,
 				F03A9C5A260517DD00CA8A21 /* QuizCategoriesPresenter.swift in Sources */,

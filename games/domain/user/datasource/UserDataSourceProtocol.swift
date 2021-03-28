@@ -20,4 +20,5 @@ protocol UserDataSourceProtocol {
     func update(email: String, with userID: Int)
     func update(password: String, with userID: Int)
     func login(user: String, pass: String, completion: @escaping LoginResponseBlock)
+    func getTopUsers(completion: @escaping AllUsersResponseBlock)
 }

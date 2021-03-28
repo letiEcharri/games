@@ -58,4 +58,8 @@ class UserRepository: UserRepositoryProtocol {
             completion(isSuccess, error)
         }
     }
+    
+    func getTopUsers(completion: @escaping AllUsersResponseBlock) {
+        datasource.getTopUsers(completion: completion)
+    }
 }
