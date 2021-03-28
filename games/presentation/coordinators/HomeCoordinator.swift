@@ -23,7 +23,7 @@ class HomeCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func resolve() {
-        navigateToHome()
+        navigateToHomeRanking()
     }
     
     // MARK: - HomeCoordinator Functions
@@ -37,6 +37,11 @@ class HomeCoordinator: Coordinator {
         childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
     }
+    
+    private func navigateToHomeRanking() {
+        let viewController = appDependencies.makeHomeRankingView(signalDelegate: self)
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: Coordinator Delegate
@@ -47,6 +52,17 @@ extension HomeCoordinator: HomeSignalDelegate {
         case .mainMenu:
             navigateTo(.mainMenu)
         case .profile:
+            navigateTo(.userProfile)
+        }
+    }
+}
+
+extension HomeCoordinator: HomeRankingSignalDelegate {
+    func signalTrigged(_ signal: HomeRankingSignal) {
+        switch signal {
+        case .mainMenu:
+            navigateTo(.mainMenu)
+        case .userProfile:
             navigateTo(.userProfile)
         }
     }

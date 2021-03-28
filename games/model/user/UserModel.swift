@@ -47,3 +47,7 @@ struct UserModel: Decodable {
         }
     }
 }
+
+struct UsersModel: Decodable {
+    let users: [UserModel]
+}

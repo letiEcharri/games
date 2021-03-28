@@ -19,13 +19,13 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                         if let selectedItem = item as? [String: Any],
                            let key = selectedItem["nick"] as? String {
                             if key == nick {
-                                            
+
                                 do {
                                     let jsonData = try JSONSerialization.data(withJSONObject: selectedItem, options: .prettyPrinted)
                                     let model = try JSONDecoder().decode(UserModel.self, from: jsonData)
                                     completion(model, nil)
                                     return
-                                    
+
                                 } catch {
                                     completion(nil, error.localizedDescription)
                                     return
@@ -85,5 +85,50 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
             }
         }
     }
+    
+    func getUserFromLocal(nick: String, completion: @escaping UserResponseBlock) {
+        if let jsonData = readLocalFile(forName: "users") {
+            do {
+                let model = try JSONDecoder().decode(UsersModel.self, from: jsonData)
+                let user = model.users.first(where: { $0.nick == nick })
+                completion(user, nil)
+                
+            } catch {
+                completion(nil, error.localizedDescription)
+            }
+        } else {
+            completion(nil, "error_generic".localized)
+        }
+    }
+    
+    func getTopUsers(completion: @escaping TopUsersResponseBlock) {
+            FirebaseManager.getValue(from: .users) { (response, error) in
+                if let response = response {
+                    if let users = response as? NSArray {
+                        var allUsers = [UserModel]()
+                        for item in users {
+                            if let selectedItem = item as? [String: Any] {
+                                do {
+                                    let jsonData = try JSONSerialization.data(withJSONObject: selectedItem, options: .prettyPrinted)
+                                    let model = try JSONDecoder().decode(UserModel.self, from: jsonData)
+                                    allUsers.append(model)
+                                    
+                                } catch {
+                                    completion(nil, error.localizedDescription)
+                                    return
+                                }
+                            }
+                        }
+                        let sortUsers = allUsers.sorted(by: { $0.score > $1.score })
+                        let newUsers = sortUsers.enumerated().compactMap({ $0 < 11 ? $1 : nil })
+                        completion(newUsers, nil)
+                        return
+                    }
+                    completion(nil, "error_generic".localized)
+                } else {
+                    completion(nil, error?.localizedDescription)
+                }
+            }
+        }
     
 }
