@@ -30,9 +30,14 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
         imageV.layer.borderColor = UIColor.white.cgColor
         imageV.image = .ic_generic_user
         imageV.layer.cornerRadius = 75
+        imageV.isUserInteractionEnabled = true
+        imageV.clipsToBounds = true
         
         imageV.heightAnchor.constraint(equalToConstant: 150).isActive = true
         imageV.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapImage(_:)))
+        imageV.addGestureRecognizer(tap)
         
         return imageV
     }()
@@ -156,6 +161,11 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
         })
         showAlert(with: viewModel)
     }
+    
+    @objc private func didTapImage(_ sender: UIGestureRecognizer) {
+        let viewController = AppDependencies().makeImageSelector(delegate: self)
+        present(viewController, animated: true)
+    }
 
 }
 
@@ -165,6 +175,9 @@ extension UserProfileViewController: UserProfilePresenterDelegate {
     func reloadData() {
         
         titleLabel.text = presenter.user?.nick
+        if let userImage = presenter.user?.image {
+            imageView.image = userImage
+        }
         
         emailTexfField = TexFieldView(text: presenter.user?.email ?? "", isSecureTextEntry: false)
         emailTexfField?.textField.delegate = self
@@ -231,4 +244,13 @@ extension UserProfileViewController: NavToolbarProtocol {
     }
     
     func toolbarProfileAction() {}
+}
+
+// MARK: - ImageSelectorViewDelegate
+
+extension UserProfileViewController: ImageSelectorViewDelegate {
+    func retrieve(image: UIImage) {
+        imageView.image = image
+        UserDefaults.standard.set(image.pngData(), forKey: UserDefaultsKeys.image.rawValue)
+    }
 }

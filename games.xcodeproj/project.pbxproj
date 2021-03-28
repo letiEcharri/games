@@ -59,12 +59,17 @@
 		F03A9C9B26052F1400CA8A21 /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9C9A26052F1400CA8A21 /* QuizQuestionViewController.swift */; };
 		F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9C9F2605327A00CA8A21 /* QuizQuestionPresenter.swift */; };
 		F03A9CA52605328500CA8A21 /* QuizQuestionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A9CA42605328500CA8A21 /* QuizQuestionPresenterProtocol.swift */; };
+		F03E55B6260FFB5B00193944 /* ImageSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E55B5260FFB5B00193944 /* ImageSelectorCell.swift */; };
+		F03E55BB260FFEBD00193944 /* ImageSelectorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E55BA260FFEBD00193944 /* ImageSelectorDependencies.swift */; };
 		F0404675260FA4A300C1B706 /* BackgroundImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404674260FA4A300C1B706 /* BackgroundImageProtocol.swift */; };
 		F040467A260FA86E00C1B706 /* UserProfileDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404679260FA86E00C1B706 /* UserProfileDependencies.swift */; };
 		F040467F260FCE2A00C1B706 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040467E260FCE2A00C1B706 /* UIViewController+Utils.swift */; };
 		F0404684260FD50C00C1B706 /* ToolbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404683260FD50C00C1B706 /* ToolbarCoordinator.swift */; };
 		F0404689260FD7F100C1B706 /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */; };
 		F0404691260FE26700C1B706 /* UserProfileInternalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0404690260FE26700C1B706 /* UserProfileInternalViews.swift */; };
+		F04046A1260FF73D00C1B706 /* ImageSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040469E260FF73D00C1B706 /* ImageSelectorPresenter.swift */; };
+		F04046A2260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040469F260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift */; };
+		F04046A3260FF73D00C1B706 /* ImageSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04046A0260FF73D00C1B706 /* ImageSelectorViewController.swift */; };
 		F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056D5A7260A76E80068DE05 /* UIButton+Action.swift */; };
 		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
 		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
@@ -189,6 +194,8 @@
 		F03A9C9A26052F1400CA8A21 /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
 		F03A9C9F2605327A00CA8A21 /* QuizQuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionPresenter.swift; sourceTree = "<group>"; };
 		F03A9CA42605328500CA8A21 /* QuizQuestionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionPresenterProtocol.swift; sourceTree = "<group>"; };
+		F03E55B5260FFB5B00193944 /* ImageSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorCell.swift; sourceTree = "<group>"; };
+		F03E55BA260FFEBD00193944 /* ImageSelectorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorDependencies.swift; sourceTree = "<group>"; };
 		F0404674260FA4A300C1B706 /* BackgroundImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageProtocol.swift; sourceTree = "<group>"; };
 		F0404679260FA86E00C1B706 /* UserProfileDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDependencies.swift; sourceTree = "<group>"; };
 		F040467E260FCE2A00C1B706 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -196,6 +203,9 @@
 		F0404688260FD7F100C1B706 /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
 		F0404690260FE26700C1B706 /* UserProfileInternalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInternalViews.swift; sourceTree = "<group>"; };
 		F0404695260FF36E00C1B706 /* games.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = games.entitlements; sourceTree = "<group>"; };
+		F040469E260FF73D00C1B706 /* ImageSelectorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorPresenter.swift; sourceTree = "<group>"; };
+		F040469F260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorPresenterProtocol.swift; sourceTree = "<group>"; };
+		F04046A0260FF73D00C1B706 /* ImageSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorViewController.swift; sourceTree = "<group>"; };
 		F056D5A7260A76E80068DE05 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
 		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -306,6 +316,7 @@
 		F008C4CF26062B2F00A5E015 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				F040469B260FF68400C1B706 /* imageSelector */,
 				F02599DB260F68E900DC4700 /* infoAlert */,
 				F008C5572606A28100A5E015 /* loading */,
 				F008C4D026062B4800A5E015 /* progressStepBar */,
@@ -594,6 +605,41 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		F03E55B4260FFB3000193944 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F03E55B5260FFB5B00193944 /* ImageSelectorCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		F040469B260FF68400C1B706 /* imageSelector */ = {
+			isa = PBXGroup;
+			children = (
+				F040469D260FF6F700C1B706 /* presenter */,
+				F040469C260FF6E500C1B706 /* view */,
+			);
+			path = imageSelector;
+			sourceTree = "<group>";
+		};
+		F040469C260FF6E500C1B706 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F03E55B4260FFB3000193944 /* cell */,
+				F04046A0260FF73D00C1B706 /* ImageSelectorViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F040469D260FF6F700C1B706 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F040469F260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift */,
+				F040469E260FF73D00C1B706 /* ImageSelectorPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
 		F05E67F125E2C2ED0040C8A1 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,6 +751,7 @@
 				F0B9D0572607703A00BC48E7 /* LoginDependencies.swift */,
 				F00E73AD260F799500A78F20 /* AlertDependencies.swift */,
 				F0404679260FA86E00C1B706 /* UserProfileDependencies.swift */,
+				F03E55BA260FFEBD00193944 /* ImageSelectorDependencies.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
@@ -1177,7 +1224,9 @@
 				F040467A260FA86E00C1B706 /* UserProfileDependencies.swift in Sources */,
 				F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */,
 				F03A9C812605289E00CA8A21 /* QuizRepositoryProtocol.swift in Sources */,
+				F03E55B6260FFB5B00193944 /* ImageSelectorCell.swift in Sources */,
 				F03A9C3C2605083200CA8A21 /* QuizCategoriesCell.swift in Sources */,
+				F04046A1260FF73D00C1B706 /* ImageSelectorPresenter.swift in Sources */,
 				F016F8532606122A008623D3 /* QuizScoreViewController.swift in Sources */,
 				F05E683925E2CFE00040C8A1 /* HomeDependencies.swift in Sources */,
 				F0AC66E726076EA900DFD467 /* LoginViewController.swift in Sources */,
@@ -1186,6 +1235,7 @@
 				F03A9CA02605327A00CA8A21 /* QuizQuestionPresenter.swift in Sources */,
 				F03A9C4B260516DE00CA8A21 /* UIView+Style.swift in Sources */,
 				F008C5452606628D00A5E015 /* UserRepository.swift in Sources */,
+				F03E55BB260FFEBD00193944 /* ImageSelectorDependencies.swift in Sources */,
 				F0D92E5C260F5A4400E6B990 /* SessionDataSource.swift in Sources */,
 				F05E681325E2CBC90040C8A1 /* UIFont+Fonts.swift in Sources */,
 				F008C4D226062B7F00A5E015 /* ProgressStepBar.swift in Sources */,
@@ -1203,6 +1253,7 @@
 				F008C5532606646300A5E015 /* UserInteractor.swift in Sources */,
 				F03A9C632605196700CA8A21 /* QuizDependencies.swift in Sources */,
 				F02599E3260F69A600DC4700 /* InfoAlertViewController.swift in Sources */,
+				F04046A2260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift in Sources */,
 				F008C54B2606645B00A5E015 /* UserInteractorProtocol.swift in Sources */,
 				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
 				F0B9D05326076FC100BC48E7 /* LoginCoordinator.swift in Sources */,
@@ -1220,6 +1271,7 @@
 				F03A9C9326052B5400CA8A21 /* QuizInteractor.swift in Sources */,
 				F0404691260FE26700C1B706 /* UserProfileInternalViews.swift in Sources */,
 				F0AC66E626076EA900DFD467 /* LoginPresenterProtocol.swift in Sources */,
+				F04046A3260FF73D00C1B706 /* ImageSelectorViewController.swift in Sources */,
 				F03A9C8E26052B4B00CA8A21 /* QuizInteractorProtocol.swift in Sources */,
 				F03A9BDF2604DF5B00CA8A21 /* MainMenuDependencies.swift in Sources */,
 				F0B9D06E2607E73A00BC48E7 /* UIImageView+Functions.swift in Sources */,

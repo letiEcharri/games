@@ -11,6 +11,7 @@ typealias LoginResponseBlock = (Bool, UserModel?, Error?) -> Void
 
 enum UserDefaultsKeys: String {
     case user
+    case image
 }
 
 protocol UserDataSourceProtocol {

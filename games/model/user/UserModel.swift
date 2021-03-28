@@ -29,6 +29,13 @@ struct UserModel: Decodable {
         }
     }
     
+    var image: UIImage? {
+        if let userImage = UserDefaults.standard.object(forKey: UserDefaultsKeys.image.rawValue) as? Data {
+            return UIImage(data: userImage)
+        }
+        return nil
+    }
+    
     func getColor() -> UIColor {
         switch cup {
         case .bronze:

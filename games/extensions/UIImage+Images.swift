@@ -218,6 +218,13 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_black_man: UIImage = {
+        if let image = UIImage(named: "ic_black_man") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {
@@ -228,3 +235,4 @@ extension UIImageView {
         self.tintColor = color
     }
 }
+
