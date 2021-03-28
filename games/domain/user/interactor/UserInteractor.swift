@@ -28,4 +28,8 @@ class UserInteractor: UserInteractorProtocol {
     func update(password: String) {
         repository.update(password: password)
     }
+    
+    func getTopUsers(completion: @escaping TopUsersResponseBlock) {
+        repository.getTopUsers(completion: completion)
+    }
 }
