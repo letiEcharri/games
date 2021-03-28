@@ -10,4 +10,6 @@ import Foundation
 protocol UserInteractorProtocol {
     func getUser(completion: @escaping UserResponseBlock)
     func update(score: Int)
+    func update(email: String)
+    func update(password: String)
 }

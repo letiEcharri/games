@@ -14,6 +14,8 @@
 "cancel" = "Cancelar";
 "close_session_message" = "¿Desea abanonar Quiz?";
 "error_generic" = "Ha ocurrido un error";
+"email" = "Email";
+"close_session" = "Cerrar sesión";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Reto del día";
@@ -23,3 +25,7 @@
 
 // INFO ALERT
 "alert_error_title" = "Error";
+
+// USER PROFILE
+"user_change_pass_old" = "Contraseña actual";
+"user_change_pass_new" = "Contraseña nueva";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainMenuViewController: BaseViewController {
+class MainMenuViewController: BaseViewController, BackgroundImageProtocol {
     
     // MARK: - Views
     
@@ -58,7 +58,6 @@ class MainMenuViewController: BaseViewController {
     // MARK: - Setup UI
     
     override func loadStyle() {
-        addBackgroundImage()
         
         self.view.addSubview(collectionView)
         NSLayoutConstraint.activate([

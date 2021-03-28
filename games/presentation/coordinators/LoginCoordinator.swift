@@ -38,6 +38,8 @@ class LoginCoordinator: Coordinator {
     }
 }
 
+// MARK: Coordinator Delegate
+
 extension LoginCoordinator: LoginSignalDelegate {
     func signalTrigged(_ signal: LoginSignal) {
         switch signal {

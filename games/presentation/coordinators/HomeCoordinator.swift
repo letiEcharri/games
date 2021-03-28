@@ -11,6 +11,7 @@ class HomeCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     let appDependencies: HomeDependencies = AppDependencies()
+    let userDependencies: UserProfileDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -32,8 +33,8 @@ class HomeCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    private func navigateToMainMenu() {
-        childCoordinator = MainMenuCoordinator(navigationController)
+    private func navigateTo(_ destination: ToolbarDestination) {
+        childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
     }
 }
@@ -44,9 +45,9 @@ extension HomeCoordinator: HomeSignalDelegate {
     func signalTrigged(_ signal: HomeSignal) {
         switch signal {
         case .mainMenu:
-            navigateToMainMenu()
+            navigateTo(.mainMenu)
         case .profile:
-            break
+            navigateTo(.userProfile)
         }
     }
 }

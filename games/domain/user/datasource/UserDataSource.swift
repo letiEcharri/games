@@ -24,14 +24,17 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                                     let jsonData = try JSONSerialization.data(withJSONObject: selectedItem, options: .prettyPrinted)
                                     let model = try JSONDecoder().decode(UserModel.self, from: jsonData)
                                     completion(model, nil)
+                                    return
                                     
                                 } catch {
                                     completion(nil, error.localizedDescription)
+                                    return
                                 }
                             }
                         }
                     }
                 }
+                completion(nil, "error_generic".localized)
             } else {
                 completion(nil, error?.localizedDescription)
             }
@@ -41,6 +44,16 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
     func update(score: Int, with userID: Int) {
         let item = "\(userID)/score"
         FirebaseManager.update(from: .users, item: item, value: score)
+    }
+    
+    func update(email: String, with userID: Int) {
+        let item = "\(userID)/email"
+        FirebaseManager.update(from: .users, item: item, value: email)
+    }
+    
+    func update(password: String, with userID: Int) {
+        let item = "\(userID)/password"
+        FirebaseManager.update(from: .users, item: item, value: password)
     }
     
     func login(user: String, pass: String, completion: @escaping LoginResponseBlock) {

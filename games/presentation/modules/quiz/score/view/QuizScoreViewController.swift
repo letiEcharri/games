@@ -9,7 +9,7 @@
 
 import UIKit
 
-class QuizScoreViewController: BaseViewController {
+class QuizScoreViewController: BaseViewController, BackgroundImageProtocol {
     
     // MARK: - Views
     
@@ -114,7 +114,6 @@ class QuizScoreViewController: BaseViewController {
     
     override func loadStyle() {
         super.loadStyle()
-        addBackgroundImage()
         
         view.addSubview(stackView)
         NSLayoutConstraint.activate([

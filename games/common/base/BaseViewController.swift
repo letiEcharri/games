@@ -28,7 +28,8 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationBarButtons()
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         if let toolbarController = self as? NavToolbarProtocol {
             toolbarController.configureToolbar()
         } else {
@@ -38,6 +39,10 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let backgroundImageProtocol = self as? BackgroundImageProtocol {
+            backgroundImageProtocol.addBackgroundImage()
+        }
 
         loadStyle()
         setTexts()
@@ -53,18 +58,6 @@ class BaseViewController: UIViewController {
     
     
     // MARK: Functions
-    
-    func addBackgroundImage() {
-        self.view.backgroundColor = .white
-        
-        self.view.addSubview(backgroundImageView)
-        NSLayoutConstraint.activate([
-            backgroundImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        ])
-    }
     
     private func checkProgressSteps() {
         if let viewController = self as? ProgressStepBarProtocol {
@@ -110,18 +103,16 @@ class BaseViewController: UIViewController {
             self.present(viewController, animated: true)
         }
     }
-}
-
-// MARK: NavigationBarProtocol
-
-extension BaseViewController: NavigationBarProtocol {
     
-    func closeSession() {
-        let viewModel = InfoAlertModel(type: .info, description: "close_session_message".localized, action: {
-            SessionDataSource.closeSession()
-            self.childCoordinator = LoginCoordinator(self.navigationController ?? UINavigationController())
-            self.childCoordinator?.resolve()
-        })
-        showAlert(with: viewModel)
+    func addBackgroundImage() {
+        self.view.backgroundColor = .white
+        
+        self.view.addSubview(backgroundImageView)
+        NSLayoutConstraint.activate([
+            backgroundImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        ])
     }
 }

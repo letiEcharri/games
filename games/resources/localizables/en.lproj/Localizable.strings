@@ -14,6 +14,8 @@
 "cancel" = "Cancel";
 "close_session_message" = "Do you want to leave Quiz?";
 "error_generic" = "An error has occurred";
+"email" = "Email";
+"close_session" = "Close session";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Day challenge";
@@ -24,3 +26,6 @@
 // INFO ALERT
 "alert_error_title" = "Error";
 
+// USER PROFILE
+"user_change_pass_old" = "Current password";
+"user_change_pass_new" = "New password";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController, BackgroundImageProtocol {
     
     // MARK: - Views
     
@@ -129,8 +129,6 @@ class HomeViewController: BaseViewController {
     // MARK: - Setup UI
     
     override func loadStyle() {
-        addBackgroundImage()
-        
         loadingImageView = UIImageView.fromGif(frame: CGRect(x: 0, y: (view.frame.height/2) - 175, width: view.frame.width, height: 350),
                                                resourceName: "loading")
         view.addSubview(loadingImageView ?? UIImageView())

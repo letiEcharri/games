@@ -10,7 +10,7 @@ import UIKit
 class MainMenuCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    let appDependencies: MainMenuDependencies = AppDependencies()
+    let appDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
     // MARK: - Init
@@ -37,8 +37,8 @@ class MainMenuCoordinator: Coordinator {
         childCoordinator?.resolve()
     }
     
-    private func navigateToHome() {
-        childCoordinator = HomeCoordinator(navigationController)
+    private func navigateTo(_ destination: ToolbarDestination) {
+        childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
     }
 }
@@ -53,9 +53,9 @@ extension MainMenuCoordinator: MainMenuSignalDelegate {
         case .dayQuestion:
             break
         case .home:
-            navigateToHome()
+            navigateTo(.home)
         case .profile:
-            break
+            navigateTo(.userProfile)
         }
     }
 }

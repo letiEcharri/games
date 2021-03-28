@@ -17,6 +17,7 @@ struct UserModel: Decodable {
     var id: Int
     var nick: String
     var score: Int
+    var email: String
     var cup: UserCup {
         switch score {
         case 101 ... 500:
@@ -26,6 +27,13 @@ struct UserModel: Decodable {
         default:
             return .bronze
         }
+    }
+    
+    var image: UIImage? {
+        if let userImage = UserDefaults.standard.object(forKey: UserDefaultsKeys.image.rawValue) as? Data {
+            return UIImage(data: userImage)
+        }
+        return nil
     }
     
     func getColor() -> UIColor {

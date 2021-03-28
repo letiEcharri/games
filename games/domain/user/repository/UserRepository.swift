@@ -36,6 +36,19 @@ class UserRepository: UserRepositoryProtocol {
         }
     }
     
+    func update(email: String) {
+        session.user?.email = email
+        if let user = session.user {
+            datasource.update(email: user.email, with: user.id)
+        }
+    }
+    
+    func update(password: String) {
+        if let user = session.user {
+            datasource.update(password: password, with: user.id)
+        }
+    }
+    
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock) {
         datasource.login(user: user, pass: pass) { (isSuccess, user, error) in
             self.session.user = user

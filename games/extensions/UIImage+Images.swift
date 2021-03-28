@@ -106,6 +106,125 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_black_woman: UIImage = {
+        if let image = UIImage(named: "ic_black_woman") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_blond_woman: UIImage = {
+        if let image = UIImage(named: "ic_blond_woman") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_emo_worker: UIImage = {
+        if let image = UIImage(named: "ic_emo_worker") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_happy_man: UIImage = {
+        if let image = UIImage(named: "ic_happy_man") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_ponytail_woman: UIImage = {
+        if let image = UIImage(named: "ic_ponytail_woman") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_white_woman: UIImage = {
+        if let image = UIImage(named: "ic_white_woman") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_woman_orange: UIImage = {
+        if let image = UIImage(named: "ic_woman_orange") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_worker: UIImage = {
+        if let image = UIImage(named: "ic_worker") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_victor: UIImage = {
+        if let image = UIImage(named: "ic_victor") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_hipster: UIImage = {
+        if let image = UIImage(named: "ic_hipster") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_man_beard: UIImage = {
+        if let image = UIImage(named: "ic_man_beard") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_modern_woman: UIImage = {
+        if let image = UIImage(named: "ic_modern_woman") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_man_beard_blond: UIImage = {
+        if let image = UIImage(named: "ic_man_beard_blond") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_woman_glasses: UIImage = {
+        if let image = UIImage(named: "ic_woman_glasses") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_generic_user: UIImage = {
+        if let image = UIImage(named: "ic_generic_user") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_edit: UIImage = {
+        if let image = UIImage(named: "ic_edit") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_black_man: UIImage = {
+        if let image = UIImage(named: "ic_black_man") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {
