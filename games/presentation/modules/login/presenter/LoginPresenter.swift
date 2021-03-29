@@ -18,6 +18,8 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
     weak var ui: LoginPresenterDelegate?
     private let interactor: LoginInteractorProtocol = LoginInteractor.shared
     
+    var typeView: LoginViewController.TypeView = .login
+    
     // MARK: - Initialization
     
     init(signalDelegate: LoginSignalDelegate) {

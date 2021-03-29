@@ -32,3 +32,8 @@
 
 // HOME
 "ranking_position" = "Posición";
+
+// LOGIN
+"login_forgot_pass" = "Forgot your password?";
+"login_account_question" = "Don't have an account?";
+"login_signup" = "Sign up";

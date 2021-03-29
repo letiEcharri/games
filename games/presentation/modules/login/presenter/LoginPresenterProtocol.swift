@@ -22,6 +22,7 @@ protocol LoginSignalDelegate: class {
 protocol LoginPresenterProtocol where Self: BasePresenter {
     
     var ui: LoginPresenterDelegate? { get set }
+    var typeView: LoginViewController.TypeView { get set }
     
     func login(user: String, pass: String)
 }

@@ -225,6 +225,27 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var leftBackground: UIImage = {
+        if let image = UIImage(named: "leftBackground") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var rightBackground: UIImage = {
+        if let image = UIImage(named: "rightBackground") {
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_email: UIImage = {
+        if let image = UIImage(named: "ic_email") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {
