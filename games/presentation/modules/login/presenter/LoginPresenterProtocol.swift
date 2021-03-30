@@ -25,6 +25,7 @@ protocol LoginPresenterProtocol where Self: BasePresenter {
     var typeView: LoginViewController.TypeView { get set }
     
     func login(user: String, pass: String)
+    func singUp(nick: String, email: String, password: String)
 }
 
 protocol LoginPresenterDelegate: BasePresenterDelegate {

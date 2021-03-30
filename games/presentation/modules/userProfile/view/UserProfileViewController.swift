@@ -175,7 +175,7 @@ extension UserProfileViewController: UserProfilePresenterDelegate {
     func reloadData() {
         
         titleLabel.text = presenter.user?.nick
-        if let userImage = presenter.user?.image {
+        if let userImage = presenter.user?.getImage() {
             imageView.image = userImage
         }
         

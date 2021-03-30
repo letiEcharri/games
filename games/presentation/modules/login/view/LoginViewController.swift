@@ -79,6 +79,7 @@ class LoginViewController: BaseViewController {
         button.titleLabel?.font = .bandar(style: .bold, size: 20)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(acceptButtonAction(_:)), for: .touchUpInside)
         
         button.widthAnchor.constraint(equalToConstant: 150).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -133,6 +134,7 @@ class LoginViewController: BaseViewController {
         button.setTitleColor(.purple, for: .normal)
         button.titleLabel?.textAlignment = .right
         button.setTitle("login_signup".localized.uppercased(), for: .normal)
+        button.addTarget(self, action: #selector(signupButtonAction(_:)), for: .touchUpInside)
         
         return button
     }()
@@ -190,14 +192,15 @@ class LoginViewController: BaseViewController {
     
     override func loadStyle() {
         super.loadStyle()
-        view.backgroundColor = .white
+        self.view.backgroundColor = .white
+        backgroundImageView.alpha = 0.2
         
-        view.addSubview(backgroundView)
+        self.view.addSubview(backgroundImageView)
         NSLayoutConstraint.activate([
-            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         ])
         
         view.addSubview(titleLabel)
@@ -260,6 +263,28 @@ class LoginViewController: BaseViewController {
             }
         }
         setViewFields()
+    }
+    
+    @objc private func signupButtonAction(_ sender: UIButton) {
+        rightView.selected = true
+        leftView.selected = false
+        presenter.typeView = .singUp
+        setViewFields()
+    }
+    
+    @objc private func acceptButtonAction(_ sender: UIButton) {
+        switch presenter.typeView {
+        case .login:
+            if let user = userTextField.text, let pass = passTextField.text {
+                presenter.login(user: user, pass: pass)
+            }
+        case .singUp:
+            if let user = userTextField.text,
+               let pass = passTextField.text,
+               let email = emailTextField.text {
+                presenter.singUp(nick: user, email: email, password: pass)
+            }
+        }
     }
     
     private func setViewFields() {

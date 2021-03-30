@@ -22,4 +22,8 @@ class LoginInteractor: LoginInteractorProtocol {
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock) {
         repository.login(user: user, pass: pass, completion: completion)
     }
+    
+    func singUp(user: UserModel, password: String, completion: @escaping ResponseBlock) {
+        repository.singUp(user: user, password: password, completion: completion)
+    }
 }

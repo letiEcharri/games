@@ -18,13 +18,10 @@ class UserRepository: UserRepositoryProtocol {
         if let sessionUser = self.session.user {
             completion(sessionUser, nil)
         } else {
-            if let nick = UserDefaults.standard.string(forKey: UserDefaultsKeys.user.rawValue) {
-                datasource.getUser(nick: nick) { (user, error) in
-                    self.session.user = user
-                    completion(user, nil)
-                }
-            } else {
-                completion(nil, "User not found")
+            let id = UserDefaults.standard.integer(forKey: UserDefaultsKeys.user.rawValue)
+            datasource.getUser(with: id) { (user, error) in
+                self.session.user = user
+                completion(user, nil)
             }
         }
     }
@@ -53,7 +50,7 @@ class UserRepository: UserRepositoryProtocol {
         datasource.login(user: user, pass: pass) { (isSuccess, user, error) in
             self.session.user = user
             if isSuccess {
-                UserDefaults.standard.setValue(user?.nick, forKey: UserDefaultsKeys.user.rawValue)
+                UserDefaults.standard.setValue(user?.id, forKey: UserDefaultsKeys.user.rawValue)
             }
             completion(isSuccess, error)
         }
@@ -61,5 +58,15 @@ class UserRepository: UserRepositoryProtocol {
     
     func getTopUsers(completion: @escaping TopUsersResponseBlock) {
         datasource.getTopUsers(completion: completion)
+    }
+    
+    func singUp(user: UserModel, password: String, completion: @escaping ResponseBlock) {
+        datasource.singUp(user: user, password: password) { (success, error) in
+            self.session.user = user
+            if success {
+                UserDefaults.standard.setValue(user.id, forKey: UserDefaultsKeys.user.rawValue)
+            }
+            completion(success, error)
+        }
     }
 }

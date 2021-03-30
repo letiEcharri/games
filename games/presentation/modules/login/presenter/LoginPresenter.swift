@@ -42,4 +42,21 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
             }
         }
     }
+    
+    func singUp(nick: String, email: String, password: String) {
+        let id = Int(Date().timeIntervalSince1970)
+        let user = UserModel(id: id, nick: nick, score: 0, email: email)
+        
+        interactor.singUp(user: user, password: password) { (success, error) in
+            if success {
+                DispatchQueue.main.async {
+                    self.signalDelegate?.signalTrigged(.home)
+                }
+            } else if let error = error {
+                self.ui?.hideLoading()
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
+                self.ui?.showAlert(with: viewModel)
+            }
+        }
+    }
 }

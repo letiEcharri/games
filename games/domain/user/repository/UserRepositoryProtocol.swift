@@ -19,4 +19,5 @@ protocol UserRepositoryProtocol {
     func update(password: String)
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock)
     func getTopUsers(completion: @escaping TopUsersResponseBlock)
+    func singUp(user: UserModel, password: String, completion: @escaping ResponseBlock)
 }

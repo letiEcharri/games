@@ -13,12 +13,24 @@ enum UserCup {
     case bronze
 }
 
-struct UserModel: Decodable {
+struct UserModel: Codable {
     var id: Int
     var nick: String
     var score: Int
     var email: String
-    var cup: UserCup {
+    
+    func getColor() -> UIColor {
+        switch getCUP() {
+        case .bronze:
+            return .bronze
+        case .silver:
+            return .silver
+        case .gold:
+            return .gold
+        }
+    }
+    
+    func getCUP() -> UserCup {
         switch score {
         case 101 ... 500:
             return .silver
@@ -29,22 +41,19 @@ struct UserModel: Decodable {
         }
     }
     
-    var image: UIImage? {
+    func getImage() -> UIImage? {
         if let userImage = UserDefaults.standard.object(forKey: UserDefaultsKeys.image.rawValue) as? Data {
             return UIImage(data: userImage)
         }
         return nil
     }
     
-    func getColor() -> UIColor {
-        switch cup {
-        case .bronze:
-            return .bronze
-        case .silver:
-            return .silver
-        case .gold:
-            return .gold
-        }
+    func encode(with password: String) -> [String: Any] {
+        
+        var dictionary = (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
+        dictionary["password"] = password
+        
+        return dictionary
     }
 }
 

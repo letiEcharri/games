@@ -11,4 +11,5 @@ import Foundation
 
 protocol LoginInteractorProtocol {
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock)
+    func singUp(user: UserModel, password: String, completion: @escaping ResponseBlock)
 }
