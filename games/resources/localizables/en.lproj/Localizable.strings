@@ -17,6 +17,13 @@
 "email" = "Email";
 "close_session" = "Close session";
 
+// LOGIN
+"login_singUp_question" = "Don't have an account?";
+"login_singUp_button" = "Sing up";
+"login_signUp_error_fields" = "Must fill all fields";
+"login_signUp_error_email" = "Must introduce a valid email";
+"login_signUp_error_pass" = "The password must be 6 characters long or more";
+
 // MAIN MENU
 "main_menu_day_challenge" = "Day challenge";
 

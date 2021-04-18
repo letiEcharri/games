@@ -6,10 +6,61 @@
 //
 
 import Foundation
+import Firebase
 
 class UserDataSource: DataSource, UserDataSourceProtocol {
     
     static let shared: UserDataSourceProtocol = UserDataSource()
+    
+    // MARK: Proterties
+    
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    // MARK: Functions
+    
+    func checkAuth(completion: @escaping FirebaseAuthBlock) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+          // ...
+        }
+    }
+    
+    func unlinkFirebaseAuth() {
+        if let handle = handle {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
+    }
+    
+    func signUp(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+        Auth.auth().createUser(withEmail: email, password: pass) { authResult, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let authResult = authResult, let email = authResult.user.email {
+                //TODO: User model
+                //authResult.user.uid
+                let model = UserModel(id: 100, nick: "", score: 0, email: email)
+                completion(.success(model))
+            } else {
+                let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+        Auth.auth().signIn(withEmail: email, password: pass) { authResult, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let authResult = authResult, let email = authResult.user.email {
+                //TODO: User model
+                //authResult.user.uid
+                let model = UserModel(id: 100, nick: "", score: 0, email: email)
+                completion(.success(model))
+            } else {
+                let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
+                completion(.failure(error))
+            }
+        }
+    }
     
     func getUser(nick: String, completion: @escaping UserResponseBlock) {
         FirebaseManager.getValue(from: .users) { (response, error) in

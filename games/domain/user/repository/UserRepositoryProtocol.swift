@@ -13,6 +13,11 @@ typealias TopUsersResponseBlock = ([UserModel]?, String?) -> Void
 
 
 protocol UserRepositoryProtocol {
+    func checkAuth(completion: @escaping FirebaseAuthBlock)
+    func unlinkFirebaseAuth()
+    func signUp(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    
     func getUser(completion: @escaping UserResponseBlock)
     func update(score: Int)
     func update(email: String)

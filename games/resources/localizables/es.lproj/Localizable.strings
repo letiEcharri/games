@@ -17,6 +17,13 @@
 "email" = "Email";
 "close_session" = "Cerrar sesión";
 
+// LOGIN
+"login_singUp_question" = "¿Aún no tienes cuenta?";
+"login_singUp_button" = "Regístrate";
+"login_signUp_error_fields" = "Debe rellenar ambos campos";
+"login_signUp_error_email" = "Debe introducir un email válido";
+"login_signUp_error_pass" = "La contraseña debe tener al menos 6 caracteres";
+
 // MAIN MENU
 "main_menu_day_challenge" = "Reto del día";
 

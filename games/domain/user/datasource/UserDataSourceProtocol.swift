@@ -8,6 +8,8 @@
 import Foundation
 
 typealias LoginResponseBlock = (Bool, UserModel?, Error?) -> Void
+typealias FirebaseAuthBlock = () -> Void
+typealias SignLoginResponseBlock = (Result<UserModel, Error>) -> Void
 
 enum UserDefaultsKeys: String {
     case user
@@ -15,6 +17,11 @@ enum UserDefaultsKeys: String {
 }
 
 protocol UserDataSourceProtocol {
+    func checkAuth(completion: @escaping FirebaseAuthBlock)
+    func unlinkFirebaseAuth()
+    func signUp(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    
     func getUser(nick: String, completion: @escaping UserResponseBlock)
     func update(score: Int, with userID: Int)
     func update(email: String, with userID: Int)

@@ -8,6 +8,9 @@ target 'games' do
   # Pods for games
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/OAuth'
 
   target 'gamesTests' do
     inherit! :search_paths

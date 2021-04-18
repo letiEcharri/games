@@ -14,6 +14,22 @@ class UserRepository: UserRepositoryProtocol {
     let session = SessionUserDataSource.shared
     let datasource: UserDataSourceProtocol = UserDataSource.shared
     
+    func checkAuth(completion: @escaping FirebaseAuthBlock) {
+        datasource.checkAuth(completion: completion)
+    }
+    
+    func unlinkFirebaseAuth() {
+        datasource.unlinkFirebaseAuth()
+    }
+    
+    func signUp(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+        datasource.signUp(email: email, pass: pass, completion: completion)
+    }
+    
+    func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+        datasource.signIn(email: email, pass: pass, completion: completion)
+    }
+    
     func getUser(completion: @escaping UserResponseBlock) {
         if let sessionUser = self.session.user {
             completion(sessionUser, nil)
@@ -53,7 +69,7 @@ class UserRepository: UserRepositoryProtocol {
         datasource.login(user: user, pass: pass) { (isSuccess, user, error) in
             self.session.user = user
             if isSuccess {
-                UserDefaults.standard.setValue(user?.nick, forKey: UserDefaultsKeys.user.rawValue)
+//                UserDefaults.standard.setValue(user?.nick, forKey: UserDefaultsKeys.user.rawValue)
             }
             completion(isSuccess, error)
         }

@@ -225,6 +225,13 @@ extension UIImage {
         }
         return UIImage()
     }()
+    
+    static var ic_email: UIImage = {
+        if let image = UIImage(named: "ic_email") {
+            return image
+        }
+        return UIImage()
+    }()
 }
 
 extension UIImageView {
@@ -235,4 +242,3 @@ extension UIImageView {
         self.tintColor = color
     }
 }
-

@@ -22,4 +22,20 @@ class LoginInteractor: LoginInteractorProtocol {
     func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock) {
         repository.login(user: user, pass: pass, completion: completion)
     }
+    
+    func checkAuth(completion: @escaping FirebaseAuthBlock) {
+        repository.checkAuth(completion: completion)
+    }
+    
+    func unlinkFirebaseAuth() {
+        repository.unlinkFirebaseAuth()
+    }
+    
+    func signUp(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+        repository.signUp(email: email, pass: pass, completion: completion)
+    }
+    
+    func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+        repository.signIn(email: email, pass: pass, completion: completion)
+    }
 }

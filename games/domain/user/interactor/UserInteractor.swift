@@ -13,6 +13,14 @@ class UserInteractor: UserInteractorProtocol {
     
     let repository: UserRepositoryProtocol = UserRepository.shared
     
+    func checkAuth(completion: @escaping FirebaseAuthBlock) {
+        repository.checkAuth(completion: completion)
+    }
+    
+    func unlinkFirebaseAuth() {
+        repository.unlinkFirebaseAuth()
+    }
+    
     func getUser(completion: @escaping UserResponseBlock) {
         repository.getUser(completion: completion)
     }

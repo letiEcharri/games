@@ -8,6 +8,9 @@
 import Foundation
 
 protocol UserInteractorProtocol {
+    func checkAuth(completion: @escaping FirebaseAuthBlock)
+    func unlinkFirebaseAuth()
+    
     func getUser(completion: @escaping UserResponseBlock)
     func update(score: Int)
     func update(email: String)
