@@ -23,16 +23,17 @@ class AppCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func resolve() {
-        navigateToLogin()
-//        if UserDefaults.standard.string(forKey: UserDefaultsKeys.user.rawValue) != nil {
-//            navigateToHome()
-//        } else {
-//            navigateToLogin()
-//        }
+        FirebaseManager.shared.checkAuth { [self] (userID) in
+            if let userID = userID {
+                navigateToHome(userID: userID)
+            } else {
+                navigateToLogin()
+            }
+        }
     }
     
-    private func navigateToHome() {
-        childCoordinator = HomeCoordinator(navigationController)
+    private func navigateToHome(userID: String) {
+        childCoordinator = HomeCoordinator(navigationController, userID: userID)
         childCoordinator?.resolve()
     }
     

@@ -26,15 +26,15 @@ class HomePresenter: BasePresenter, HomePresenterProtocol {
     // MARK: - Life Cycle
     
     override func viewWillAppear() {
-        userInteractor.getUser() { (user, error) in
-            if let user = user {
-                self.user = user
-                self.ui?.reloadData()
-            } else if let error = error {
-                let viewModel = InfoAlertModel(type: .error, description: error)
-                self.ui?.showAlert(with: viewModel)
-            }
-        }
+//        userInteractor.getUser() { (user, error) in
+//            if let user = user {
+//                self.user = user
+//                self.ui?.reloadData()
+//            } else if let error = error {
+//                let viewModel = InfoAlertModel(type: .error, description: error)
+//                self.ui?.showAlert(with: viewModel)
+//            }
+//        }
     }
     
     

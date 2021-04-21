@@ -29,11 +29,15 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
     
     func login(user: String, pass: String) {
         self.ui?.showLoading()
+        
         interactor.signIn(email: user.lowercased(), pass: pass) { (response) in
             
             switch response {
-            case .success(let user):
-                break
+            case .success(let userID):
+                DispatchQueue.main.async {
+                    self.ui?.hideLoading()
+                    self.signalDelegate?.signalTrigged(.home(userID))
+                }
             case .failure(let error):
                 self.ui?.hideLoading()
                 let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)

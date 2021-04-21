@@ -13,11 +13,13 @@ class HomeCoordinator: Coordinator {
     let appDependencies: HomeDependencies = AppDependencies()
     let userDependencies: UserProfileDependencies = AppDependencies()
     var childCoordinator: Coordinator?
+    private var userID: String
     
     // MARK: - Init
         
-    public init(_ navigationController: UINavigationController) {
+    public init(_ navigationController: UINavigationController, userID: String) {
         self.navigationController = navigationController
+        self.userID = userID
     }
     
     // MARK: - Coordinator
@@ -39,7 +41,7 @@ class HomeCoordinator: Coordinator {
     }
     
     private func navigateToHomeRanking() {
-        let viewController = appDependencies.makeHomeRankingView(signalDelegate: self)
+        let viewController = appDependencies.makeHomeRankingView(signalDelegate: self, userID: userID)
         navigationController.pushViewController(viewController, animated: true)
     }
 }

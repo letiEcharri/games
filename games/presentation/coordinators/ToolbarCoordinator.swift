@@ -8,7 +8,7 @@
 import UIKit
 
 enum ToolbarDestination {
-    case home
+    case home(_ userID: String)
     case mainMenu
     case userProfile
 }
@@ -31,8 +31,8 @@ class ToolbarCoordinator: Coordinator {
     
     func resolve() {
         switch destination {
-        case .home:
-            navigateToHome()
+        case .home(let userID):
+            navigateToHome(userID: userID)
         case .mainMenu:
             navigateToMainMenu()
         case .userProfile:
@@ -47,8 +47,8 @@ class ToolbarCoordinator: Coordinator {
         childCoordinator?.resolve()
     }
     
-    private func navigateToHome() {
-        childCoordinator = HomeCoordinator(navigationController)
+    private func navigateToHome(userID: String) {
+        childCoordinator = HomeCoordinator(navigationController, userID: userID)
         childCoordinator?.resolve()
     }
     

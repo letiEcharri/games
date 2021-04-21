@@ -13,16 +13,12 @@ class UserInteractor: UserInteractorProtocol {
     
     let repository: UserRepositoryProtocol = UserRepository.shared
     
-    func checkAuth(completion: @escaping FirebaseAuthBlock) {
-        repository.checkAuth(completion: completion)
-    }
-    
     func unlinkFirebaseAuth() {
         repository.unlinkFirebaseAuth()
     }
     
-    func getUser(completion: @escaping UserResponseBlock) {
-        repository.getUser(completion: completion)
+    func getUser(userID: String, completion: @escaping UserResponseBlock) {
+        repository.getUser(userID: userID, completion: completion)
     }
     
     func update(score: Int) {

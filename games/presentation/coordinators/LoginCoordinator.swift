@@ -32,8 +32,8 @@ class LoginCoordinator: Coordinator {
         navigationController.pushViewController(viewContoller, animated: true)
     }
     
-    private func navigateToHome() {
-        childCoordinator = HomeCoordinator(navigationController)
+    private func navigateToHome(userID: String) {
+        childCoordinator = HomeCoordinator(navigationController, userID: userID)
         childCoordinator?.resolve()
     }
 }
@@ -43,8 +43,8 @@ class LoginCoordinator: Coordinator {
 extension LoginCoordinator: LoginSignalDelegate {
     func signalTrigged(_ signal: LoginSignal) {
         switch signal {
-        case .home:
-            navigateToHome()
+        case .home(let userID):
+            navigateToHome(userID: userID)
         }
     }
 }

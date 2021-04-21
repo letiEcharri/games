@@ -49,8 +49,8 @@ class UserProfileCoordinator: Coordinator {
 extension UserProfileCoordinator: UserProfileSignalDelegate {
     func signalTrigged(_ signal: UserProfileSignal) {
         switch signal {
-        case .home:
-            navigateTo(.home)
+        case .home(let userID):
+            navigateTo(.home(userID))
         case .mainMenu:
             navigateTo(.mainMenu)
         case .closeSession:

@@ -10,7 +10,7 @@ import Foundation
 enum MainMenuSignal {
     case quiz
     case dayQuestion
-    case home
+    case home(_ userID: String)
     case profile
 }
 

@@ -26,6 +26,7 @@ protocol HomeRankingPresenterProtocol where Self: BasePresenter {
     var user: UserModel? { get set }
     var selectedTAB: HomeRankingPresenter.Tab { get set }
     var topUsers: [UserModel]? { get set }
+    var numberOfRows: Int { get }
     
     func select(tab: HomeRankingPresenter.Tab)
     func goToMainMenu()

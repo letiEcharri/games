@@ -10,7 +10,7 @@
 import UIKit
 
 enum UserProfileSignal {
-    case home
+    case home(_ userID: String)
     case mainMenu
     case closeSession
 }

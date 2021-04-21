@@ -14,15 +14,11 @@ class UserRepository: UserRepositoryProtocol {
     let session = SessionUserDataSource.shared
     let datasource: UserDataSourceProtocol = UserDataSource.shared
     
-    func checkAuth(completion: @escaping FirebaseAuthBlock) {
-        datasource.checkAuth(completion: completion)
-    }
-    
     func unlinkFirebaseAuth() {
         datasource.unlinkFirebaseAuth()
     }
     
-    func signUp(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
+    func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock) {
         datasource.signUp(email: email, pass: pass, completion: completion)
     }
     
@@ -30,17 +26,20 @@ class UserRepository: UserRepositoryProtocol {
         datasource.signIn(email: email, pass: pass, completion: completion)
     }
     
-    func getUser(completion: @escaping UserResponseBlock) {
+    func getUser(userID: String, completion: @escaping UserResponseBlock) {
         if let sessionUser = self.session.user {
-            completion(sessionUser, nil)
+            completion(.success(sessionUser))
         } else {
-            if let nick = UserDefaults.standard.string(forKey: UserDefaultsKeys.user.rawValue) {
-                datasource.getUser(nick: nick) { (user, error) in
+            
+            datasource.getUser(userID: userID) { (response) in
+                switch response {
+                case .success(let user):
                     self.session.user = user
-                    completion(user, nil)
+                    completion(.success(user))
+                    
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } else {
-                completion(nil, "User not found")
             }
         }
     }
@@ -48,30 +47,20 @@ class UserRepository: UserRepositoryProtocol {
     func update(score: Int) {
         session.user?.score += score
         if let user = session.user {
-            datasource.update(score: user.score, with: user.id)
+//            datasource.update(score: user.score, with: user.id)
         }
     }
     
     func update(email: String) {
         session.user?.email = email
         if let user = session.user {
-            datasource.update(email: user.email, with: user.id)
+//            datasource.update(email: user.email, with: user.id)
         }
     }
     
     func update(password: String) {
         if let user = session.user {
-            datasource.update(password: password, with: user.id)
-        }
-    }
-    
-    func login(user: String, pass: String, completion: @escaping LoginRepositoryBlock) {
-        datasource.login(user: user, pass: pass) { (isSuccess, user, error) in
-            self.session.user = user
-            if isSuccess {
-//                UserDefaults.standard.setValue(user?.nick, forKey: UserDefaultsKeys.user.rawValue)
-            }
-            completion(isSuccess, error)
+//            datasource.update(password: password, with: user.id)
         }
     }
     

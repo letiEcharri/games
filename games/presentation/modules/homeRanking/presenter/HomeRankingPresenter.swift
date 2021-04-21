@@ -25,11 +25,25 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
     var user: UserModel?
     var topUsers: [UserModel]?
     var selectedTAB: Tab = .score
+    private var userID: String
+    
+    var numberOfRows: Int {
+        switch selectedTAB {
+        case .score:
+            return user != nil ? 1 : 0
+        case .ranking:
+            if let topUsers = topUsers {
+                return topUsers.count + 1
+            }
+        }
+        return 0
+    }
     
     // MARK: - Initialization
     
-    init(signalDelegate: HomeRankingSignalDelegate) {
+    init(signalDelegate: HomeRankingSignalDelegate, userID: String) {
         self.signalDelegate = signalDelegate
+        self.userID = userID
     }
     
     // MARK: - HomeRankingPresenter Functions
@@ -37,18 +51,20 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
     override func viewWillAppear() {
         super.viewWillAppear()
         
+        userInteractor.unlinkFirebaseAuth()
+        
         if user == nil {
-            userInteractor.getUser { (userModel, error) in
-                
-                if let userModel = userModel {
+            userInteractor.getUser(userID: userID) { (response) in
+                switch response {
+                case .success(let userModel):
                     self.user = userModel
                     self.ui?.reloadData()
-                    
-                } else if let error = error {
-                    let viewModel = InfoAlertModel(type: .error, description: error)
+                case .failure(let error):
+                    let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
                     self.ui?.showAlert(with: viewModel)
                 }
             }
+            
         }
         
     }
@@ -57,17 +73,18 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
         selectedTAB = tab
         
         if selectedTAB == .ranking, topUsers == nil {
-            userInteractor.getTopUsers { (users, error) in
-                
-                if let users = users {
+            userInteractor.getTopUsers { (response) in
+                switch response {
+                case .success(let users):
                     self.topUsers = users
                     self.ui?.reloadData()
                     
-                } else if let error = error {
-                    let viewModel = InfoAlertModel(type: .error, description: error)
+                case .failure(let error):
+                    let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
                     self.ui?.showAlert(with: viewModel)
                 }
             }
+
         } else {
             self.ui?.reloadData()
         }

@@ -14,10 +14,11 @@ enum UserCup {
 }
 
 struct UserModel: Decodable {
-    var id: Int
+    var id: String
     var nick: String
     var score: Int
     var email: String
+    
     var cup: UserCup {
         switch score {
         case 101 ... 500:

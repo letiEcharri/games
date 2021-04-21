@@ -9,7 +9,7 @@ import Foundation
 
 enum QuizCategoriesSignal {
     case category(_ cat: QuizCategoryModel)
-    case home
+    case home(_ userID: String)
     case profile
 }
 

@@ -46,7 +46,8 @@ class QuizCategoriesPresenter: BasePresenter, QuizCategoriesPresenterProtocol {
     }
     
     func goToHome() {
-        signalDelegate.signalTrigged(.home)
+        //TODO: userID
+        signalDelegate.signalTrigged(.home(""))
     }
     
     func goToProfile() {
