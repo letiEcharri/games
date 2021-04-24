@@ -16,6 +16,7 @@
 "error_generic" = "An error has occurred";
 "email" = "Email";
 "close_session" = "Close session";
+"name" = "Name";
 
 // LOGIN
 "login_singUp_question" = "Don't have an account?";
@@ -23,6 +24,9 @@
 "login_signUp_error_fields" = "Must fill all fields";
 "login_signUp_error_email" = "Must introduce a valid email";
 "login_signUp_error_pass" = "The password must be 6 characters long or more";
+"login_welcome" = "Welcome";
+"login_welcome_description" = "Now you just need to add your username";
+"login_start" = "Start";
 
 // MAIN MENU
 "main_menu_day_challenge" = "Day challenge";

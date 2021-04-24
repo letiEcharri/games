@@ -11,34 +11,46 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Properties
         
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     var childCoordinator: Coordinator?
+    var window: UIWindow
     
     // MARK: - Init
     
-    init(_ navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(_ window: UIWindow) {
+        self.window = window
     }
     
     // MARK: - Coordinator
     
     func resolve() {
-        FirebaseManager.shared.checkAuth { [self] (userID) in
-            if let userID = userID {
-                navigateToHome(userID: userID)
-            } else {
-                navigateToLogin()
-            }
-        }
+        let viewController = AppDependencies().makeSplashView(signalDelegate: self)
+        navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
     }
     
     private func navigateToHome(userID: String) {
-        childCoordinator = HomeCoordinator(navigationController, userID: userID)
-        childCoordinator?.resolve()
+        if let navigationController = navigationController {
+            childCoordinator = HomeCoordinator(navigationController, userID: userID)
+            childCoordinator?.resolve()
+        }
     }
     
     private func navigateToLogin() {
-        childCoordinator = LoginCoordinator(navigationController)
-        childCoordinator?.resolve()
+        if let navigationController = navigationController {
+            childCoordinator = LoginCoordinator(navigationController)
+            childCoordinator?.resolve()
+        }
+    }
+}
+
+extension AppCoordinator: SplashSignalDelegate {
+    func signalTrigged(_ signal: SplashSignal) {
+        switch signal {
+        case .login:
+            navigateToLogin()
+        case .home(let userID):
+            navigateToHome(userID: userID)
+        }
     }
 }

@@ -58,7 +58,11 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
                 switch response {
                 case .success(let userModel):
                     self.user = userModel
-                    self.ui?.reloadData()
+                    if !userModel.created {
+                        self.createUser()
+                    } else {
+                        self.ui?.reloadData()
+                    }
                 case .failure(let error):
                     let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
                     self.ui?.showAlert(with: viewModel)
@@ -96,5 +100,18 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
     
     func goToUserProfile() {
         signalDelegate?.signalTrigged(.userProfile)
+    }
+    
+    // MARK: Private functions
+    
+    private func createUser() {
+        if let user = self.user {
+            userInteractor.createUser(with: user) { (error) in
+                if let error = error {
+                    print(error)
+                }
+                self.ui?.reloadData()
+            }
+        }
     }
 }

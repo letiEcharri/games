@@ -16,6 +16,8 @@ protocol UserRepositoryProtocol {
     func unlinkFirebaseAuth()
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock)
     func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock)
+    func checkAuth(completion: @escaping (String?) -> Void) 
     
     func getUser(userID: String, completion: @escaping UserResponseBlock)
     func update(score: Int)

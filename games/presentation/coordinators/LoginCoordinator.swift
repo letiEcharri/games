@@ -10,6 +10,7 @@ import UIKit
 class LoginCoordinator: Coordinator {
     
     let navigationController: UINavigationController
+    var loginNavController: UINavigationController?
     let appDependencies: LoginDependencies = AppDependencies()
     var childCoordinator: Coordinator?
     
@@ -29,7 +30,7 @@ class LoginCoordinator: Coordinator {
     
     private func navigateToLogin() {
         let viewContoller = appDependencies.makeLoginView(signalDelegate: self)
-        navigationController.pushViewController(viewContoller, animated: true)
+        navigationController.pushViewController(viewContoller, animated: false)
     }
     
     private func navigateToHome(userID: String) {

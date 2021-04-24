@@ -10,6 +10,7 @@ import UIKit
 class HomeCoordinator: Coordinator {
     
     let navigationController: UINavigationController
+    var homeNavController: UINavigationController?
     let appDependencies: HomeDependencies = AppDependencies()
     let userDependencies: UserProfileDependencies = AppDependencies()
     var childCoordinator: Coordinator?
@@ -32,7 +33,10 @@ class HomeCoordinator: Coordinator {
     
     private func navigateToHome() {
         let viewController = appDependencies.makeHomeView(signalDelegate: self)
-        navigationController.pushViewController(viewController, animated: true)
+        homeNavController = UINavigationController(rootViewController: viewController)
+        if let homeNavController = homeNavController {
+            navigationController.present(homeNavController, animated: true)
+        }
     }
     
     private func navigateTo(_ destination: ToolbarDestination) {
@@ -42,7 +46,11 @@ class HomeCoordinator: Coordinator {
     
     private func navigateToHomeRanking() {
         let viewController = appDependencies.makeHomeRankingView(signalDelegate: self, userID: userID)
-        navigationController.pushViewController(viewController, animated: true)
+        homeNavController = UINavigationController(rootViewController: viewController)
+        if let homeNavController = homeNavController {
+            homeNavController.modalPresentationStyle = .fullScreen
+            navigationController.present(homeNavController, animated: true)
+        }
     }
 }
 

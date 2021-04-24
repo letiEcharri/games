@@ -17,6 +17,14 @@ class UserInteractor: UserInteractorProtocol {
         repository.unlinkFirebaseAuth()
     }
     
+    func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock) {
+        repository.createUser(with: model, completion: completion)
+    }
+    
+    func checkAuth(completion: @escaping (String?) -> Void) {
+        repository.checkAuth(completion: completion)
+    }
+    
     func getUser(userID: String, completion: @escaping UserResponseBlock) {
         repository.getUser(userID: userID, completion: completion)
     }

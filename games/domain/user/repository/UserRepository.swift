@@ -19,7 +19,16 @@ class UserRepository: UserRepositoryProtocol {
     }
     
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock) {
-        datasource.signUp(email: email, pass: pass, completion: completion)
+        datasource.signUp(email: email, pass: pass) { (response) in
+            switch response {
+            case .success(var user):
+                user.created = false
+                self.session.user = user
+                completion(.success(user))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
     func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
@@ -42,6 +51,19 @@ class UserRepository: UserRepositoryProtocol {
                 }
             }
         }
+    }
+    
+    func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock) {
+        datasource.createUser(with: model) { (error) in
+            if error == nil {
+                self.session.user = model
+            }
+            completion(error)
+        }
+    }
+    
+    func checkAuth(completion: @escaping (String?) -> Void) {
+        datasource.checkAuth(completion: completion)
     }
     
     func update(score: Int) {

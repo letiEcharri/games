@@ -58,14 +58,13 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
     }
     
     func signUp(email: String, pass: String) {
-        self.ui?.showLoading()
         interactor.signUp(email: email.lowercased(), pass: pass) { (response) in
-            self.ui?.hideLoading()
             switch response {
-            case .success(let value):
+            case .success:
                 break
             case .failure(let error):
-                break
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
+                self.ui?.showAlert(with: viewModel)
             }
         }
     }

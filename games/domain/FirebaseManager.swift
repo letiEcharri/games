@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 
 typealias FirebaseResponseBlock = (Result<Any?, Error>) -> Void
+typealias FirebaseUpdateResponseBlock = (Error?) -> Void
 
 class FirebaseManager {
     
@@ -25,18 +26,45 @@ class FirebaseManager {
     }
     
     func get(database: DataBase, completion: @escaping FirebaseResponseBlock) {
-        ref.child(database.rawValue).observeSingleEvent(of: .value) { (snapshot) in
-            completion(.success(snapshot.value))
-        } withCancel: { (error) in
-            completion(.failure(error))
+        DispatchQueue.main.async {
+            self.ref.child(database.rawValue).observeSingleEvent(of: .value) { (snapshot) in
+                completion(.success(snapshot.value))
+            } withCancel: { (error) in
+                completion(.failure(error))
+            }
         }
     }
     
     func getUser(userID: String, completion: @escaping FirebaseResponseBlock) {
-        ref.child(DataBase.users.rawValue).child(userID).observeSingleEvent(of: .value) { (snapshot) in
-            completion(.success(snapshot.value))
-        } withCancel: { (error) in
-            completion(.failure(error))
+        DispatchQueue.main.async {
+            self.ref.child(DataBase.users.rawValue).child(userID).observeSingleEvent(of: .value) { (snapshot) in
+                completion(.success(snapshot.value))
+            } withCancel: { (error) in
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func update(_ database: DataBase, item: String, value: Any, completion: @escaping FirebaseUpdateResponseBlock) {
+        DispatchQueue.main.async {
+            self.ref.child(database.rawValue).child(item).setValue(value) { (error:Error?, ref:DatabaseReference) in
+                if let error = error {
+                  print("Data could not be saved: \(error).")
+                } else {
+                  print("Data saved successfully!")
+                }
+                completion(error)
+            }
+        }
+    }
+    
+    func createItem(with database: DataBase, value: [String: Any], completion: @escaping FirebaseUpdateResponseBlock ) {
+        DispatchQueue.main.async {
+            guard let key = self.ref.child(database.rawValue).childByAutoId().key else { return }
+            let keyValue = String(format: "/%@/%@", database.rawValue, key)
+            self.ref.updateChildValues([keyValue: value]) { (error, databaseRef) in
+                completion(error)
+            }
         }
     }
     
@@ -53,18 +81,34 @@ class FirebaseManager {
     // MARK: Authorization
     
     func checkAuth(completion: @escaping (String?) -> Void) {
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = user {
-                completion(user.uid)
-            } else {
-                completion(nil)
+        signOut()
+        DispatchQueue.main.async {
+            self.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+                if let user = user {
+                    completion(user.uid)
+                } else {
+                    completion(nil)
+                }
             }
         }
     }
     
     func unlinkFirebaseAuth() {
-        if let handle = handle {
-            Auth.auth().removeStateDidChangeListener(handle)
+        DispatchQueue.main.async {
+            if let handle = self.handle {
+                Auth.auth().removeStateDidChangeListener(handle)
+            }
+        }
+    }
+    
+    func signOut() {
+        DispatchQueue.main.async {
+            let firebaseAuth = Auth.auth()
+            do {
+              try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+              print ("Error signing out: %@", signOutError)
+            }
         }
     }
 }

@@ -195,6 +195,7 @@ class LoginViewController: BaseViewController {
     
     @objc private func showSignUpView(_ sender: UIButton) {
         signUpView = SignUpView(presenter: presenter)
+        
         if let signUpView = signUpView {
             view.addSubview(signUpView)
             signUpViewYConstraint = signUpView.centerYAnchor.constraint(equalTo: view.centerYAnchor)

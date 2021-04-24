@@ -19,32 +19,36 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
     }
     
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock) {
-        Auth.auth().createUser(withEmail: email, password: pass) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let authResult = authResult,
-                      let email = authResult.user.email {
+        DispatchQueue.main.async {
+            Auth.auth().createUser(withEmail: email, password: pass) { authResult, error in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let authResult = authResult,
+                          let email = authResult.user.email {
 
-                let model = UserModel(id: authResult.user.uid, nick: "", score: 0, email: email)
-                completion(.success(model))
-            } else {
-                let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
-                completion(.failure(error))
+                    let model = UserModel(id: authResult.user.uid, nick: self.getNick(from: email), score: 0, email: email)
+                    completion(.success(model))
+                } else {
+                    let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
+                    completion(.failure(error))
+                }
             }
         }
     }
     
     func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock) {
-        Auth.auth().signIn(withEmail: email, password: pass) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-                
-            } else if let authResult = authResult {
-                
-                completion(.success(authResult.user.uid))
-            } else {
-                let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
-                completion(.failure(error))
+        DispatchQueue.main.async {
+            Auth.auth().signIn(withEmail: email, password: pass) { authResult, error in
+                if let error = error {
+                    completion(.failure(error))
+                    
+                } else if let authResult = authResult {
+                    
+                    completion(.success(authResult.user.uid))
+                } else {
+                    let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
+                    completion(.failure(error))
+                }
             }
         }
     }
@@ -63,7 +67,8 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                         completion(.failure(error))
                     }
                 } else {
-                    let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
+                    let code = data == nil ? Constants.Error.userNil.rawValue : 1
+                    let error = NSError(domain:"", code: code, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
                     completion(.failure(error))
                 }
                 
@@ -71,6 +76,15 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock) {
+        let user = [model.id: model.getDictionary()]
+        FirebaseManager.shared.createItem(with: .users, value: model.getDictionary(), completion: completion)
+    }
+    
+    func checkAuth(completion: @escaping (String?) -> Void) {
+        FirebaseManager.shared.checkAuth(completion: completion)
     }
     
     func update(score: Int, with userID: Int) {
@@ -138,6 +152,13 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
             }
         }
 
+    }
+    
+    // MARK: Private functions
+    
+    private func getNick(from email: String) -> String {
+        let groups = email.components(separatedBy: "@")
+        return groups[0]
     }
     
 }

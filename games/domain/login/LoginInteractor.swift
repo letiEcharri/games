@@ -24,6 +24,8 @@ class LoginInteractor: LoginInteractorProtocol {
     }
     
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock) {
+//        let user = UserModel(id: "", nick: "", score: 0, email: email)
+//        completion(.success(user))
         repository.signUp(email: email, pass: pass, completion: completion)
     }
     

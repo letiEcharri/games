@@ -37,6 +37,8 @@ struct UserModel: Decodable {
         return nil
     }
     
+    var created = true
+    
     func getColor() -> UIColor {
         switch cup {
         case .bronze:
@@ -46,6 +48,15 @@ struct UserModel: Decodable {
         case .gold:
             return .gold
         }
+    }
+    
+    func getDictionary() -> [String: Any] {
+        return [
+            "id": id,
+            "email": email,
+            "nick": nick,
+            "score": score
+        ]
     }
 }
 

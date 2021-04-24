@@ -204,7 +204,7 @@ extension LoginViewController {
             
             return stack
         }()
-        
+                
         private var presenter: LoginPresenterProtocol
         
         init(presenter: LoginPresenterProtocol) {
@@ -233,11 +233,14 @@ extension LoginViewController {
                 stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
                 stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             ])
+            
+            passTextField.isSecureTextEntry = true
         }
         
         @objc private func signUpAction(_ sender: UIButton) {
             checkFields { (email, pass) in
                 self.presenter.signUp(email: email, pass: pass)
+                self.removeFromSuperview()
             }
         }
         
