@@ -122,15 +122,7 @@ extension HomeRankingViewController: HomeRankingPresenterDelegate {
 
 extension HomeRankingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch self.presenter.selectedTAB {
-        case .score:
-            return presenter.user != nil ? 1 : 0
-        case .ranking:
-            if let topUsers = presenter.topUsers {
-                return topUsers.count
-            }
-        }
-        return 0
+        presenter.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -10,217 +10,288 @@ import UIKit
 extension UIImage {
     
     static var ic_cup: UIImage =  {
-        if let image = UIImage(named: "ic_cup") {
+        let name = "ic_cup"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_background: UIImage = {
-        if let image = UIImage(named: "ic_background") {
+        let name = "ic_background"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_games_backgroung: UIImage = {
-        if let image = UIImage(named: "ic_games_backgroung") {
+        let name = "ic_games_backgroung"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_tick: UIImage = {
-        if let image = UIImage(named: "ic_tick") {
+        let name = "ic_tick"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_cross: UIImage = {
-        if let image = UIImage(named: "ic_cross") {
+        let name = "ic_cross"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_lock: UIImage = {
-        if let image = UIImage(named: "ic_lock") {
+        let name = "ic_lock"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_user: UIImage = {
-        if let image = UIImage(named: "ic_user") {
+        let name = "ic_user"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_eye: UIImage = {
-        if let image = UIImage(named: "ic_eye") {
+        let name = "ic_eye"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_back: UIImage = {
-        if let image = UIImage(named: "ic_back") {
+        let name = "ic_back"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_toolbar_cup: UIImage = {
-        if let image = UIImage(named: "ic_toolbar_cup") {
+        let name = "ic_toolbar_cup"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_toolbar_play: UIImage = {
-        if let image = UIImage(named: "ic_toolbar_play") {
+        let name = "ic_toolbar_play"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_toolbar_user: UIImage = {
-        if let image = UIImage(named: "ic_toolbar_user") {
+        let name = "ic_toolbar_user"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_exit: UIImage = {
-        if let image = UIImage(named: "ic_exit") {
+        let name = "ic_exit"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_warning: UIImage = {
-        if let image = UIImage(named: "ic_warning") {
+        let name = "ic_warning"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_black_woman: UIImage = {
-        if let image = UIImage(named: "ic_black_woman") {
+        let name = "ic_black_woman"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_blond_woman: UIImage = {
-        if let image = UIImage(named: "ic_blond_woman") {
+        let name = "ic_blond_woman"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_emo_worker: UIImage = {
-        if let image = UIImage(named: "ic_emo_worker") {
+        let name = "ic_emo_worker"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_happy_man: UIImage = {
-        if let image = UIImage(named: "ic_happy_man") {
+        let name = "ic_happy_man"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_ponytail_woman: UIImage = {
-        if let image = UIImage(named: "ic_ponytail_woman") {
+        let name = "ic_ponytail_woman"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_white_woman: UIImage = {
-        if let image = UIImage(named: "ic_white_woman") {
+        let name = "ic_white_woman"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_woman_orange: UIImage = {
-        if let image = UIImage(named: "ic_woman_orange") {
+        let name = "ic_woman_orange"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_worker: UIImage = {
-        if let image = UIImage(named: "ic_worker") {
+        let name = "ic_worker"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_victor: UIImage = {
-        if let image = UIImage(named: "ic_victor") {
+        let name = "ic_victor"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_hipster: UIImage = {
-        if let image = UIImage(named: "ic_hipster") {
+        let name = "ic_hipster"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_man_beard: UIImage = {
-        if let image = UIImage(named: "ic_man_beard") {
+        let name = "ic_man_beard"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_modern_woman: UIImage = {
-        if let image = UIImage(named: "ic_modern_woman") {
+        let name = "ic_modern_woman"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_man_beard_blond: UIImage = {
-        if let image = UIImage(named: "ic_man_beard_blond") {
+        let name = "ic_man_beard_blond"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_woman_glasses: UIImage = {
-        if let image = UIImage(named: "ic_woman_glasses") {
+        let name = "ic_woman_glasses"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_generic_user: UIImage = {
-        if let image = UIImage(named: "ic_generic_user") {
+        let name = "ic_generic_user"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_edit: UIImage = {
-        if let image = UIImage(named: "ic_edit") {
+        let name = "ic_edit"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
     }()
     
     static var ic_black_man: UIImage = {
-        if let image = UIImage(named: "ic_black_man") {
+        let name = "ic_black_man"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
+            return image
+        }
+        return UIImage()
+    }()
+    
+    static var ic_email: UIImage = {
+        let name = "ic_email"
+        if let image = UIImage(named: name) {
+            image.accessibilityIdentifier = name
             return image
         }
         return UIImage()
@@ -235,4 +306,3 @@ extension UIImageView {
         self.tintColor = color
     }
 }
-

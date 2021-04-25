@@ -39,7 +39,7 @@ class QuizScorePresenter: BasePresenter, QuizScorePresenterProtocol {
     // MARK: - QuizScorePresenter Functions
     
     func exit() {
-        interactor.update(score: score)
+        interactor.editUser(field: .score, value: score) { (error) in }
         signalDelegate?.signalTrigged(.finish)
     }
 }

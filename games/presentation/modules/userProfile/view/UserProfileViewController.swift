@@ -50,10 +50,18 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
         return label
     }()
     
+    lazy var emailLabel: UILabel = {
+        let label = UILabel()
+        label.font = .bandar(style: .regular, size: 22)
+        label.textColor = .black
+        
+        return label
+    }()
+    
     lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [
             imageView,
-            titleLabel
+            emailLabel
         ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -78,7 +86,7 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
         return button
     }()
     
-    var emailTexfField: TexFieldView?
+    var nickTextField: TexFieldView?
     var passTexfField: TexFieldView?
     var changePassView: ChangePassView?
 
@@ -138,7 +146,7 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
     override func dismissKeyboard() {
         super.dismissKeyboard()
         
-        emailTexfField?.textField.disable()
+        nickTextField?.textField.disable()
         passTexfField?.textField.disable()
     }
     
@@ -174,18 +182,19 @@ class UserProfileViewController: BaseViewController, BackgroundImageProtocol {
 extension UserProfileViewController: UserProfilePresenterDelegate {
     func reloadData() {
         
-        titleLabel.text = presenter.user?.nick
-        if let userImage = presenter.user?.image {
+        if let userImage = presenter.user?.getImage() {
             imageView.image = userImage
         }
         
-        emailTexfField = TexFieldView(text: presenter.user?.email ?? "", isSecureTextEntry: false)
-        emailTexfField?.textField.delegate = self
+        emailLabel.text = presenter.user?.email
+        
+        nickTextField = TexFieldView(text: presenter.user?.nick ?? "", isSecureTextEntry: false, font: .bandar(style: .bold, size: 30))
+        nickTextField?.textField.delegate = self
         passTexfField = TexFieldView(text: "*********", isSecureTextEntry: true)
         passTexfField?.textField.delegate = self
         passTexfField?.delegate = self
-        if let emailTexfField = emailTexfField, let passTexfField = passTexfField {
-            stackView.addArrangedSubview(emailTexfField)
+        if let nickTextField = nickTextField, let passTexfField = passTexfField {
+            stackView.addArrangedSubview(nickTextField)
             stackView.addArrangedSubview(passTexfField)
         }
         
@@ -251,6 +260,6 @@ extension UserProfileViewController: NavToolbarProtocol {
 extension UserProfileViewController: ImageSelectorViewDelegate {
     func retrieve(image: UIImage) {
         imageView.image = image
-        UserDefaults.standard.set(image.pngData(), forKey: UserDefaultsKeys.image.rawValue)
+        presenter.update(image: image)
     }
 }

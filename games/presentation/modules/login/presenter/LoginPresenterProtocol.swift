@@ -24,8 +24,10 @@ protocol LoginPresenterProtocol where Self: BasePresenter {
     var ui: LoginPresenterDelegate? { get set }
     
     func login(user: String, pass: String)
+    func signUp(email: String, pass: String)
+    func checkSignUpFields(email: String, pass: String, completion: @escaping (String?) -> Void)
 }
 
 protocol LoginPresenterDelegate: BasePresenterDelegate {
-    
+    func clearFields()
 }

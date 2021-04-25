@@ -36,12 +36,6 @@ class UserProfileCoordinator: Coordinator {
         childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
         childCoordinator?.resolve()
     }
-    
-    private func closeSession() {
-        SessionDataSource.closeSession()
-        childCoordinator = LoginCoordinator(navigationController)
-        childCoordinator?.resolve()
-    }
 }
 
 // MARK: Coordinator Delegate
@@ -54,7 +48,7 @@ extension UserProfileCoordinator: UserProfileSignalDelegate {
         case .mainMenu:
             navigateTo(.mainMenu)
         case .closeSession:
-            closeSession()
+            navigationController.popToRootViewController(animated: false)
         }
     }
 }

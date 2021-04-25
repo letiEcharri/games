@@ -64,8 +64,41 @@ class LoginViewController: BaseViewController {
         
         return stack
     }()
+    
+    lazy var signUpLabel: UILabel = {
+        let label = UILabel()
+        label.font = .bandar(style: .regular, size: 18)
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    lazy var signUpButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = .bandar(style: .bold, size: 18)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(showSignUpView(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var signUpStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [
+            signUpLabel,
+            signUpButton
+        ])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.spacing = 5
+        
+        return stack
+    }()
+    
+    var signUpView: SignUpView?
 
     // MARK: - Properties
+    
+    private var signUpViewYConstraint: NSLayoutConstraint?
     
     private var presenter: LoginPresenterProtocol
     
@@ -91,7 +124,14 @@ class LoginViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         presenter.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+        moveViewWithKeyboard()
 	}
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        presenter.viewDidDisappear()
+    }
 	
     // MARK: - Setup UI
     
@@ -123,6 +163,12 @@ class LoginViewController: BaseViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
+        
+        view.addSubview(signUpStackView)
+        NSLayoutConstraint.activate([
+            signUpStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            signUpStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
     
     override func setTexts() {
@@ -130,6 +176,8 @@ class LoginViewController: BaseViewController {
         loginButton.setTitle("LOGIN", for: .normal)
         userTextField.placeholder = "user".localized
         passTextField.placeholder = "password".localized
+        signUpLabel.text = "login_singUp_question".localized
+        signUpButton.setTitle("login_singUp_button".localized.uppercased(), for: .normal)
     }
     
     // MARK: - Functions
@@ -144,6 +192,34 @@ class LoginViewController: BaseViewController {
             presenter.login(user: user, pass: pass)
         }
     }
+    
+    @objc private func showSignUpView(_ sender: UIButton) {
+        signUpView = SignUpView(presenter: presenter)
+        
+        if let signUpView = signUpView {
+            view.addSubview(signUpView)
+            signUpViewYConstraint = signUpView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            if let signUpViewYConstraint = signUpViewYConstraint {
+                NSLayoutConstraint.activate([
+                    signUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+                    signUpView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+                    signUpViewYConstraint
+                ])
+            }
+        }
+    }
+    
+    override func keyboardWillShow(notification: NSNotification) {
+        if signUpView != nil {
+            signUpViewYConstraint?.constant = -80
+        }
+    }
+
+    override func keyboardWillHide(notification: NSNotification) {
+        if signUpView != nil {
+            signUpViewYConstraint?.constant = 0
+        }
+    }
 
 }
 
@@ -151,6 +227,11 @@ class LoginViewController: BaseViewController {
 
 extension LoginViewController: LoginPresenterDelegate {
     func reloadData() {}
+    
+    func clearFields() {
+        userTextField.text = ""
+        passTextField.text = ""
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -162,104 +243,5 @@ extension LoginViewController: UITextFieldDelegate {
             checkTextFields()
         }
         return true
-    }
-}
-
-// MARK: - Custom Calsses
-
-extension LoginViewController {
-    
-    class LoginTextField: UITextField {
-        
-        // MARK: Views
-        
-        lazy var leftImage: UIImageView = {
-            let imageView = UIImageView(frame: CGRect(x: 10, y: 5, width: 30, height: 30))
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = isSecureTextEntry ? .ic_lock : .ic_user
-            imageView.setImage(color: .white)
-            
-            return imageView
-        }()
-        
-        lazy var rightImage: UIImageView = {
-            let imageView = UIImageView(frame: CGRect(x: 10, y: 5, width: 30, height: 30))
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = .ic_eye
-            imageView.setImage(color: .white)
-            
-            return imageView
-        }()
-        
-        // MARK: Properties
-        
-        override var isSecureTextEntry: Bool {
-            didSet {
-                addLeftImage()
-                addRightImage()
-            }
-        }
-        
-        override var placeholder: String? {
-            didSet {
-                setPlaceholderStyle()
-            }
-        }
-        
-        // MARK: Initialization
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            configureView()
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        // MARK: Functions
-        
-        private func configureView() {
-            translatesAutoresizingMaskIntoConstraints = false
-            backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-            layer.cornerRadius = 10
-            
-            font = .bandar(style: .regular, size: 25)
-            textColor = .white
-            tintColor = .white
-            
-            heightAnchor.constraint(equalToConstant: 60).isActive = true
-        }
-        
-        private func addLeftImage() {
-            let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 50, height: 40))
-            iconContainerView.addSubview(leftImage)
-            leftView = iconContainerView
-            leftViewMode = .always
-        }
-        
-        private func addRightImage() {
-            if isSecureTextEntry {
-                let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 40))
-                iconContainerView.addSubview(rightImage)
-                rightView = iconContainerView
-                rightViewMode = .always
-                
-                let tap = UITapGestureRecognizer(target: self, action: #selector(eyeTapAction(_:)))
-                iconContainerView.addGestureRecognizer(tap)
-            }
-        }
-        
-        @objc private func eyeTapAction(_ sender: UITapGestureRecognizer) {
-            isSecureTextEntry.toggle()
-        }
-        
-        private func setPlaceholderStyle() {
-            let attributtes = [
-                NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5),
-                NSAttributedString.Key.font: UIFont.bandar(style: .italic, size: 20)
-            ]
-            attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: attributtes)
-        }
     }
 }

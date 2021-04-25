@@ -12,26 +12,26 @@ class QuizDataSource: QuizDataSourceProtocol {
     static let shared: QuizDataSourceProtocol = QuizDataSource()
     
     func getQuiz(completion: @escaping QuizResponseBlock) {
-        FirebaseManager.getValue(from: .quiz) { (response, error) in
-            if let quiz = response as? [String: Any] {
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: quiz, options: .prettyPrinted)
-                    let model = try JSONDecoder().decode(QuizCategoriesModel.self, from: jsonData)
-                    completion(model, nil)
-
-                } catch {
-                    completion(nil, error)
-                }
-            } else if let quizData = self.readLocalFile(forName: "quiz") {
-                do {
-                    let model = try JSONDecoder().decode(QuizModel.self, from: quizData)
-                    completion(model.quiz, nil)
-
-                } catch {
-                    completion(nil, error)
-                }
-            }
-        }
+//        FirebaseManager.getValue(from: .quiz) { (response, error) in
+//            if let quiz = response as? [String: Any] {
+//                do {
+//                    let jsonData = try JSONSerialization.data(withJSONObject: quiz, options: .prettyPrinted)
+//                    let model = try JSONDecoder().decode(QuizCategoriesModel.self, from: jsonData)
+//                    completion(model, nil)
+//
+//                } catch {
+//                    completion(nil, error)
+//                }
+//            } else if let quizData = self.readLocalFile(forName: "quiz") {
+//                do {
+//                    let model = try JSONDecoder().decode(QuizModel.self, from: quizData)
+//                    completion(model.quiz, nil)
+//
+//                } catch {
+//                    completion(nil, error)
+//                }
+//            }
+//        }
     }
     
     func getQuestions(with model: OpenTrivialRequestModel, completion: @escaping QuizCategoryResponseBlock) {

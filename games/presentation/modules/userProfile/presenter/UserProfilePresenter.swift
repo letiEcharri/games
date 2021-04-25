@@ -31,23 +31,33 @@ class UserProfilePresenter: BasePresenter, UserProfilePresenterProtocol {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        interactor.getUser { (userModel, error) in
-            if let userModel = userModel {
-                self.user = userModel
+        interactor.getUser { (response) in
+            switch response {
+            case .success(let user):
+                self.user = user
                 self.ui?.reloadData()
                 
-            } else if let error = error {
-                let viewModel = InfoAlertModel(type: .error, description: error)
+            case .failure(let error):
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription) {
+                    self.signalDelegate?.signalTrigged(.closeSession)
+                }
                 self.ui?.showAlert(with: viewModel)
             }
         }
     }
     
     func textfieldAction(isSecureEntry: Bool, text: String) {
-        if isSecureEntry {
-            interactor.update(password: text)
-        } else {
-            interactor.update(email: text)
+        interactor.editUser(field: isSecureEntry ? .password : .nick, value: text) { (error) in
+            if let error = error {
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
+                self.ui?.showAlert(with: viewModel)
+            }
+        }
+    }
+    
+    func update(image: UIImage) {
+        if let name = image.accessibilityIdentifier {
+            interactor.editUser(field: .image, value: name) { (error) in }
         }
     }
     
@@ -60,6 +70,7 @@ class UserProfilePresenter: BasePresenter, UserProfilePresenterProtocol {
     }
     
     func closeSession() {
+        interactor.signOut()
         signalDelegate?.signalTrigged(.closeSession)
     }
 }

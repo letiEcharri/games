@@ -10,7 +10,6 @@ import Foundation
 class SessionDataSource {
     
     static func closeSession() {
-        UserDefaults.standard.setValue(nil, forKey: UserDefaultsKeys.user.rawValue)
         SessionUserDataSource.shared.clear()
         SessionQuizDataSource.shared.clear()
     }
