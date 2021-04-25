@@ -58,7 +58,7 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
                 switch response {
                 case .success(let userModel):
                     self.user = userModel
-                    if !userModel.created {
+                    if userModel.nick == "" {
                         self.createUser()
                     } else {
                         self.ui?.reloadData()

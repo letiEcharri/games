@@ -72,7 +72,6 @@
 		F04046A2260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040469F260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift */; };
 		F04046A3260FF73D00C1B706 /* ImageSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04046A0260FF73D00C1B706 /* ImageSelectorViewController.swift */; };
 		F056D5A8260A76E80068DE05 /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056D5A7260A76E80068DE05 /* UIButton+Action.swift */; };
-		F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */; };
 		F05E680325E2C9B00040C8A1 /* PantonDemo-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */; };
 		F05E680525E2C9B00040C8A1 /* PantonDemo-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */; };
 		F05E680725E2C9B00040C8A1 /* PantonDemo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */; };
@@ -82,8 +81,6 @@
 		F05E682B25E2CE8E0040C8A1 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */; };
 		F05E683E25E2D2800040C8A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E683D25E2D2800040C8A1 /* BaseViewController.swift */; };
 		F05E684325E2D3A10040C8A1 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E684225E2D3A10040C8A1 /* BasePresenter.swift */; };
-		F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E684725E2D4380040C8A1 /* HomePresenterProtocol.swift */; };
-		F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E684C25E2D4FE0040C8A1 /* HomePresenter.swift */; };
 		F05E685225E2D85B0040C8A1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */; };
 		F05E685A25E2DDC30040C8A1 /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */; };
 		F05E686225E2E72C0040C8A1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E686125E2E72C0040C8A1 /* UserModel.swift */; };
@@ -224,7 +221,6 @@
 		F040469F260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorPresenterProtocol.swift; sourceTree = "<group>"; };
 		F04046A0260FF73D00C1B706 /* ImageSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorViewController.swift; sourceTree = "<group>"; };
 		F056D5A7260A76E80068DE05 /* UIButton+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
-		F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05E67FB25E2C9AF0040C8A1 /* PantonDemo-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-LightItalic.ttf"; sourceTree = "<group>"; };
 		F05E67FD25E2C9AF0040C8A1 /* PantonDemo-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F05E67FF25E2C9AF0040C8A1 /* PantonDemo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PantonDemo-Light.ttf"; sourceTree = "<group>"; };
@@ -234,8 +230,6 @@
 		F05E682A25E2CE8E0040C8A1 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		F05E683D25E2D2800040C8A1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F05E684225E2D3A10040C8A1 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		F05E684725E2D4380040C8A1 /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
-		F05E684C25E2D4FE0040C8A1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		F05E685125E2D85B0040C8A1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F05E685925E2DDC30040C8A1 /* UIImage+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
 		F05E686125E2E72C0040C8A1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -692,32 +686,6 @@
 			path = presentation;
 			sourceTree = "<group>";
 		};
-		F05E67F225E2C2F40040C8A1 /* home */ = {
-			isa = PBXGroup;
-			children = (
-				F05E67F425E2C30B0040C8A1 /* presenter */,
-				F05E67F325E2C3050040C8A1 /* view */,
-			);
-			path = home;
-			sourceTree = "<group>";
-		};
-		F05E67F325E2C3050040C8A1 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				F05E67F525E2C33D0040C8A1 /* HomeViewController.swift */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		F05E67F425E2C30B0040C8A1 /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				F05E684725E2D4380040C8A1 /* HomePresenterProtocol.swift */,
-				F05E684C25E2D4FE0040C8A1 /* HomePresenter.swift */,
-			);
-			path = presenter;
-			sourceTree = "<group>";
-		};
 		F05E67FA25E2C9950040C8A1 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,7 +935,6 @@
 			children = (
 				F0E59FAC263315E3002FCD48 /* splash */,
 				F0AC66DF26076E8600DFD467 /* login */,
-				F05E67F225E2C2F40040C8A1 /* home */,
 				F05EA2132610ED2E002201FC /* homeRanking */,
 				F03A9BC52604D9ED00CA8A21 /* mainMenu */,
 				F03A9C17260501B700CA8A21 /* quiz */,
@@ -1392,19 +1359,16 @@
 				F05EA21A2610ED6E002201FC /* HomeRankingPresenterProtocol.swift in Sources */,
 				F0BA8EE3262C968D00A97681 /* LoginInternalViews.swift in Sources */,
 				F03A9BC92604DA2100CA8A21 /* MainMenuViewController.swift in Sources */,
-				F05E684D25E2D4FE0040C8A1 /* HomePresenter.swift in Sources */,
 				F02599CE260F5E7600DC4700 /* NavigationBarProtocol.swift in Sources */,
 				F0404689260FD7F100C1B706 /* UserProfileCoordinator.swift in Sources */,
 				F05EA2082610EB0E002201FC /* HomeDependencies.swift in Sources */,
 				F016F8522606122A008623D3 /* QuizScorePresenterProtocol.swift in Sources */,
 				F03A9C86260528A900CA8A21 /* QuizRepository.swift in Sources */,
-				F05E684825E2D4380040C8A1 /* HomePresenterProtocol.swift in Sources */,
 				F008C5532606646300A5E015 /* UserInteractor.swift in Sources */,
 				F0E59FB42633161E002FCD48 /* SplashViewController.swift in Sources */,
 				F02599E3260F69A600DC4700 /* InfoAlertViewController.swift in Sources */,
 				F04046A2260FF73D00C1B706 /* ImageSelectorPresenterProtocol.swift in Sources */,
 				F008C54B2606645B00A5E015 /* UserInteractorProtocol.swift in Sources */,
-				F05E67F625E2C33D0040C8A1 /* HomeViewController.swift in Sources */,
 				F0B9D05326076FC100BC48E7 /* LoginCoordinator.swift in Sources */,
 				F015E913260F9A9D00D4E02E /* UserProfilePresenterProtocol.swift in Sources */,
 				F0B9D063260797B500BC48E7 /* LoginInteractor.swift in Sources */,

@@ -21,8 +21,7 @@ class UserRepository: UserRepositoryProtocol {
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock) {
         datasource.signUp(email: email, pass: pass) { (response) in
             switch response {
-            case .success(var user):
-                user.created = false
+            case .success(let user):
                 self.session.user = user
                 completion(.success(user))
             case .failure(let error):

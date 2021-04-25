@@ -37,8 +37,6 @@ struct UserModel: Decodable {
         return nil
     }
     
-    var created = true
-    
     func getColor() -> UIColor {
         switch cup {
         case .bronze:

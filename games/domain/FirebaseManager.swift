@@ -58,30 +58,9 @@ class FirebaseManager {
         }
     }
     
-    func createItem(with database: DataBase, value: [String: Any], completion: @escaping FirebaseUpdateResponseBlock ) {
-        DispatchQueue.main.async {
-            guard let key = self.ref.child(database.rawValue).childByAutoId().key else { return }
-            let keyValue = String(format: "/%@/%@", database.rawValue, key)
-            self.ref.updateChildValues([keyValue: value]) { (error, databaseRef) in
-                completion(error)
-            }
-        }
-    }
-    
-//    func update(from database: DataBase, item: String, value: Any) {
-//        ref.child(database.rawValue).child(item).setValue(value) { (error:Error?, ref:DatabaseReference) in
-//            if let error = error {
-//              print("Data could not be saved: \(error).")
-//            } else {
-//              print("Data saved successfully!")
-//            }
-//        }
-//    }
-    
     // MARK: Authorization
     
     func checkAuth(completion: @escaping (String?) -> Void) {
-        signOut()
         DispatchQueue.main.async {
             self.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
                 if let user = user {

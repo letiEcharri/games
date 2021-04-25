@@ -26,7 +26,7 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
                 } else if let authResult = authResult,
                           let email = authResult.user.email {
 
-                    let model = UserModel(id: authResult.user.uid, nick: self.getNick(from: email), score: 0, email: email)
+                    let model = UserModel(id: authResult.user.uid, nick: "", score: 0, email: email)
                     completion(.success(model))
                 } else {
                     let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
@@ -79,8 +79,9 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
     }
     
     func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock) {
-        let user = [model.id: model.getDictionary()]
-        FirebaseManager.shared.createItem(with: .users, value: model.getDictionary(), completion: completion)
+        var value = model
+        value.nick = getNick(from: model.email)
+        FirebaseManager.shared.update(.users, item: model.id, value: value.getDictionary(), completion: completion)
     }
     
     func checkAuth(completion: @escaping (String?) -> Void) {
