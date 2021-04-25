@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>QUIZ</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +22,18 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PantonDemo-Light.ttf</string>
+		<string>PantonDemo-Black.ttf</string>
+		<string>PantonDemo-BlackItalic.ttf</string>
+		<string>PantonDemo-LightItalic.ttf</string>
+		<string>BandarBold.ttf</string>
+		<string>BandarBoldItalic.ttf</string>
+		<string>BandarItalic.ttf</string>
+		<string>BandarOutline.ttf</string>
+		<string>BandarRegular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

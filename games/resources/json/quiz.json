@@ -1,0 +1,93 @@
+{
+    "quiz": {
+        "categories": [
+            {
+                "name": "Películas",
+                "questions": [
+                    {
+                        "id": 0,
+                        "question": "¿Cuál es el alter ego de Tony Stark?",
+                        "answers": {
+                            "answer1": "Star-Lord",
+                            "answer2": "Iron Man",
+                            "answer3": "Ned Stark",
+                            "answer4": "Pinocho"
+                        },
+                        "answer": "answer2"
+                    },
+                    {
+                        "id": 1,
+                        "question": "¿Porqué le pusieron su nombre a Indiana Jones?",
+                        "answers": {
+                            "answer1": "Porque nació en la India",
+                            "answer2": "Porque a su madre se le ocurrió ese nombre",
+                            "answer3": "Porque el perro de su padre se llamaba Indiana",
+                            "answer4": "Porque su padre escuchaba música Indie"
+                        },
+                        "answer": "answer3"
+                    },
+                    {
+                        "id": 2,
+                        "question": "¿Cómo se llama el burro que acompaña a Shrek?",
+                        "answers": {
+                            "answer1": "Burro",
+                            "answer2": "Will",
+                            "answer3": "Anacleto",
+                            "answer4": "Platero"
+                        },
+                        "answer": "answer1"
+                    },
+                    {
+                        "id": 3,
+                        "question": "¿Qué actor hace de Jason Bourne en El caso Bourne(The Bourne Identity)?",
+                        "answers": {
+                            "answer1": "Mark Wahlberg",
+                            "answer2": "Jim Carrey",
+                            "answer3": "Bruce Willis",
+                            "answer4": "Matt Damon"
+                        },
+                        "answer": "answer4"
+                    },
+                    {
+                        "id": 4,
+                        "question": "¿Cuál es el nombre de la momia en la película de La Momia(The Mummy) de 1999?",
+                        "answers": {
+                            "answer1": "Momia",
+                            "answer2": "Uff qué bicho más feo",
+                            "answer3": "Imhotep",
+                            "answer4": "Tutankamón"
+                        },
+                        "answer": "answer3"
+                    }
+                ]
+            },
+            {
+                "name": "Música",
+                "questions": [
+                    {
+                        "id": 5,
+                        "question": "¿Quién cantaba 'Single Ladies'?",
+                        "answers": {
+                            "answer1": "JLO",
+                            "answer2": "Beyoncé",
+                            "answer3": "AC/DC",
+                            "answer4": "Britney Spears"
+                        },
+                        "answer": "answer2"
+                    },
+                    {
+                        "id": 6,
+                        "question": "¿Quién era la cantante de Mecano?",
+                        "answers": {
+                            "answer1": "Merche",
+                            "answer2": "Paulina Rubio",
+                            "answer3": "Raffaella Carrà",
+                            "answer4": "Ana Torroja"
+                        },
+                        "answer": "answer4"
+                    }
+                ]
+            }
+        ]
+    }
+}

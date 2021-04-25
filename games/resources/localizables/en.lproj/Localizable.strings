@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  games
+
+  Created by Leticia Personal on 26/03/2021.
+  
+*/
+
+// COMMON
+"user" = "User";
+"password" = "Password";
+"score" = "Score";
+"ok" = "Ok";
+"cancel" = "Cancel";
+"close_session_message" = "Do you want to leave Quiz?";
+"error_generic" = "An error has occurred";
+"email" = "Email";
+"close_session" = "Close session";
+"name" = "Name";
+
+// LOGIN
+"login_singUp_question" = "Don't have an account?";
+"login_singUp_button" = "Sing up";
+"login_signUp_error_fields" = "Must fill all fields";
+"login_signUp_error_email" = "Must introduce a valid email";
+"login_signUp_error_pass" = "The password must be 6 characters long or more";
+"login_welcome" = "Welcome";
+"login_welcome_description" = "Now you just need to add your username";
+"login_start" = "Start";
+
+// MAIN MENU
+"main_menu_day_challenge" = "Day challenge";
+
+// SCORE
+"score_ok" = "Ok!";
+
+// INFO ALERT
+"alert_error_title" = "Error";
+
+// USER PROFILE
+"user_change_pass_old" = "Current password";
+"user_change_pass_new" = "New password";
+
+// HOME
+"ranking_position" = "Posición";
