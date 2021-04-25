@@ -10,7 +10,16 @@ import Firebase
 
 class UserDataSource: DataSource, UserDataSourceProtocol {
     
+    enum Edit {
+        case nick
+        case password
+        case score
+        case image
+    }
+    
     static let shared: UserDataSourceProtocol = UserDataSource()
+    
+    private let firebaseManager = FirebaseManager.shared
             
     // MARK: Functions
     
@@ -53,8 +62,12 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
         }
     }
     
-    func getUser(userID: String, completion: @escaping UserResponseBlock) {
-        FirebaseManager.shared.getUser(userID: userID) { (response) in
+    func signOut() {
+        firebaseManager.signOut()
+    }
+    
+    func getUser(completion: @escaping UserResponseBlock) {
+        firebaseManager.getUser { (response) in
             switch response {
             case .success(let data):
                 if let data = data as? NSDictionary {
@@ -79,28 +92,31 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
     }
     
     func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock) {
-        var value = model
-        value.nick = getNick(from: model.email)
-        FirebaseManager.shared.update(.users, item: model.id, value: value.getDictionary(), completion: completion)
+        firebaseManager.update(.users, item: model.id, value: model.getDictionary(), completion: completion)
     }
     
     func checkAuth(completion: @escaping (String?) -> Void) {
         FirebaseManager.shared.checkAuth(completion: completion)
     }
     
-    func update(score: Int, with userID: Int) {
-        let item = "\(userID)/score"
-//        FirebaseManager.update(from: .users, item: item, value: score)
-    }
-    
-    func update(email: String, with userID: Int) {
-        let item = "\(userID)/email"
-//        FirebaseManager.update(from: .users, item: item, value: email)
-    }
-    
-    func update(password: String, with userID: Int) {
-        let item = "\(userID)/password"
-//        FirebaseManager.update(from: .users, item: item, value: password)
+    func editUser(field: Edit, with userID: String, value: Any, completion: @escaping FirebaseUpdateResponseBlock) {
+        var item: String = ""
+        switch field {
+        case .nick:
+            item = "nick"
+        case .score:
+            item = "score"
+        case .image:
+            item = "image"
+        case .password:
+            if let pass = value as? String {
+                firebaseManager.update(password: pass, completion: completion)
+            }
+        }
+        if field != .password {
+            let key = String(format: "%@/%@", userID, item)
+            firebaseManager.update(.users, item: key, value: value, completion: completion)
+        }
     }
     
     
@@ -125,7 +141,7 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
     }
     
     func getTopUsers(completion: @escaping TopUsersResponseBlock) {
-        FirebaseManager.shared.get(database: .users) { (response) in
+        firebaseManager.get(database: .users) { (response) in
             switch response {
             case .success(let data):
                 if let data = data as? NSDictionary {
@@ -153,13 +169,6 @@ class UserDataSource: DataSource, UserDataSourceProtocol {
             }
         }
 
-    }
-    
-    // MARK: Private functions
-    
-    private func getNick(from email: String) -> String {
-        let groups = email.components(separatedBy: "@")
-        return groups[0]
     }
     
 }

@@ -11,6 +11,7 @@ import Foundation
 
 protocol LoginInteractorProtocol {
     func unlinkFirebaseAuth()
+    func checkAuth(completion: @escaping (String?) -> Void)
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock)
     func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
 }

@@ -16,12 +16,10 @@ protocol UserRepositoryProtocol {
     func unlinkFirebaseAuth()
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock)
     func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    func signOut()
     func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock)
-    func checkAuth(completion: @escaping (String?) -> Void) 
-    
-    func getUser(userID: String, completion: @escaping UserResponseBlock)
-    func update(score: Int)
-    func update(email: String)
-    func update(password: String)
+    func checkAuth(completion: @escaping (String?) -> Void)
+    func editUser(field: UserDataSource.Edit, value: Any, completion: @escaping FirebaseUpdateResponseBlock)
+    func getUser(completion: @escaping UserResponseBlock)
     func getTopUsers(completion: @escaping TopUsersResponseBlock)
 }

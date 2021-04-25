@@ -227,6 +227,11 @@ class LoginViewController: BaseViewController {
 
 extension LoginViewController: LoginPresenterDelegate {
     func reloadData() {}
+    
+    func clearFields() {
+        userTextField.text = ""
+        passTextField.text = ""
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

@@ -29,13 +29,11 @@ class SplashPresenter: BasePresenter, SplashPresenterProtocol {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { 
-            self.interactor.checkAuth { (userID) in
-                if let userID = userID {
-                    self.signalDelegate?.signalTrigged(.home(userID))
-                } else {
-                    self.signalDelegate?.signalTrigged(.login)
-                }
+        self.interactor.checkAuth { (userID) in
+            if userID != nil {
+                self.signalDelegate?.signalTrigged(.home)
+            } else {
+                self.signalDelegate?.signalTrigged(.login)
             }
         }
     }

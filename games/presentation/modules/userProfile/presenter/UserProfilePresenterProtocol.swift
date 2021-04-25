@@ -10,7 +10,7 @@
 import UIKit
 
 enum UserProfileSignal {
-    case home(_ userID: String)
+    case home
     case mainMenu
     case closeSession
 }
@@ -28,6 +28,7 @@ protocol UserProfilePresenterProtocol where Self: BasePresenter {
     func goToHome()
     func goToMainMenu()
     func closeSession()
+    func update(image: UIImage)
 }
 
 protocol UserProfilePresenterDelegate: BasePresenterDelegate {

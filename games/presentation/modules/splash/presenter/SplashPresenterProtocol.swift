@@ -12,7 +12,7 @@ import UIKit
 // MARK: - ViewState
 
 enum SplashSignal {
-    case home(_ userID: String)
+    case home
     case login
 }
 

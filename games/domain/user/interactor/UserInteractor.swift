@@ -25,23 +25,19 @@ class UserInteractor: UserInteractorProtocol {
         repository.checkAuth(completion: completion)
     }
     
-    func getUser(userID: String, completion: @escaping UserResponseBlock) {
-        repository.getUser(userID: userID, completion: completion)
+    func editUser(field: UserDataSource.Edit, value: Any, completion: @escaping FirebaseUpdateResponseBlock) {
+        repository.editUser(field: field, value: value, completion: completion)
     }
     
-    func update(score: Int) {
-        repository.update(score: score)
-    }
-    
-    func update(email: String) {
-        repository.update(email: email)
-    }
-    
-    func update(password: String) {
-        repository.update(password: password)
+    func getUser(completion: @escaping UserResponseBlock) {
+        repository.getUser(completion: completion)
     }
     
     func getTopUsers(completion: @escaping TopUsersResponseBlock) {
         repository.getTopUsers(completion: completion)
+    }
+    
+    func signOut() {
+        repository.signOut()
     }
 }

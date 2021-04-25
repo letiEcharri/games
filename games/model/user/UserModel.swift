@@ -18,6 +18,7 @@ struct UserModel: Decodable {
     var nick: String
     var score: Int
     var email: String
+    var image: String?
     
     var cup: UserCup {
         switch score {
@@ -30,13 +31,6 @@ struct UserModel: Decodable {
         }
     }
     
-    var image: UIImage? {
-        if let userImage = UserDefaults.standard.object(forKey: UserDefaultsKeys.image.rawValue) as? Data {
-            return UIImage(data: userImage)
-        }
-        return nil
-    }
-    
     func getColor() -> UIColor {
         switch cup {
         case .bronze:
@@ -46,6 +40,13 @@ struct UserModel: Decodable {
         case .gold:
             return .gold
         }
+    }
+    
+    func getImage() -> UIImage? {
+        if let image = image {
+            return UIImage(named: image)
+        }
+        return nil
     }
     
     func getDictionary() -> [String: Any] {

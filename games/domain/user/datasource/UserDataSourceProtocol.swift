@@ -21,12 +21,10 @@ protocol UserDataSourceProtocol {
     func unlinkFirebaseAuth()
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock)
     func signIn(email: String, pass: String, completion: @escaping SignLoginResponseBlock)
+    func signOut()
     func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock)
-    func checkAuth(completion: @escaping (String?) -> Void) 
-    
-    func getUser(userID: String, completion: @escaping UserResponseBlock)
-    func update(score: Int, with userID: Int)
-    func update(email: String, with userID: Int)
-    func update(password: String, with userID: Int)
+    func checkAuth(completion: @escaping (String?) -> Void)
+    func editUser(field: UserDataSource.Edit, with userID: String, value: Any, completion: @escaping FirebaseUpdateResponseBlock)
+    func getUser(completion: @escaping UserResponseBlock)
     func getTopUsers(completion: @escaping TopUsersResponseBlock)
 }

@@ -8,14 +8,14 @@
 import UIKit
 
 protocol HomeDependencies {
-    func makeHomeRankingView(signalDelegate: HomeRankingSignalDelegate, userID: String) -> HomeRankingViewController
+    func makeHomeRankingView(signalDelegate: HomeRankingSignalDelegate) -> HomeRankingViewController
 }
 
 extension AppDependencies: HomeDependencies {
     
-    func makeHomeRankingView(signalDelegate: HomeRankingSignalDelegate, userID: String) -> HomeRankingViewController {
+    func makeHomeRankingView(signalDelegate: HomeRankingSignalDelegate) -> HomeRankingViewController {
         
-        let presenter = HomeRankingPresenter(signalDelegate: signalDelegate, userID: userID)
+        let presenter = HomeRankingPresenter(signalDelegate: signalDelegate)
         let viewController = HomeRankingViewController(presenter)
         
         presenter.ui = viewController

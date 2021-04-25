@@ -23,6 +23,10 @@ class LoginInteractor: LoginInteractorProtocol {
         repository.unlinkFirebaseAuth()
     }
     
+    func checkAuth(completion: @escaping (String?) -> Void) {
+        repository.checkAuth(completion: completion)
+    }
+    
     func signUp(email: String, pass: String, completion: @escaping SignUpResponseBlock) {
 //        let user = UserModel(id: "", nick: "", score: 0, email: email)
 //        completion(.success(user))

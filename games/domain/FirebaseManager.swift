@@ -35,11 +35,16 @@ class FirebaseManager {
         }
     }
     
-    func getUser(userID: String, completion: @escaping FirebaseResponseBlock) {
-        DispatchQueue.main.async {
-            self.ref.child(DataBase.users.rawValue).child(userID).observeSingleEvent(of: .value) { (snapshot) in
-                completion(.success(snapshot.value))
-            } withCancel: { (error) in
+    func getUser(completion: @escaping FirebaseResponseBlock) {
+        checkAuth { (userID) in
+            if let userID = userID {
+                self.ref.child(DataBase.users.rawValue).child(userID).observeSingleEvent(of: .value) { (snapshot) in
+                    completion(.success(snapshot.value))
+                } withCancel: { (error) in
+                    completion(.failure(error))
+                }
+            } else {
+                let error = NSError(domain:"", code: 1, userInfo: [NSLocalizedDescriptionKey: "error_generic".localized]) as Error
                 completion(.failure(error))
             }
         }
@@ -55,6 +60,16 @@ class FirebaseManager {
                 }
                 completion(error)
             }
+        }
+    }
+    
+    func update(password: String, completion: @escaping FirebaseUpdateResponseBlock) {
+        DispatchQueue.main.async {
+            let user = Auth.auth().currentUser
+            
+            user?.updatePassword(to: password, completion: { (error) in
+                completion(error)
+            })
         }
     }
     

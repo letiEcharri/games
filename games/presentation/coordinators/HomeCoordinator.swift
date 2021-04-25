@@ -10,17 +10,14 @@ import UIKit
 class HomeCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    var homeNavController: UINavigationController?
     let appDependencies: HomeDependencies = AppDependencies()
     let userDependencies: UserProfileDependencies = AppDependencies()
     var childCoordinator: Coordinator?
-    private var userID: String
     
     // MARK: - Init
         
-    public init(_ navigationController: UINavigationController, userID: String) {
+    public init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.userID = userID
     }
     
     // MARK: - Coordinator
@@ -32,19 +29,14 @@ class HomeCoordinator: Coordinator {
     // MARK: - HomeCoordinator Functions
     
     private func navigateTo(_ destination: ToolbarDestination) {
-        if let homeNavController = homeNavController {
-            childCoordinator = ToolbarCoordinator(homeNavController, destination: destination)
-            childCoordinator?.resolve()
-        }
+        childCoordinator = ToolbarCoordinator(navigationController, destination: destination)
+        childCoordinator?.resolve()
     }
     
     private func navigateToHomeRanking() {
-        let viewController = appDependencies.makeHomeRankingView(signalDelegate: self, userID: userID)
-        homeNavController = UINavigationController(rootViewController: viewController)
-        if let homeNavController = homeNavController {
-            homeNavController.modalPresentationStyle = .fullScreen
-            navigationController.present(homeNavController, animated: true)
-        }
+        let viewController = appDependencies.makeHomeRankingView(signalDelegate: self)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -57,6 +49,8 @@ extension HomeCoordinator: HomeRankingSignalDelegate {
             navigateTo(.mainMenu)
         case .userProfile:
             navigateTo(.userProfile)
+        case .login:
+            navigationController.popToRootViewController(animated: false)
         }
     }
 }

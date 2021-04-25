@@ -24,33 +24,26 @@ class AppCoordinator: Coordinator {
     // MARK: - Coordinator
     
     func resolve() {
-        let viewController = AppDependencies().makeSplashView(signalDelegate: self)
+        let viewController = AppDependencies().makeLoginView(signalDelegate: self)
         navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
     }
     
-    private func navigateToHome(userID: String) {
+    private func navigateToHome() {
         if let navigationController = navigationController {
-            childCoordinator = HomeCoordinator(navigationController, userID: userID)
-            childCoordinator?.resolve()
-        }
-    }
-    
-    private func navigateToLogin() {
-        if let navigationController = navigationController {
-            childCoordinator = LoginCoordinator(navigationController)
+            childCoordinator = HomeCoordinator(navigationController)
             childCoordinator?.resolve()
         }
     }
 }
 
-extension AppCoordinator: SplashSignalDelegate {
-    func signalTrigged(_ signal: SplashSignal) {
+// MARK: Coordinator Delegate
+
+extension AppCoordinator: LoginSignalDelegate {
+    func signalTrigged(_ signal: LoginSignal) {
         switch signal {
-        case .login:
-            navigateToLogin()
-        case .home(let userID):
-            navigateToHome(userID: userID)
+        case .home:
+            navigateToHome()
         }
     }
 }

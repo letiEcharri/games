@@ -27,34 +27,32 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol {
     
     // MARK: - LoginPresenter Functions
     
-    func login(user: String, pass: String) {
-        self.ui?.showLoading()
+    override func viewWillAppear() {
+        super.viewWillAppear()
         
+        self.interactor.checkAuth { (userID) in
+            if userID != nil {
+                self.signalDelegate?.signalTrigged(.home)
+            }
+        }
+    }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        interactor.unlinkFirebaseAuth()
+    }
+    
+    func login(user: String, pass: String) {
         interactor.signIn(email: user.lowercased(), pass: pass) { (response) in
             
             switch response {
-            case .success(let userID):
-                DispatchQueue.main.async {
-                    self.ui?.hideLoading()
-                    self.signalDelegate?.signalTrigged(.home(userID))
-                }
+            case .success:
+                self.ui?.clearFields()
             case .failure(let error):
-                self.ui?.hideLoading()
                 let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
                 self.ui?.showAlert(with: viewModel)
             }
         }
-//        interactor.login(user: user, pass: pass) { (isSuccess, error) in
-//            if isSuccess {
-//                DispatchQueue.main.async {
-//                    self.signalDelegate?.signalTrigged(.home)
-//                }
-//            } else if let error = error {
-//                self.ui?.hideLoading()
-//                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
-//                self.ui?.showAlert(with: viewModel)
-//            }
-//        }
     }
     
     func signUp(email: String, pass: String) {

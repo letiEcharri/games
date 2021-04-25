@@ -25,7 +25,7 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
     var user: UserModel?
     var topUsers: [UserModel]?
     var selectedTAB: Tab = .score
-    private var userID: String
+//    private var userID: String
     
     var numberOfRows: Int {
         switch selectedTAB {
@@ -41,9 +41,8 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
     
     // MARK: - Initialization
     
-    init(signalDelegate: HomeRankingSignalDelegate, userID: String) {
+    init(signalDelegate: HomeRankingSignalDelegate) {
         self.signalDelegate = signalDelegate
-        self.userID = userID
     }
     
     // MARK: - HomeRankingPresenter Functions
@@ -53,22 +52,21 @@ class HomeRankingPresenter: BasePresenter, HomeRankingPresenterProtocol {
         
         userInteractor.unlinkFirebaseAuth()
         
-        if user == nil {
-            userInteractor.getUser(userID: userID) { (response) in
-                switch response {
-                case .success(let userModel):
-                    self.user = userModel
-                    if userModel.nick == "" {
-                        self.createUser()
-                    } else {
-                        self.ui?.reloadData()
-                    }
-                case .failure(let error):
-                    let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription)
-                    self.ui?.showAlert(with: viewModel)
+        userInteractor.getUser { (response) in
+            switch response {
+            case .success(let userModel):
+                self.user = userModel
+                if userModel.nick == "" {
+                    self.createUser()
+                } else {
+                    self.ui?.reloadData()
                 }
+            case .failure(let error):
+                let viewModel = InfoAlertModel(type: .error, description: error.localizedDescription) {
+                    self.signalDelegate?.signalTrigged(.login)
+                }
+                self.ui?.showAlert(with: viewModel)
             }
-            
         }
         
     }

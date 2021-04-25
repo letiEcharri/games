@@ -52,8 +52,8 @@ extension MainMenuCoordinator: MainMenuSignalDelegate {
             navigateToQuiz()
         case .dayQuestion:
             break
-        case .home(let userID):
-            navigateTo(.home(userID))
+        case .home:
+            navigateTo(.home)
         case .profile:
             navigateTo(.userProfile)
         }

@@ -12,7 +12,7 @@ import UIKit
 // MARK: - ViewState
 
 enum LoginSignal {
-    case home(_ userID: String)
+    case home
 }
 
 protocol LoginSignalDelegate: class {
@@ -29,5 +29,5 @@ protocol LoginPresenterProtocol where Self: BasePresenter {
 }
 
 protocol LoginPresenterDelegate: BasePresenterDelegate {
-    
+    func clearFields()
 }

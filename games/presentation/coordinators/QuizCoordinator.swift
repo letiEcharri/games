@@ -53,8 +53,8 @@ extension QuizCoordinator: QuizCategoriesSignalDelegate {
         switch signal {
         case .category(let cat):
             navigateToQuestion(category: cat)
-        case .home(let userID):
-            navigateTo(.home(userID))
+        case .home:
+            navigateTo(.home)
         case .profile:
             navigateTo(.userProfile)
         }

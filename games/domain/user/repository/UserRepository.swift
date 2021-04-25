@@ -34,18 +34,24 @@ class UserRepository: UserRepositoryProtocol {
         datasource.signIn(email: email, pass: pass, completion: completion)
     }
     
-    func getUser(userID: String, completion: @escaping UserResponseBlock) {
+    func signOut() {
+        SessionDataSource.closeSession()
+        datasource.signOut()
+    }
+    
+    func getUser(completion: @escaping UserResponseBlock) {
         if let sessionUser = self.session.user {
             completion(.success(sessionUser))
         } else {
             
-            datasource.getUser(userID: userID) { (response) in
+            datasource.getUser { (response) in
                 switch response {
                 case .success(let user):
                     self.session.user = user
                     completion(.success(user))
                     
                 case .failure(let error):
+                    self.signOut()
                     completion(.failure(error))
                 }
             }
@@ -53,9 +59,12 @@ class UserRepository: UserRepositoryProtocol {
     }
     
     func createUser(with model: UserModel, completion: @escaping FirebaseUpdateResponseBlock) {
-        datasource.createUser(with: model) { (error) in
+        var user = model
+        user.nick = getNick(from: model.email)
+        
+        datasource.createUser(with: user) { (error) in
             if error == nil {
-                self.session.user = model
+                self.session.user = user
             }
             completion(error)
         }
@@ -65,27 +74,46 @@ class UserRepository: UserRepositoryProtocol {
         datasource.checkAuth(completion: completion)
     }
     
-    func update(score: Int) {
-        session.user?.score += score
-        if let user = session.user {
-//            datasource.update(score: user.score, with: user.id)
-        }
-    }
-    
-    func update(email: String) {
-        session.user?.email = email
-        if let user = session.user {
-//            datasource.update(email: user.email, with: user.id)
-        }
-    }
-    
-    func update(password: String) {
-        if let user = session.user {
-//            datasource.update(password: password, with: user.id)
+    func editUser(field: UserDataSource.Edit, value: Any, completion: @escaping FirebaseUpdateResponseBlock) {
+        getUser { (response) in
+            switch response {
+            case .success(let user):
+                self.datasource.editUser(field: field, with: user.id, value: value) { (error) in
+                    if error == nil {
+                        switch field {
+                        case .nick:
+                            if let nick = value as? String {
+                                self.session.user?.nick = nick
+                            }
+                        case .score:
+                            if let score = value as? Int {
+                                self.session.user?.score = score
+                            }
+                        case .image:
+                            if let image = value as? String {
+                                self.session.user?.image = image
+                            }
+                        default:
+                            break
+                        }
+                    }
+                    completion(error)
+                }
+                
+            case .failure(let error):
+                completion(error)
+            }
         }
     }
     
     func getTopUsers(completion: @escaping TopUsersResponseBlock) {
         datasource.getTopUsers(completion: completion)
+    }
+    
+    // MARK: Private functions
+    
+    private func getNick(from email: String) -> String {
+        let groups = email.components(separatedBy: "@")
+        return groups[0]
     }
 }

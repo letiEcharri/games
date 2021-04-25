@@ -28,6 +28,11 @@ class SplashViewController: BaseViewController {
 
     // MARK: - Life cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
         presenter.viewDidLoad()

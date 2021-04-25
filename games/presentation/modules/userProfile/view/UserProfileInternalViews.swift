@@ -105,10 +105,7 @@ extension UserProfileViewController {
         }()
         
         lazy var stackView: UIStackView =  {
-            let stack = UIStackView(arrangedSubviews: [
-                titleLabel,
-                txtStackView
-            ])
+            let stack = UIStackView()
             stack.translatesAutoresizingMaskIntoConstraints = false
             stack.axis = .vertical
             
@@ -118,12 +115,14 @@ extension UserProfileViewController {
         var isSecureTextEntry: Bool = false
         private var text: String
         var textField = TextField()
+        var customFont: UIFont?
         
         var delegate: ChangePassViewProtocol?
         
-        init(text: String, isSecureTextEntry: Bool) {
+        init(text: String, isSecureTextEntry: Bool, font: UIFont? = nil) {
             self.text = text
             self.isSecureTextEntry = isSecureTextEntry
+            self.customFont = font
             super.init(frame: .zero)
             configureView()
         }
@@ -137,9 +136,17 @@ extension UserProfileViewController {
             
             heightAnchor.constraint(equalToConstant: 70).isActive = true
         
-            titleLabel.text = isSecureTextEntry ? "password".localized : "email".localized
+            titleLabel.text = isSecureTextEntry ? "password".localized : ""
             textField.isSecureTextEntry = isSecureTextEntry
             textField.text = text
+            if let font = customFont {
+                textField.font = font
+            }
+            
+            if isSecureTextEntry {
+                stackView.addArrangedSubview(titleLabel)
+            }
+            stackView.addArrangedSubview(txtStackView)
             
             addSubview(stackView)
             NSLayoutConstraint.activate([

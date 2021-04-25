@@ -14,6 +14,7 @@ import UIKit
 enum HomeRankingSignal {
     case mainMenu
     case userProfile
+    case login
 }
 
 protocol HomeRankingSignalDelegate: class {

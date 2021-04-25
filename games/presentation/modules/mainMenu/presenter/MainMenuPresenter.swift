@@ -42,8 +42,7 @@ class MainMenuPresenter: BasePresenter, MainMenuPresenterProtocol {
     }
     
     func goToHome() {
-        // TODO: userID
-        signalDelegate.signalTrigged(.home(""))
+        signalDelegate.signalTrigged(.home)
     }
     
     func goToProfile() {
